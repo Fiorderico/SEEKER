@@ -1,0 +1,1382 @@
+Log delle generazioni:
+
+Generazione 0:
+  Fitness media: -279.0849136475
+  Fitness minima: -279.0920551
+  Fitness massima: -279.0736992
+  Fitness degli individui:
+    Individuo 0 -> Fitness: -279.081921
+    Individuo 1 -> Fitness: -279.0837
+    Individuo 2 -> Fitness: -279.0792556
+    Individuo 3 -> Fitness: -279.0819213
+    Individuo 4 -> Fitness: -279.0819084
+    Individuo 5 -> Fitness: -279.0830849
+    Individuo 6 -> Fitness: -279.0785861
+    Individuo 7 -> Fitness: -279.0863243
+    Individuo 8 -> Fitness: -279.0861569
+    Individuo 9 -> Fitness: -279.0900609
+    Individuo 10 -> Fitness: -279.0848269
+    Individuo 11 -> Fitness: -279.0855324
+    Individuo 12 -> Fitness: -279.0885625
+    Individuo 13 -> Fitness: -279.085601
+    Individuo 14 -> Fitness: -279.0882312
+    Individuo 15 -> Fitness: -279.083727
+    Individuo 16 -> Fitness: -279.0878989
+    Individuo 17 -> Fitness: -279.0909916
+    Individuo 18 -> Fitness: -279.0863589
+    Individuo 19 -> Fitness: -279.084961
+    Individuo 20 -> Fitness: -279.0834007
+    Individuo 21 -> Fitness: -279.0776155
+    Individuo 22 -> Fitness: -279.0736992
+    Individuo 23 -> Fitness: -279.0752005
+    Individuo 24 -> Fitness: -279.0861895
+    Individuo 25 -> Fitness: -279.0920551
+    Individuo 26 -> Fitness: -279.0864305
+    Individuo 27 -> Fitness: -279.0889492
+    Individuo 28 -> Fitness: -279.0885408
+    Individuo 29 -> Fitness: -279.0837806
+    Individuo 30 -> Fitness: -279.079461
+    Individuo 31 -> Fitness: -279.0916136
+    Individuo 32 -> Fitness: -279.0889033
+    Individuo 33 -> Fitness: -279.0818536
+    Individuo 34 -> Fitness: -279.086366
+    Individuo 35 -> Fitness: -279.0769676
+    Individuo 36 -> Fitness: -279.089922
+    Individuo 37 -> Fitness: -279.0919341
+    Individuo 38 -> Fitness: -279.0869664
+    Individuo 39 -> Fitness: -279.0870859
+
+Generazione 1:
+  Fitness media: -279.08702955749993
+  Fitness minima: -279.0961761
+  Fitness massima: -279.0737014
+  Fitness degli individui:
+    Individuo 6412 -> Fitness: -279.0877176
+    Individuo 4834 -> Fitness: -279.0858684
+    Individuo 8189 -> Fitness: -279.0904623
+    Individuo 6652 -> Fitness: -279.0933546
+    Individuo 8696 -> Fitness: -279.0930493
+    Individuo 5465 -> Fitness: -279.0817593
+    Individuo 2490 -> Fitness: -279.0870185
+    Individuo 5036 -> Fitness: -279.0896031
+    Individuo 8289 -> Fitness: -279.0831702
+    Individuo 2283 -> Fitness: -279.0842127
+    Individuo 5070 -> Fitness: -279.085479
+    Individuo 6346 -> Fitness: -279.0814987
+    Individuo 1275 -> Fitness: -279.0892046
+    Individuo 1469 -> Fitness: -279.0817845
+    Individuo 9298 -> Fitness: -279.0881198
+    Individuo 6762 -> Fitness: -279.0877945
+    Individuo 3889 -> Fitness: -279.0837536
+    Individuo 6572 -> Fitness: -279.0737014
+    Individuo 2859 -> Fitness: -279.0961761
+    Individuo 8164 -> Fitness: -279.092153
+    Individuo 8781 -> Fitness: -279.0924405
+    Individuo 3793 -> Fitness: -279.0900808
+    Individuo 6095 -> Fitness: -279.0859612
+    Individuo 7932 -> Fitness: -279.0869405
+    Individuo 4467 -> Fitness: -279.0846389
+    Individuo 1025 -> Fitness: -279.0933396
+    Individuo 4743 -> Fitness: -279.0835881
+    Individuo 6256 -> Fitness: -279.0872007
+    Individuo 5941 -> Fitness: -279.0868418
+    Individuo 8764 -> Fitness: -279.0827448
+    Individuo 9983 -> Fitness: -279.0859755
+    Individuo 2264 -> Fitness: -279.0879656
+    Individuo 5507 -> Fitness: -279.0866973
+    Individuo 4952 -> Fitness: -279.0882312
+    Individuo 2746 -> Fitness: -279.0862944
+    Individuo 4510 -> Fitness: -279.0939634
+    Individuo 2924 -> Fitness: -279.0908493
+    Individuo 6725 -> Fitness: -279.0838672
+    Individuo 5155 -> Fitness: -279.0859163
+    Individuo 4413 -> Fitness: -279.081764
+
+Generazione 2:
+  Fitness media: -279.08884067750006
+  Fitness minima: -279.096153
+  Fitness massima: -279.0771795
+  Fitness degli individui:
+    Individuo 5843 -> Fitness: -279.0909912
+    Individuo 8344 -> Fitness: -279.0890657
+    Individuo 5809 -> Fitness: -279.0872868
+    Individuo 2079 -> Fitness: -279.0869402
+    Individuo 2551 -> Fitness: -279.094081
+    Individuo 6189 -> Fitness: -279.094596
+    Individuo 4581 -> Fitness: -279.0855063
+    Individuo 5283 -> Fitness: -279.0897489
+    Individuo 5897 -> Fitness: -279.08809
+    Individuo 3535 -> Fitness: -279.0896685
+    Individuo 4521 -> Fitness: -279.0855505
+    Individuo 6672 -> Fitness: -279.0843878
+    Individuo 1225 -> Fitness: -279.0892874
+    Individuo 9744 -> Fitness: -279.0894044
+    Individuo 9057 -> Fitness: -279.0896372
+    Individuo 3895 -> Fitness: -279.092678
+    Individuo 1560 -> Fitness: -279.0771795
+    Individuo 6286 -> Fitness: -279.0912497
+    Individuo 7164 -> Fitness: -279.0920145
+    Individuo 4579 -> Fitness: -279.0869405
+    Individuo 6966 -> Fitness: -279.0924405
+    Individuo 6167 -> Fitness: -279.096153
+    Individuo 1810 -> Fitness: -279.0828962
+    Individuo 9982 -> Fitness: -279.0844724
+    Individuo 2711 -> Fitness: -279.0845958
+    Individuo 3191 -> Fitness: -279.0918137
+    Individuo 6945 -> Fitness: -279.0873374
+    Individuo 1549 -> Fitness: -279.0891009
+    Individuo 9847 -> Fitness: -279.0901237
+    Individuo 2283 -> Fitness: -279.0942428
+    Individuo 8803 -> Fitness: -279.0923247
+    Individuo 9602 -> Fitness: -279.0919939
+    Individuo 9156 -> Fitness: -279.0903592
+    Individuo 8791 -> Fitness: -279.0819725
+    Individuo 7773 -> Fitness: -279.0895796
+    Individuo 6885 -> Fitness: -279.0881198
+    Individuo 7167 -> Fitness: -279.0916641
+    Individuo 7084 -> Fitness: -279.0830867
+    Individuo 5941 -> Fitness: -279.0878415
+    Individuo 8407 -> Fitness: -279.0892046
+
+Generazione 3:
+  Fitness media: -279.0876720949999
+  Fitness minima: -279.0953321
+  Fitness massima: -279.0698037
+  Fitness degli individui:
+    Individuo 2544 -> Fitness: -279.0906412
+    Individuo 6368 -> Fitness: -279.0871048
+    Individuo 6189 -> Fitness: -279.0802007
+    Individuo 6386 -> Fitness: -279.0861941
+    Individuo 8954 -> Fitness: -279.0912497
+    Individuo 8805 -> Fitness: -279.089248
+    Individuo 1776 -> Fitness: -279.0925484
+    Individuo 4780 -> Fitness: -279.0802292
+    Individuo 1852 -> Fitness: -279.0881941
+    Individuo 3197 -> Fitness: -279.0886804
+    Individuo 7670 -> Fitness: -279.087624
+    Individuo 8458 -> Fitness: -279.0852196
+    Individuo 4031 -> Fitness: -279.087659
+    Individuo 6706 -> Fitness: -279.0897489
+    Individuo 5823 -> Fitness: -279.089967
+    Individuo 1795 -> Fitness: -279.0892769
+    Individuo 6738 -> Fitness: -279.0911759
+    Individuo 7320 -> Fitness: -279.083325
+    Individuo 5524 -> Fitness: -279.0804628
+    Individuo 5027 -> Fitness: -279.0897098
+    Individuo 6808 -> Fitness: -279.092678
+    Individuo 1801 -> Fitness: -279.0937635
+    Individuo 6838 -> Fitness: -279.0935498
+    Individuo 4319 -> Fitness: -279.0698037
+    Individuo 2340 -> Fitness: -279.0877617
+    Individuo 3208 -> Fitness: -279.0884333
+    Individuo 4335 -> Fitness: -279.087404
+    Individuo 4142 -> Fitness: -279.0919467
+    Individuo 3184 -> Fitness: -279.0812889
+    Individuo 2875 -> Fitness: -279.0929888
+    Individuo 1129 -> Fitness: -279.0810197
+    Individuo 5741 -> Fitness: -279.0893323
+    Individuo 5564 -> Fitness: -279.0939251
+    Individuo 1385 -> Fitness: -279.0916973
+    Individuo 8422 -> Fitness: -279.0884637
+    Individuo 4835 -> Fitness: -279.0953321
+    Individuo 8919 -> Fitness: -279.0811086
+    Individuo 5317 -> Fitness: -279.0897546
+    Individuo 9488 -> Fitness: -279.0910377
+    Individuo 4382 -> Fitness: -279.0771348
+
+Generazione 4:
+  Fitness media: -279.08852487499996
+  Fitness minima: -279.0943147
+  Fitness massima: -279.0773662
+  Fitness degli individui:
+    Individuo 5748 -> Fitness: -279.0932447
+    Individuo 1461 -> Fitness: -279.093801
+    Individuo 9472 -> Fitness: -279.0841871
+    Individuo 7230 -> Fitness: -279.0897751
+    Individuo 4605 -> Fitness: -279.0895819
+    Individuo 7513 -> Fitness: -279.0904884
+    Individuo 2312 -> Fitness: -279.0909629
+    Individuo 4388 -> Fitness: -279.0820324
+    Individuo 5806 -> Fitness: -279.0927457
+    Individuo 4904 -> Fitness: -279.0889985
+    Individuo 2009 -> Fitness: -279.0924185
+    Individuo 1157 -> Fitness: -279.0897098
+    Individuo 4044 -> Fitness: -279.0907977
+    Individuo 5413 -> Fitness: -279.0895126
+    Individuo 9329 -> Fitness: -279.0929888
+    Individuo 2284 -> Fitness: -279.0930855
+    Individuo 8093 -> Fitness: -279.0904239
+    Individuo 4243 -> Fitness: -279.0799985
+    Individuo 3122 -> Fitness: -279.0924395
+    Individuo 3579 -> Fitness: -279.084592
+    Individuo 7223 -> Fitness: -279.0932813
+    Individuo 7889 -> Fitness: -279.0907544
+    Individuo 6567 -> Fitness: -279.0897098
+    Individuo 6444 -> Fitness: -279.0932849
+    Individuo 3257 -> Fitness: -279.0886316
+    Individuo 4201 -> Fitness: -279.0869711
+    Individuo 3517 -> Fitness: -279.092756
+    Individuo 9878 -> Fitness: -279.0836929
+    Individuo 7688 -> Fitness: -279.0892331
+    Individuo 8861 -> Fitness: -279.0841166
+    Individuo 6473 -> Fitness: -279.0872151
+    Individuo 5513 -> Fitness: -279.0808782
+    Individuo 6065 -> Fitness: -279.0853809
+    Individuo 3109 -> Fitness: -279.0897489
+    Individuo 3398 -> Fitness: -279.086403
+    Individuo 1394 -> Fitness: -279.0864928
+    Individuo 2459 -> Fitness: -279.0943147
+    Individuo 6846 -> Fitness: -279.0811901
+    Individuo 1217 -> Fitness: -279.0877889
+    Individuo 6283 -> Fitness: -279.0773662
+
+Generazione 5:
+  Fitness media: -279.08873696
+  Fitness minima: -279.0952448
+  Fitness massima: -279.0798066
+  Fitness degli individui:
+    Individuo 5128 -> Fitness: -279.0820519
+    Individuo 9485 -> Fitness: -279.0842181
+    Individuo 3358 -> Fitness: -279.0929501
+    Individuo 7324 -> Fitness: -279.0916771
+    Individuo 2695 -> Fitness: -279.0831184
+    Individuo 8027 -> Fitness: -279.0857894
+    Individuo 4531 -> Fitness: -279.0895571
+    Individuo 5908 -> Fitness: -279.0917331
+    Individuo 1690 -> Fitness: -279.0924049
+    Individuo 8278 -> Fitness: -279.082671
+    Individuo 9203 -> Fitness: -279.0943147
+    Individuo 6723 -> Fitness: -279.092513
+    Individuo 8600 -> Fitness: -279.0903512
+    Individuo 8701 -> Fitness: -279.0898295
+    Individuo 2977 -> Fitness: -279.089674
+    Individuo 9583 -> Fitness: -279.0854968
+    Individuo 7350 -> Fitness: -279.0910851
+    Individuo 7592 -> Fitness: -279.0900938
+    Individuo 6827 -> Fitness: -279.0912245
+    Individuo 8140 -> Fitness: -279.088491
+    Individuo 6030 -> Fitness: -279.0952448
+    Individuo 2905 -> Fitness: -279.0875674
+    Individuo 1572 -> Fitness: -279.0848577
+    Individuo 4525 -> Fitness: -279.0891602
+    Individuo 9360 -> Fitness: -279.0802534
+    Individuo 8816 -> Fitness: -279.0883828
+    Individuo 4207 -> Fitness: -279.0866523
+    Individuo 8592 -> Fitness: -279.0912197
+    Individuo 8752 -> Fitness: -279.0798066
+    Individuo 3537 -> Fitness: -279.0894705
+    Individuo 4553 -> Fitness: -279.0809411
+    Individuo 3343 -> Fitness: -279.0862676
+    Individuo 6417 -> Fitness: -279.0946618
+    Individuo 5327 -> Fitness: -279.0889642
+    Individuo 6828 -> Fitness: -279.0933553
+    Individuo 4246 -> Fitness: -279.0858902
+    Individuo 8274 -> Fitness: -279.0930248
+    Individuo 9125 -> Fitness: -279.0899304
+    Individuo 7579 -> Fitness: -279.0904477
+    Individuo 3209 -> Fitness: -279.0941352
+
+Generazione 6:
+  Fitness media: -279.08807915750003
+  Fitness minima: -279.0957246
+  Fitness massima: -279.0768032
+  Fitness degli individui:
+    Individuo 5420 -> Fitness: -279.0845203
+    Individuo 4171 -> Fitness: -279.0893182
+    Individuo 8220 -> Fitness: -279.0907497
+    Individuo 9772 -> Fitness: -279.0897384
+    Individuo 2074 -> Fitness: -279.0871447
+    Individuo 1667 -> Fitness: -279.0801868
+    Individuo 5508 -> Fitness: -279.0826523
+    Individuo 3742 -> Fitness: -279.0946404
+    Individuo 8148 -> Fitness: -279.0916502
+    Individuo 1297 -> Fitness: -279.089674
+    Individuo 3108 -> Fitness: -279.0931994
+    Individuo 1548 -> Fitness: -279.0930248
+    Individuo 8482 -> Fitness: -279.0828247
+    Individuo 4923 -> Fitness: -279.0920209
+    Individuo 6930 -> Fitness: -279.0913688
+    Individuo 1605 -> Fitness: -279.0768032
+    Individuo 8494 -> Fitness: -279.0829317
+    Individuo 6569 -> Fitness: -279.0901155
+    Individuo 6705 -> Fitness: -279.0893976
+    Individuo 7877 -> Fitness: -279.0912197
+    Individuo 8566 -> Fitness: -279.087191
+    Individuo 9492 -> Fitness: -279.0789203
+    Individuo 4318 -> Fitness: -279.084541
+    Individuo 8526 -> Fitness: -279.0867566
+    Individuo 7176 -> Fitness: -279.0896572
+    Individuo 3778 -> Fitness: -279.0904477
+    Individuo 3024 -> Fitness: -279.0880368
+    Individuo 2768 -> Fitness: -279.0920666
+    Individuo 8107 -> Fitness: -279.0782151
+    Individuo 2281 -> Fitness: -279.0957246
+    Individuo 2441 -> Fitness: -279.0881134
+    Individuo 8332 -> Fitness: -279.0893406
+    Individuo 6263 -> Fitness: -279.0891768
+    Individuo 6596 -> Fitness: -279.0941421
+    Individuo 7009 -> Fitness: -279.0808873
+    Individuo 7852 -> Fitness: -279.0863337
+    Individuo 2090 -> Fitness: -279.0941953
+    Individuo 5221 -> Fitness: -279.0900693
+    Individuo 9515 -> Fitness: -279.0899845
+    Individuo 3636 -> Fitness: -279.0861851
+
+Generazione 7:
+  Fitness media: -279.08759638999993
+  Fitness minima: -279.0957246
+  Fitness massima: -279.0751861
+  Fitness degli individui:
+    Individuo 4713 -> Fitness: -279.0876944
+    Individuo 6272 -> Fitness: -279.0816913
+    Individuo 5666 -> Fitness: -279.0939539
+    Individuo 1578 -> Fitness: -279.0835007
+    Individuo 1254 -> Fitness: -279.0957246
+    Individuo 4761 -> Fitness: -279.0916502
+    Individuo 9176 -> Fitness: -279.0931732
+    Individuo 8832 -> Fitness: -279.0866041
+    Individuo 4287 -> Fitness: -279.0941033
+    Individuo 6532 -> Fitness: -279.0828919
+    Individuo 7428 -> Fitness: -279.0854568
+    Individuo 8668 -> Fitness: -279.0915729
+    Individuo 4131 -> Fitness: -279.0906637
+    Individuo 2493 -> Fitness: -279.0808827
+    Individuo 9860 -> Fitness: -279.0941038
+    Individuo 4553 -> Fitness: -279.082708
+    Individuo 2192 -> Fitness: -279.0818426
+    Individuo 4773 -> Fitness: -279.0931994
+    Individuo 6562 -> Fitness: -279.0887908
+    Individuo 4505 -> Fitness: -279.0864246
+    Individuo 5975 -> Fitness: -279.0919151
+    Individuo 4755 -> Fitness: -279.0881404
+    Individuo 7908 -> Fitness: -279.0851837
+    Individuo 8697 -> Fitness: -279.0869002
+    Individuo 7416 -> Fitness: -279.0871104
+    Individuo 8723 -> Fitness: -279.0907448
+    Individuo 1299 -> Fitness: -279.0910515
+    Individuo 3827 -> Fitness: -279.088632
+    Individuo 5804 -> Fitness: -279.0918285
+    Individuo 4754 -> Fitness: -279.085452
+    Individuo 8838 -> Fitness: -279.0892383
+    Individuo 4131 -> Fitness: -279.0871686
+    Individuo 8305 -> Fitness: -279.0894007
+    Individuo 4887 -> Fitness: -279.0935238
+    Individuo 1017 -> Fitness: -279.0871391
+    Individuo 2149 -> Fitness: -279.0826721
+    Individuo 4514 -> Fitness: -279.0751861
+    Individuo 1112 -> Fitness: -279.0780516
+    Individuo 6344 -> Fitness: -279.0837671
+    Individuo 5388 -> Fitness: -279.0841167
+
+Generazione 8:
+  Fitness media: -279.08974333000003
+  Fitness minima: -279.0946259
+  Fitness massima: -279.0823299
+  Fitness degli individui:
+    Individuo 2257 -> Fitness: -279.0917488
+    Individuo 9588 -> Fitness: -279.0914336
+    Individuo 6825 -> Fitness: -279.091187
+    Individuo 3980 -> Fitness: -279.0885814
+    Individuo 7439 -> Fitness: -279.0876526
+    Individuo 3783 -> Fitness: -279.0940952
+    Individuo 6185 -> Fitness: -279.0919151
+    Individuo 6191 -> Fitness: -279.0915446
+    Individuo 3400 -> Fitness: -279.0853022
+    Individuo 9266 -> Fitness: -279.0932107
+    Individuo 7976 -> Fitness: -279.0872428
+    Individuo 6166 -> Fitness: -279.0894297
+    Individuo 5413 -> Fitness: -279.0913209
+    Individuo 1050 -> Fitness: -279.0885488
+    Individuo 3295 -> Fitness: -279.0915729
+    Individuo 4225 -> Fitness: -279.0903242
+    Individuo 8784 -> Fitness: -279.0946259
+    Individuo 7912 -> Fitness: -279.0823299
+    Individuo 8506 -> Fitness: -279.0938011
+    Individuo 9362 -> Fitness: -279.0916667
+    Individuo 9361 -> Fitness: -279.0925528
+    Individuo 6057 -> Fitness: -279.0857609
+    Individuo 2894 -> Fitness: -279.0900304
+    Individuo 8894 -> Fitness: -279.08572
+    Individuo 3871 -> Fitness: -279.0896142
+    Individuo 9100 -> Fitness: -279.0916809
+    Individuo 6268 -> Fitness: -279.0884291
+    Individuo 5073 -> Fitness: -279.0868595
+    Individuo 4278 -> Fitness: -279.0935238
+    Individuo 2739 -> Fitness: -279.0905401
+    Individuo 2709 -> Fitness: -279.0899845
+    Individuo 1691 -> Fitness: -279.0872624
+    Individuo 2885 -> Fitness: -279.0884114
+    Individuo 6527 -> Fitness: -279.0845471
+    Individuo 9206 -> Fitness: -279.0853015
+    Individuo 3309 -> Fitness: -279.0904946
+    Individuo 1054 -> Fitness: -279.090149
+    Individuo 4262 -> Fitness: -279.0878164
+    Individuo 2953 -> Fitness: -279.0914861
+    Individuo 2842 -> Fitness: -279.0920344
+
+Generazione 9:
+  Fitness media: -279.08828292000004
+  Fitness minima: -279.0969238
+  Fitness massima: -279.0760128
+  Fitness degli individui:
+    Individuo 6023 -> Fitness: -279.08711
+    Individuo 5819 -> Fitness: -279.0922418
+    Individuo 9933 -> Fitness: -279.0812232
+    Individuo 7399 -> Fitness: -279.0945627
+    Individuo 4361 -> Fitness: -279.0915729
+    Individuo 6793 -> Fitness: -279.0878033
+    Individuo 2137 -> Fitness: -279.0935764
+    Individuo 9657 -> Fitness: -279.0832318
+    Individuo 5551 -> Fitness: -279.0941201
+    Individuo 8823 -> Fitness: -279.0937154
+    Individuo 2363 -> Fitness: -279.0899523
+    Individuo 8287 -> Fitness: -279.0881224
+    Individuo 1489 -> Fitness: -279.0915767
+    Individuo 7881 -> Fitness: -279.0760128
+    Individuo 7488 -> Fitness: -279.0914336
+    Individuo 8679 -> Fitness: -279.0892896
+    Individuo 3783 -> Fitness: -279.0840314
+    Individuo 4843 -> Fitness: -279.0911092
+    Individuo 8464 -> Fitness: -279.0835455
+    Individuo 3217 -> Fitness: -279.0880644
+    Individuo 6355 -> Fitness: -279.0862478
+    Individuo 5935 -> Fitness: -279.0905401
+    Individuo 1122 -> Fitness: -279.0845811
+    Individuo 9587 -> Fitness: -279.0815995
+    Individuo 1745 -> Fitness: -279.0893342
+    Individuo 5135 -> Fitness: -279.0895877
+    Individuo 1179 -> Fitness: -279.0969238
+    Individuo 9965 -> Fitness: -279.0877549
+    Individuo 7831 -> Fitness: -279.0814673
+    Individuo 5300 -> Fitness: -279.0864892
+    Individuo 2144 -> Fitness: -279.0896178
+    Individuo 4839 -> Fitness: -279.09501
+    Individuo 8970 -> Fitness: -279.0881871
+    Individuo 1127 -> Fitness: -279.0852399
+    Individuo 8002 -> Fitness: -279.0876275
+    Individuo 4103 -> Fitness: -279.0882204
+    Individuo 4579 -> Fitness: -279.0915729
+    Individuo 9569 -> Fitness: -279.0892339
+    Individuo 6024 -> Fitness: -279.0796744
+    Individuo 2557 -> Fitness: -279.0901118
+
+Generazione 10:
+  Fitness media: -279.0885908125
+  Fitness minima: -279.0959335
+  Fitness massima: -279.0743158
+  Fitness degli individui:
+    Individuo 9926 -> Fitness: -279.0902891
+    Individuo 1397 -> Fitness: -279.0862684
+    Individuo 5141 -> Fitness: -279.0881415
+    Individuo 6091 -> Fitness: -279.0838707
+    Individuo 4260 -> Fitness: -279.0893712
+    Individuo 6273 -> Fitness: -279.0819631
+    Individuo 2285 -> Fitness: -279.0881544
+    Individuo 1175 -> Fitness: -279.0768124
+    Individuo 6844 -> Fitness: -279.0913121
+    Individuo 1650 -> Fitness: -279.0936339
+    Individuo 8171 -> Fitness: -279.0858029
+    Individuo 1050 -> Fitness: -279.0895162
+    Individuo 8540 -> Fitness: -279.0889644
+    Individuo 4577 -> Fitness: -279.0928202
+    Individuo 4915 -> Fitness: -279.0921566
+    Individuo 7670 -> Fitness: -279.0949239
+    Individuo 9160 -> Fitness: -279.093357
+    Individuo 6273 -> Fitness: -279.0919019
+    Individuo 4102 -> Fitness: -279.0959335
+    Individuo 3557 -> Fitness: -279.0922173
+    Individuo 7170 -> Fitness: -279.0915767
+    Individuo 7265 -> Fitness: -279.085277
+    Individuo 9182 -> Fitness: -279.0914336
+    Individuo 2757 -> Fitness: -279.0905547
+    Individuo 3151 -> Fitness: -279.0807171
+    Individuo 3924 -> Fitness: -279.0886665
+    Individuo 6144 -> Fitness: -279.0822457
+    Individuo 4072 -> Fitness: -279.0914336
+    Individuo 6182 -> Fitness: -279.0936222
+    Individuo 7054 -> Fitness: -279.0872544
+    Individuo 7076 -> Fitness: -279.0819976
+    Individuo 2396 -> Fitness: -279.0920149
+    Individuo 7875 -> Fitness: -279.0922418
+    Individuo 6040 -> Fitness: -279.0943229
+    Individuo 8795 -> Fitness: -279.0888799
+    Individuo 2061 -> Fitness: -279.0890549
+    Individuo 6406 -> Fitness: -279.0917077
+    Individuo 6476 -> Fitness: -279.0801401
+    Individuo 4809 -> Fitness: -279.0887647
+    Individuo 1778 -> Fitness: -279.0743158
+
+Generazione 11:
+  Fitness media: -279.08924842749997
+  Fitness minima: -279.0954992
+  Fitness massima: -279.0752814
+  Fitness degli individui:
+    Individuo 6196 -> Fitness: -279.0930675
+    Individuo 4142 -> Fitness: -279.0917843
+    Individuo 5742 -> Fitness: -279.0902891
+    Individuo 7570 -> Fitness: -279.0910183
+    Individuo 8533 -> Fitness: -279.0943229
+    Individuo 2509 -> Fitness: -279.0914871
+    Individuo 4579 -> Fitness: -279.0918337
+    Individuo 2599 -> Fitness: -279.0882073
+    Individuo 3045 -> Fitness: -279.0788945
+    Individuo 5796 -> Fitness: -279.0908356
+    Individuo 1068 -> Fitness: -279.0921571
+    Individuo 4539 -> Fitness: -279.0887311
+    Individuo 3945 -> Fitness: -279.0836309
+    Individuo 2388 -> Fitness: -279.0752814
+    Individuo 4930 -> Fitness: -279.0811076
+    Individuo 5671 -> Fitness: -279.09111
+    Individuo 3841 -> Fitness: -279.0812128
+    Individuo 4630 -> Fitness: -279.0900449
+    Individuo 8899 -> Fitness: -279.0913121
+    Individuo 7557 -> Fitness: -279.0890633
+    Individuo 6004 -> Fitness: -279.0936339
+    Individuo 5503 -> Fitness: -279.082314
+    Individuo 6008 -> Fitness: -279.0922734
+    Individuo 2794 -> Fitness: -279.0887983
+    Individuo 2844 -> Fitness: -279.0831243
+    Individuo 2770 -> Fitness: -279.0928202
+    Individuo 4113 -> Fitness: -279.0954992
+    Individuo 7873 -> Fitness: -279.0864346
+    Individuo 3695 -> Fitness: -279.0905547
+    Individuo 5896 -> Fitness: -279.0897823
+    Individuo 7764 -> Fitness: -279.0949239
+    Individuo 6374 -> Fitness: -279.0910035
+    Individuo 1827 -> Fitness: -279.089004
+    Individuo 5444 -> Fitness: -279.0895162
+    Individuo 2400 -> Fitness: -279.0917127
+    Individuo 8422 -> Fitness: -279.0930174
+    Individuo 1795 -> Fitness: -279.092573
+    Individuo 6964 -> Fitness: -279.0835154
+    Individuo 7537 -> Fitness: -279.0935295
+    Individuo 8938 -> Fitness: -279.0905151
+
+Generazione 12:
+  Fitness media: -279.08898529499993
+  Fitness minima: -279.0954992
+  Fitness massima: -279.0725507
+  Fitness degli individui:
+    Individuo 5205 -> Fitness: -279.0908195
+    Individuo 4459 -> Fitness: -279.0927636
+    Individuo 5159 -> Fitness: -279.0866595
+    Individuo 7365 -> Fitness: -279.0822846
+    Individuo 3218 -> Fitness: -279.0881968
+    Individuo 8951 -> Fitness: -279.0891065
+    Individuo 9287 -> Fitness: -279.0824085
+    Individuo 3737 -> Fitness: -279.0863272
+    Individuo 6557 -> Fitness: -279.0930675
+    Individuo 7757 -> Fitness: -279.0916709
+    Individuo 5435 -> Fitness: -279.0915874
+    Individuo 9620 -> Fitness: -279.0893188
+    Individuo 2512 -> Fitness: -279.0866476
+    Individuo 3567 -> Fitness: -279.0949239
+    Individuo 6217 -> Fitness: -279.0870316
+    Individuo 1220 -> Fitness: -279.0917843
+    Individuo 4960 -> Fitness: -279.090052
+    Individuo 9801 -> Fitness: -279.0927586
+    Individuo 2919 -> Fitness: -279.0830453
+    Individuo 1976 -> Fitness: -279.0843073
+    Individuo 9852 -> Fitness: -279.0725507
+    Individuo 6298 -> Fitness: -279.0872619
+    Individuo 9036 -> Fitness: -279.0954992
+    Individuo 8701 -> Fitness: -279.0813493
+    Individuo 8660 -> Fitness: -279.090454
+    Individuo 9751 -> Fitness: -279.0911806
+    Individuo 2098 -> Fitness: -279.086205
+    Individuo 3341 -> Fitness: -279.0888076
+    Individuo 2962 -> Fitness: -279.0917843
+    Individuo 2926 -> Fitness: -279.0920068
+    Individuo 9270 -> Fitness: -279.0910183
+    Individuo 7373 -> Fitness: -279.0929913
+    Individuo 1752 -> Fitness: -279.0936943
+    Individuo 8756 -> Fitness: -279.0884049
+    Individuo 6269 -> Fitness: -279.0846568
+    Individuo 2892 -> Fitness: -279.0919741
+    Individuo 8633 -> Fitness: -279.0917843
+    Individuo 4283 -> Fitness: -279.0859109
+    Individuo 4092 -> Fitness: -279.093356
+    Individuo 7039 -> Fitness: -279.0937601
+
+Generazione 13:
+  Fitness media: -279.0892941125
+  Fitness minima: -279.0963506
+  Fitness massima: -279.077344
+  Fitness degli individui:
+    Individuo 9237 -> Fitness: -279.0917843
+    Individuo 7343 -> Fitness: -279.0817026
+    Individuo 7429 -> Fitness: -279.0947462
+    Individuo 2914 -> Fitness: -279.0916709
+    Individuo 7563 -> Fitness: -279.0879721
+    Individuo 6528 -> Fitness: -279.0903687
+    Individuo 7370 -> Fitness: -279.0904501
+    Individuo 1813 -> Fitness: -279.0898802
+    Individuo 8166 -> Fitness: -279.0931906
+    Individuo 5997 -> Fitness: -279.0925281
+    Individuo 9827 -> Fitness: -279.0938831
+    Individuo 8782 -> Fitness: -279.077344
+    Individuo 6806 -> Fitness: -279.0853521
+    Individuo 5045 -> Fitness: -279.0902199
+    Individuo 5440 -> Fitness: -279.0863298
+    Individuo 4182 -> Fitness: -279.0891096
+    Individuo 1635 -> Fitness: -279.0817815
+    Individuo 2115 -> Fitness: -279.0782384
+    Individuo 6359 -> Fitness: -279.0891846
+    Individuo 3016 -> Fitness: -279.096316
+    Individuo 3228 -> Fitness: -279.0911218
+    Individuo 1311 -> Fitness: -279.0917843
+    Individuo 1334 -> Fitness: -279.0813441
+    Individuo 3902 -> Fitness: -279.0879126
+    Individuo 2984 -> Fitness: -279.0914442
+    Individuo 4261 -> Fitness: -279.0922469
+    Individuo 1137 -> Fitness: -279.086744
+    Individuo 8780 -> Fitness: -279.0940841
+    Individuo 5129 -> Fitness: -279.0802743
+    Individuo 9855 -> Fitness: -279.0875522
+    Individuo 1603 -> Fitness: -279.092478
+    Individuo 7685 -> Fitness: -279.0881077
+    Individuo 5098 -> Fitness: -279.088944
+    Individuo 9737 -> Fitness: -279.0940351
+    Individuo 3202 -> Fitness: -279.0888482
+    Individuo 1066 -> Fitness: -279.0938687
+    Individuo 8196 -> Fitness: -279.0933446
+    Individuo 2701 -> Fitness: -279.0911076
+    Individuo 7161 -> Fitness: -279.0963506
+    Individuo 4663 -> Fitness: -279.0881187
+
+Generazione 14:
+  Fitness media: -279.0903447074999
+  Fitness minima: -279.096542
+  Fitness massima: -279.078858
+  Fitness degli individui:
+    Individuo 3291 -> Fitness: -279.0937389
+    Individuo 5590 -> Fitness: -279.0857409
+    Individuo 2994 -> Fitness: -279.0911218
+    Individuo 4616 -> Fitness: -279.095984
+    Individuo 3494 -> Fitness: -279.0905376
+    Individuo 1904 -> Fitness: -279.0904972
+    Individuo 9978 -> Fitness: -279.092243
+    Individuo 8719 -> Fitness: -279.0836971
+    Individuo 9120 -> Fitness: -279.0802373
+    Individuo 8336 -> Fitness: -279.096316
+    Individuo 9101 -> Fitness: -279.0938149
+    Individuo 2597 -> Fitness: -279.0909045
+    Individuo 3097 -> Fitness: -279.0836539
+    Individuo 7939 -> Fitness: -279.0895286
+    Individuo 1545 -> Fitness: -279.0911061
+    Individuo 8675 -> Fitness: -279.0945797
+    Individuo 3391 -> Fitness: -279.089128
+    Individuo 1580 -> Fitness: -279.0896764
+    Individuo 3199 -> Fitness: -279.092327
+    Individuo 9805 -> Fitness: -279.085829
+    Individuo 4615 -> Fitness: -279.0924089
+    Individuo 2638 -> Fitness: -279.0884028
+    Individuo 5982 -> Fitness: -279.0931528
+    Individuo 5466 -> Fitness: -279.0866906
+    Individuo 2999 -> Fitness: -279.0952933
+    Individuo 8876 -> Fitness: -279.0888542
+    Individuo 1859 -> Fitness: -279.078858
+    Individuo 4042 -> Fitness: -279.089364
+    Individuo 8544 -> Fitness: -279.0917404
+    Individuo 9894 -> Fitness: -279.0905196
+    Individuo 1221 -> Fitness: -279.096542
+    Individuo 1279 -> Fitness: -279.0928484
+    Individuo 3984 -> Fitness: -279.0927586
+    Individuo 6727 -> Fitness: -279.0898872
+    Individuo 8283 -> Fitness: -279.0925281
+    Individuo 1813 -> Fitness: -279.0936085
+    Individuo 3805 -> Fitness: -279.090815
+    Individuo 9346 -> Fitness: -279.0907369
+    Individuo 6537 -> Fitness: -279.0892815
+    Individuo 8277 -> Fitness: -279.0888356
+
+Generazione 15:
+  Fitness media: -279.08721289999994
+  Fitness minima: -279.0974249
+  Fitness massima: -279.0733427
+  Fitness degli individui:
+    Individuo 2806 -> Fitness: -279.0916893
+    Individuo 5726 -> Fitness: -279.0937631
+    Individuo 3116 -> Fitness: -279.0887314
+    Individuo 6689 -> Fitness: -279.0821625
+    Individuo 4285 -> Fitness: -279.0733427
+    Individuo 1886 -> Fitness: -279.0766652
+    Individuo 4259 -> Fitness: -279.0921226
+    Individuo 9578 -> Fitness: -279.0821912
+    Individuo 1423 -> Fitness: -279.0935904
+    Individuo 1215 -> Fitness: -279.092327
+    Individuo 6497 -> Fitness: -279.0803673
+    Individuo 2213 -> Fitness: -279.0793036
+    Individuo 5048 -> Fitness: -279.0919402
+    Individuo 6801 -> Fitness: -279.0828655
+    Individuo 4833 -> Fitness: -279.084739
+    Individuo 2959 -> Fitness: -279.0909512
+    Individuo 5613 -> Fitness: -279.0974249
+    Individuo 4809 -> Fitness: -279.091069
+    Individuo 2074 -> Fitness: -279.0884797
+    Individuo 8779 -> Fitness: -279.0827305
+    Individuo 3319 -> Fitness: -279.084542
+    Individuo 7273 -> Fitness: -279.086735
+    Individuo 8782 -> Fitness: -279.0899898
+    Individuo 6003 -> Fitness: -279.0925897
+    Individuo 1478 -> Fitness: -279.0882967
+    Individuo 5909 -> Fitness: -279.0810924
+    Individuo 8450 -> Fitness: -279.0852708
+    Individuo 5543 -> Fitness: -279.0900369
+    Individuo 4021 -> Fitness: -279.0916549
+    Individuo 5729 -> Fitness: -279.0875205
+    Individuo 2448 -> Fitness: -279.0908685
+    Individuo 3711 -> Fitness: -279.090815
+    Individuo 4173 -> Fitness: -279.0813465
+    Individuo 9020 -> Fitness: -279.0846009
+    Individuo 4703 -> Fitness: -279.083505
+    Individuo 8347 -> Fitness: -279.0929729
+    Individuo 6950 -> Fitness: -279.095181
+    Individuo 7632 -> Fitness: -279.0885772
+    Individuo 1365 -> Fitness: -279.0863093
+    Individuo 1122 -> Fitness: -279.0801547
+
+Generazione 16:
+  Fitness media: -279.08886527
+  Fitness minima: -279.0965753
+  Fitness massima: -279.0773792
+  Fitness degli individui:
+    Individuo 5512 -> Fitness: -279.0910171
+    Individuo 5167 -> Fitness: -279.0922226
+    Individuo 5326 -> Fitness: -279.0878849
+    Individuo 1443 -> Fitness: -279.0832534
+    Individuo 9799 -> Fitness: -279.0862465
+    Individuo 9889 -> Fitness: -279.0796679
+    Individuo 1376 -> Fitness: -279.091234
+    Individuo 5065 -> Fitness: -279.0864118
+    Individuo 5019 -> Fitness: -279.0889919
+    Individuo 6071 -> Fitness: -279.0864175
+    Individuo 7626 -> Fitness: -279.0899972
+    Individuo 4673 -> Fitness: -279.0776998
+    Individuo 4280 -> Fitness: -279.0915264
+    Individuo 5763 -> Fitness: -279.0866928
+    Individuo 5651 -> Fitness: -279.0961722
+    Individuo 9613 -> Fitness: -279.0842113
+    Individuo 4444 -> Fitness: -279.0910301
+    Individuo 2315 -> Fitness: -279.0930522
+    Individuo 5684 -> Fitness: -279.0906234
+    Individuo 5314 -> Fitness: -279.0929008
+    Individuo 9025 -> Fitness: -279.0925897
+    Individuo 9904 -> Fitness: -279.0846103
+    Individuo 7998 -> Fitness: -279.0916919
+    Individuo 5852 -> Fitness: -279.0856708
+    Individuo 1292 -> Fitness: -279.0942801
+    Individuo 7833 -> Fitness: -279.0912521
+    Individuo 9956 -> Fitness: -279.090419
+    Individuo 1713 -> Fitness: -279.0893054
+    Individuo 9069 -> Fitness: -279.0888472
+    Individuo 8011 -> Fitness: -279.0899898
+    Individuo 2789 -> Fitness: -279.0892893
+    Individuo 2301 -> Fitness: -279.0773792
+    Individuo 2463 -> Fitness: -279.0904233
+    Individuo 4009 -> Fitness: -279.0862927
+    Individuo 6197 -> Fitness: -279.088439
+    Individuo 9029 -> Fitness: -279.0903828
+    Individuo 8771 -> Fitness: -279.091911
+    Individuo 5842 -> Fitness: -279.0965753
+    Individuo 8792 -> Fitness: -279.0877115
+    Individuo 1860 -> Fitness: -279.0902966
+
+Generazione 17:
+  Fitness media: -279.08812854750005
+  Fitness minima: -279.0949456
+  Fitness massima: -279.0721309
+  Fitness degli individui:
+    Individuo 5000 -> Fitness: -279.085939
+    Individuo 2821 -> Fitness: -279.0846622
+    Individuo 1712 -> Fitness: -279.0839284
+    Individuo 7164 -> Fitness: -279.0938396
+    Individuo 4450 -> Fitness: -279.0895117
+    Individuo 6446 -> Fitness: -279.0850744
+    Individuo 8765 -> Fitness: -279.0889256
+    Individuo 6027 -> Fitness: -279.0848488
+    Individuo 7176 -> Fitness: -279.0826598
+    Individuo 9015 -> Fitness: -279.0925382
+    Individuo 7100 -> Fitness: -279.0921192
+    Individuo 9455 -> Fitness: -279.080528
+    Individuo 5904 -> Fitness: -279.083839
+    Individuo 2436 -> Fitness: -279.0949456
+    Individuo 3152 -> Fitness: -279.0875027
+    Individuo 2032 -> Fitness: -279.0822913
+    Individuo 9752 -> Fitness: -279.0825412
+    Individuo 9873 -> Fitness: -279.0909265
+    Individuo 3473 -> Fitness: -279.0850563
+    Individuo 8722 -> Fitness: -279.0922768
+    Individuo 8378 -> Fitness: -279.0897716
+    Individuo 2921 -> Fitness: -279.0916197
+    Individuo 7783 -> Fitness: -279.0893922
+    Individuo 1692 -> Fitness: -279.0929536
+    Individuo 3644 -> Fitness: -279.090641
+    Individuo 7524 -> Fitness: -279.0899972
+    Individuo 9573 -> Fitness: -279.083101
+    Individuo 8709 -> Fitness: -279.0911963
+    Individuo 1414 -> Fitness: -279.086794
+    Individuo 9944 -> Fitness: -279.0934055
+    Individuo 6032 -> Fitness: -279.0800217
+    Individuo 3509 -> Fitness: -279.0942952
+    Individuo 4142 -> Fitness: -279.0903828
+    Individuo 6585 -> Fitness: -279.0920948
+    Individuo 6015 -> Fitness: -279.0923748
+    Individuo 1017 -> Fitness: -279.0884824
+    Individuo 5196 -> Fitness: -279.0908982
+    Individuo 9678 -> Fitness: -279.0721309
+    Individuo 8154 -> Fitness: -279.0906366
+    Individuo 8349 -> Fitness: -279.0909981
+
+Generazione 18:
+  Fitness media: -279.08789672250003
+  Fitness minima: -279.0975361
+  Fitness massima: -279.0740566
+  Fitness degli individui:
+    Individuo 9314 -> Fitness: -279.0845203
+    Individuo 5179 -> Fitness: -279.0975361
+    Individuo 5100 -> Fitness: -279.091216
+    Individuo 8148 -> Fitness: -279.0875971
+    Individuo 2878 -> Fitness: -279.0880999
+    Individuo 6545 -> Fitness: -279.0889945
+    Individuo 8272 -> Fitness: -279.0873058
+    Individuo 4902 -> Fitness: -279.0832647
+    Individuo 4146 -> Fitness: -279.0804113
+    Individuo 6868 -> Fitness: -279.0929676
+    Individuo 6655 -> Fitness: -279.0860613
+    Individuo 6000 -> Fitness: -279.0913376
+    Individuo 5436 -> Fitness: -279.0868391
+    Individuo 1504 -> Fitness: -279.0849385
+    Individuo 2397 -> Fitness: -279.0921201
+    Individuo 2858 -> Fitness: -279.0808217
+    Individuo 8470 -> Fitness: -279.0880917
+    Individuo 7059 -> Fitness: -279.0791513
+    Individuo 2052 -> Fitness: -279.0898553
+    Individuo 8985 -> Fitness: -279.0897342
+    Individuo 4913 -> Fitness: -279.0782747
+    Individuo 9638 -> Fitness: -279.0884746
+    Individuo 6172 -> Fitness: -279.0865649
+    Individuo 5195 -> Fitness: -279.0920578
+    Individuo 2709 -> Fitness: -279.0851579
+    Individuo 5606 -> Fitness: -279.0867299
+    Individuo 4414 -> Fitness: -279.0904367
+    Individuo 2303 -> Fitness: -279.086948
+    Individuo 9972 -> Fitness: -279.0928983
+    Individuo 9042 -> Fitness: -279.0937142
+    Individuo 7114 -> Fitness: -279.0945361
+    Individuo 8000 -> Fitness: -279.0899972
+    Individuo 6126 -> Fitness: -279.0909316
+    Individuo 2210 -> Fitness: -279.0740566
+    Individuo 8517 -> Fitness: -279.0820103
+    Individuo 8236 -> Fitness: -279.0885292
+    Individuo 3405 -> Fitness: -279.0926128
+    Individuo 4623 -> Fitness: -279.090173
+    Individuo 7377 -> Fitness: -279.0870614
+    Individuo 8184 -> Fitness: -279.0938396
+
+Generazione 19:
+  Fitness media: -279.08873284000003
+  Fitness minima: -279.0951251
+  Fitness massima: -279.0813246
+  Fitness degli individui:
+    Individuo 7267 -> Fitness: -279.0864368
+    Individuo 5414 -> Fitness: -279.0868338
+    Individuo 8489 -> Fitness: -279.0946853
+    Individuo 5938 -> Fitness: -279.0876841
+    Individuo 4878 -> Fitness: -279.0897713
+    Individuo 9232 -> Fitness: -279.0838654
+    Individuo 2403 -> Fitness: -279.0824901
+    Individuo 6396 -> Fitness: -279.0903438
+    Individuo 8503 -> Fitness: -279.0904777
+    Individuo 8269 -> Fitness: -279.0892387
+    Individuo 2030 -> Fitness: -279.0880505
+    Individuo 2048 -> Fitness: -279.0889044
+    Individuo 1321 -> Fitness: -279.0936341
+    Individuo 7926 -> Fitness: -279.0904706
+    Individuo 5484 -> Fitness: -279.0871893
+    Individuo 7439 -> Fitness: -279.0885704
+    Individuo 2980 -> Fitness: -279.085561
+    Individuo 9565 -> Fitness: -279.0936226
+    Individuo 4085 -> Fitness: -279.0818699
+    Individuo 6448 -> Fitness: -279.0920578
+    Individuo 6067 -> Fitness: -279.0859087
+    Individuo 2521 -> Fitness: -279.0885568
+    Individuo 2963 -> Fitness: -279.0879129
+    Individuo 7757 -> Fitness: -279.0881197
+    Individuo 6788 -> Fitness: -279.0858947
+    Individuo 3392 -> Fitness: -279.087536
+    Individuo 8098 -> Fitness: -279.0921201
+    Individuo 4786 -> Fitness: -279.093932
+    Individuo 3259 -> Fitness: -279.091206
+    Individuo 5521 -> Fitness: -279.0898165
+    Individuo 3930 -> Fitness: -279.0951251
+    Individuo 9723 -> Fitness: -279.0939566
+    Individuo 4783 -> Fitness: -279.0918452
+    Individuo 5234 -> Fitness: -279.0901301
+    Individuo 1630 -> Fitness: -279.0827708
+    Individuo 9231 -> Fitness: -279.090173
+    Individuo 6479 -> Fitness: -279.0823653
+    Individuo 3682 -> Fitness: -279.0886601
+    Individuo 6364 -> Fitness: -279.0902018
+    Individuo 2764 -> Fitness: -279.0813246
+
+Generazione 20:
+  Fitness media: -279.08634540249994
+  Fitness minima: -279.0956755
+  Fitness massima: -279.0722297
+  Fitness degli individui:
+    Individuo 8229 -> Fitness: -279.0840918
+    Individuo 1277 -> Fitness: -279.0874
+    Individuo 7567 -> Fitness: -279.0900266
+    Individuo 2822 -> Fitness: -279.0884662
+    Individuo 9471 -> Fitness: -279.0886817
+    Individuo 4055 -> Fitness: -279.0788939
+    Individuo 9635 -> Fitness: -279.0872214
+    Individuo 4336 -> Fitness: -279.0925116
+    Individuo 7114 -> Fitness: -279.0903438
+    Individuo 4875 -> Fitness: -279.0877149
+    Individuo 6958 -> Fitness: -279.0922741
+    Individuo 2307 -> Fitness: -279.0946945
+    Individuo 1005 -> Fitness: -279.093757
+    Individuo 2372 -> Fitness: -279.0871642
+    Individuo 3954 -> Fitness: -279.0750681
+    Individuo 7576 -> Fitness: -279.0722297
+    Individuo 8807 -> Fitness: -279.0956755
+    Individuo 2549 -> Fitness: -279.0828133
+    Individuo 3092 -> Fitness: -279.0781261
+    Individuo 6057 -> Fitness: -279.0788971
+    Individuo 3962 -> Fitness: -279.0882556
+    Individuo 1207 -> Fitness: -279.0844288
+    Individuo 6850 -> Fitness: -279.0851924
+    Individuo 2201 -> Fitness: -279.0816637
+    Individuo 7338 -> Fitness: -279.0921049
+    Individuo 6138 -> Fitness: -279.0917627
+    Individuo 4014 -> Fitness: -279.0912375
+    Individuo 2324 -> Fitness: -279.0861155
+    Individuo 6416 -> Fitness: -279.0799872
+    Individuo 3020 -> Fitness: -279.0793549
+    Individuo 8136 -> Fitness: -279.0803848
+    Individuo 2952 -> Fitness: -279.0835027
+    Individuo 5595 -> Fitness: -279.0814682
+    Individuo 3536 -> Fitness: -279.0905329
+    Individuo 8160 -> Fitness: -279.0866364
+    Individuo 1313 -> Fitness: -279.0867054
+    Individuo 3034 -> Fitness: -279.0879658
+    Individuo 4600 -> Fitness: -279.0896685
+    Individuo 8359 -> Fitness: -279.0904654
+    Individuo 2218 -> Fitness: -279.0903313
+
+Generazione 21:
+  Fitness media: -279.08805552
+  Fitness minima: -279.0946945
+  Fitness massima: -279.0745187
+  Fitness degli individui:
+    Individuo 7384 -> Fitness: -279.0879658
+    Individuo 3474 -> Fitness: -279.0875811
+    Individuo 5868 -> Fitness: -279.0872796
+    Individuo 2991 -> Fitness: -279.0903922
+    Individuo 8064 -> Fitness: -279.0838749
+    Individuo 2821 -> Fitness: -279.0905675
+    Individuo 3205 -> Fitness: -279.0783043
+    Individuo 8835 -> Fitness: -279.0902447
+    Individuo 2580 -> Fitness: -279.0912375
+    Individuo 9210 -> Fitness: -279.0926478
+    Individuo 4062 -> Fitness: -279.0873235
+    Individuo 9294 -> Fitness: -279.0863446
+    Individuo 6050 -> Fitness: -279.0889547
+    Individuo 9205 -> Fitness: -279.0902114
+    Individuo 3199 -> Fitness: -279.088516
+    Individuo 1498 -> Fitness: -279.0899884
+    Individuo 9048 -> Fitness: -279.0798009
+    Individuo 3791 -> Fitness: -279.0877151
+    Individuo 7776 -> Fitness: -279.093433
+    Individuo 8257 -> Fitness: -279.0890351
+    Individuo 3258 -> Fitness: -279.090158
+    Individuo 1349 -> Fitness: -279.0916297
+    Individuo 7058 -> Fitness: -279.0851533
+    Individuo 5475 -> Fitness: -279.0833746
+    Individuo 4267 -> Fitness: -279.0930394
+    Individuo 6997 -> Fitness: -279.0745187
+    Individuo 3616 -> Fitness: -279.0882285
+    Individuo 5991 -> Fitness: -279.0946945
+    Individuo 4610 -> Fitness: -279.0867099
+    Individuo 5132 -> Fitness: -279.082683
+    Individuo 6725 -> Fitness: -279.0938268
+    Individuo 8858 -> Fitness: -279.0906352
+    Individuo 4350 -> Fitness: -279.0887857
+    Individuo 5760 -> Fitness: -279.0916359
+    Individuo 6916 -> Fitness: -279.0914118
+    Individuo 9737 -> Fitness: -279.0881816
+    Individuo 7819 -> Fitness: -279.0906643
+    Individuo 8949 -> Fitness: -279.0899128
+    Individuo 3865 -> Fitness: -279.0834075
+    Individuo 5941 -> Fitness: -279.0821515
+
+Generazione 22:
+  Fitness media: -279.0878817925
+  Fitness minima: -279.0957197
+  Fitness massima: -279.0766315
+  Fitness degli individui:
+    Individuo 5565 -> Fitness: -279.0893092
+    Individuo 5600 -> Fitness: -279.0822719
+    Individuo 4677 -> Fitness: -279.0912051
+    Individuo 3154 -> Fitness: -279.0894306
+    Individuo 1547 -> Fitness: -279.087719
+    Individuo 6031 -> Fitness: -279.0930315
+    Individuo 9401 -> Fitness: -279.0939175
+    Individuo 7384 -> Fitness: -279.0886717
+    Individuo 9651 -> Fitness: -279.0912548
+    Individuo 6854 -> Fitness: -279.0886009
+    Individuo 9582 -> Fitness: -279.0914704
+    Individuo 9375 -> Fitness: -279.0850702
+    Individuo 6645 -> Fitness: -279.0868877
+    Individuo 9285 -> Fitness: -279.088497
+    Individuo 1184 -> Fitness: -279.0878416
+    Individuo 8979 -> Fitness: -279.0882449
+    Individuo 7994 -> Fitness: -279.0880282
+    Individuo 7305 -> Fitness: -279.0872496
+    Individuo 5153 -> Fitness: -279.0783676
+    Individuo 5590 -> Fitness: -279.0851896
+    Individuo 6863 -> Fitness: -279.0882958
+    Individuo 9236 -> Fitness: -279.0931148
+    Individuo 6332 -> Fitness: -279.0776425
+    Individuo 4853 -> Fitness: -279.0957197
+    Individuo 6867 -> Fitness: -279.0930394
+    Individuo 2298 -> Fitness: -279.090189
+    Individuo 5983 -> Fitness: -279.0882642
+    Individuo 9443 -> Fitness: -279.0843259
+    Individuo 1191 -> Fitness: -279.0890351
+    Individuo 6675 -> Fitness: -279.0894084
+    Individuo 2500 -> Fitness: -279.092205
+    Individuo 4988 -> Fitness: -279.0766315
+    Individuo 3510 -> Fitness: -279.0903922
+    Individuo 8848 -> Fitness: -279.0833402
+    Individuo 9417 -> Fitness: -279.0901862
+    Individuo 7425 -> Fitness: -279.0889632
+    Individuo 2377 -> Fitness: -279.0787252
+    Individuo 2007 -> Fitness: -279.0879529
+    Individuo 6020 -> Fitness: -279.0862478
+    Individuo 2250 -> Fitness: -279.0893337
+
+Generazione 23:
+  Fitness media: -279.0882410549999
+  Fitness minima: -279.0949358
+  Fitness massima: -279.0712046
+  Fitness degli individui:
+    Individuo 4844 -> Fitness: -279.0822198
+    Individuo 1452 -> Fitness: -279.089806
+    Individuo 9990 -> Fitness: -279.0834708
+    Individuo 4438 -> Fitness: -279.0897662
+    Individuo 5826 -> Fitness: -279.0860059
+    Individuo 9364 -> Fitness: -279.0905812
+    Individuo 9668 -> Fitness: -279.0886009
+    Individuo 8787 -> Fitness: -279.0895163
+    Individuo 7666 -> Fitness: -279.0890009
+    Individuo 7713 -> Fitness: -279.0712046
+    Individuo 7041 -> Fitness: -279.0935365
+    Individuo 8588 -> Fitness: -279.0899327
+    Individuo 7627 -> Fitness: -279.0949358
+    Individuo 5565 -> Fitness: -279.0862683
+    Individuo 5353 -> Fitness: -279.0943668
+    Individuo 9253 -> Fitness: -279.0891636
+    Individuo 2948 -> Fitness: -279.0894788
+    Individuo 8317 -> Fitness: -279.0902419
+    Individuo 8004 -> Fitness: -279.0894564
+    Individuo 7678 -> Fitness: -279.0875957
+    Individuo 8308 -> Fitness: -279.0919699
+    Individuo 4196 -> Fitness: -279.0885398
+    Individuo 1701 -> Fitness: -279.084264
+    Individuo 1258 -> Fitness: -279.0903751
+    Individuo 2706 -> Fitness: -279.0809168
+    Individuo 5382 -> Fitness: -279.0910048
+    Individuo 9950 -> Fitness: -279.0915479
+    Individuo 5272 -> Fitness: -279.0889343
+    Individuo 1291 -> Fitness: -279.0875382
+    Individuo 3750 -> Fitness: -279.0922512
+    Individuo 7006 -> Fitness: -279.087724
+    Individuo 8844 -> Fitness: -279.0901487
+    Individuo 9100 -> Fitness: -279.0904469
+    Individuo 3323 -> Fitness: -279.0799572
+    Individuo 2724 -> Fitness: -279.0821279
+    Individuo 1487 -> Fitness: -279.0892474
+    Individuo 2439 -> Fitness: -279.0881735
+    Individuo 7765 -> Fitness: -279.0891212
+    Individuo 3481 -> Fitness: -279.0894084
+    Individuo 5324 -> Fitness: -279.0907959
+
+Generazione 24:
+  Fitness media: -279.08742454
+  Fitness minima: -279.0960285
+  Fitness massima: -279.0755683
+  Fitness degli individui:
+    Individuo 3910 -> Fitness: -279.07812
+    Individuo 8012 -> Fitness: -279.0903636
+    Individuo 8744 -> Fitness: -279.0910048
+    Individuo 8613 -> Fitness: -279.0874974
+    Individuo 1048 -> Fitness: -279.0891588
+    Individuo 7569 -> Fitness: -279.0815114
+    Individuo 6420 -> Fitness: -279.0818835
+    Individuo 2843 -> Fitness: -279.0810715
+    Individuo 1398 -> Fitness: -279.0765951
+    Individuo 5521 -> Fitness: -279.088864
+    Individuo 3419 -> Fitness: -279.0935441
+    Individuo 1880 -> Fitness: -279.0902149
+    Individuo 1435 -> Fitness: -279.0847056
+    Individuo 5532 -> Fitness: -279.0902419
+    Individuo 8392 -> Fitness: -279.0827415
+    Individuo 5516 -> Fitness: -279.0890214
+    Individuo 3676 -> Fitness: -279.0886297
+    Individuo 7802 -> Fitness: -279.0905812
+    Individuo 7775 -> Fitness: -279.0896574
+    Individuo 6073 -> Fitness: -279.0952681
+    Individuo 4751 -> Fitness: -279.0895505
+    Individuo 4737 -> Fitness: -279.0903441
+    Individuo 1550 -> Fitness: -279.0927128
+    Individuo 8869 -> Fitness: -279.0899479
+    Individuo 2670 -> Fitness: -279.089806
+    Individuo 3829 -> Fitness: -279.0935718
+    Individuo 8048 -> Fitness: -279.0808183
+    Individuo 5563 -> Fitness: -279.0866835
+    Individuo 2392 -> Fitness: -279.0960285
+    Individuo 7965 -> Fitness: -279.080331
+    Individuo 6596 -> Fitness: -279.0904469
+    Individuo 4211 -> Fitness: -279.0755683
+    Individuo 9725 -> Fitness: -279.0855603
+    Individuo 2335 -> Fitness: -279.0911024
+    Individuo 3475 -> Fitness: -279.0838813
+    Individuo 9903 -> Fitness: -279.0837522
+    Individuo 9931 -> Fitness: -279.0833567
+    Individuo 3266 -> Fitness: -279.0960152
+    Individuo 3376 -> Fitness: -279.0881935
+    Individuo 8401 -> Fitness: -279.0886345
+
+Generazione 25:
+  Fitness media: -279.08744160500004
+  Fitness minima: -279.096717
+  Fitness massima: -279.0758422
+  Fitness degli individui:
+    Individuo 6092 -> Fitness: -279.0958388
+    Individuo 2140 -> Fitness: -279.0854168
+    Individuo 1367 -> Fitness: -279.0858609
+    Individuo 5770 -> Fitness: -279.0902419
+    Individuo 5451 -> Fitness: -279.0909307
+    Individuo 6385 -> Fitness: -279.0906049
+    Individuo 7487 -> Fitness: -279.08829
+    Individuo 1776 -> Fitness: -279.0833461
+    Individuo 7029 -> Fitness: -279.0913686
+    Individuo 2447 -> Fitness: -279.0758422
+    Individuo 6914 -> Fitness: -279.0825221
+    Individuo 5785 -> Fitness: -279.0839487
+    Individuo 2590 -> Fitness: -279.0841686
+    Individuo 4802 -> Fitness: -279.087963
+    Individuo 2048 -> Fitness: -279.0919372
+    Individuo 3248 -> Fitness: -279.0869469
+    Individuo 5875 -> Fitness: -279.0909142
+    Individuo 8473 -> Fitness: -279.0847492
+    Individuo 6539 -> Fitness: -279.0844791
+    Individuo 3649 -> Fitness: -279.0890367
+    Individuo 5509 -> Fitness: -279.0886971
+    Individuo 8373 -> Fitness: -279.0891523
+    Individuo 4161 -> Fitness: -279.0831656
+    Individuo 8362 -> Fitness: -279.0893978
+    Individuo 2166 -> Fitness: -279.0818878
+    Individuo 6119 -> Fitness: -279.0897305
+    Individuo 9236 -> Fitness: -279.0845698
+    Individuo 7446 -> Fitness: -279.085505
+    Individuo 2737 -> Fitness: -279.079139
+    Individuo 5775 -> Fitness: -279.0842737
+    Individuo 4835 -> Fitness: -279.0847636
+    Individuo 4797 -> Fitness: -279.0847322
+    Individuo 7672 -> Fitness: -279.0896004
+    Individuo 2918 -> Fitness: -279.0882217
+    Individuo 5751 -> Fitness: -279.0842414
+    Individuo 8757 -> Fitness: -279.0904239
+    Individuo 5524 -> Fitness: -279.0898904
+    Individuo 4966 -> Fitness: -279.0940164
+    Individuo 7236 -> Fitness: -279.095132
+    Individuo 9383 -> Fitness: -279.096717
+
+Generazione 26:
+  Fitness media: -279.08739738500003
+  Fitness minima: -279.0975076
+  Fitness massima: -279.0800703
+  Fitness degli individui:
+    Individuo 4004 -> Fitness: -279.0957781
+    Individuo 2383 -> Fitness: -279.0938488
+    Individuo 2051 -> Fitness: -279.0803703
+    Individuo 2565 -> Fitness: -279.0841658
+    Individuo 1577 -> Fitness: -279.0891744
+    Individuo 4146 -> Fitness: -279.0884689
+    Individuo 9685 -> Fitness: -279.0940164
+    Individuo 7811 -> Fitness: -279.0852618
+    Individuo 4085 -> Fitness: -279.082882
+    Individuo 7191 -> Fitness: -279.0885644
+    Individuo 5630 -> Fitness: -279.0849113
+    Individuo 3757 -> Fitness: -279.0888693
+    Individuo 4115 -> Fitness: -279.0906818
+    Individuo 1443 -> Fitness: -279.0811788
+    Individuo 2325 -> Fitness: -279.0813182
+    Individuo 1355 -> Fitness: -279.0975076
+    Individuo 2526 -> Fitness: -279.0844539
+    Individuo 7656 -> Fitness: -279.0873379
+    Individuo 7813 -> Fitness: -279.0852874
+    Individuo 3569 -> Fitness: -279.0897972
+    Individuo 9541 -> Fitness: -279.0906049
+    Individuo 4725 -> Fitness: -279.0957715
+    Individuo 3098 -> Fitness: -279.0941374
+    Individuo 4242 -> Fitness: -279.0844901
+    Individuo 7850 -> Fitness: -279.0800703
+    Individuo 4857 -> Fitness: -279.0842287
+    Individuo 5885 -> Fitness: -279.0892689
+    Individuo 5188 -> Fitness: -279.0906049
+    Individuo 6715 -> Fitness: -279.0831328
+    Individuo 3629 -> Fitness: -279.0822114
+    Individuo 3496 -> Fitness: -279.0892369
+    Individuo 8434 -> Fitness: -279.0831901
+    Individuo 7921 -> Fitness: -279.0867492
+    Individuo 3475 -> Fitness: -279.0887427
+    Individuo 8284 -> Fitness: -279.0828554
+    Individuo 9577 -> Fitness: -279.0899983
+    Individuo 1641 -> Fitness: -279.0833851
+    Individuo 7936 -> Fitness: -279.087791
+    Individuo 4018 -> Fitness: -279.0883921
+    Individuo 7077 -> Fitness: -279.0871594
+
+Generazione 27:
+  Fitness media: -279.08878026499997
+  Fitness minima: -279.0975076
+  Fitness massima: -279.0772337
+  Fitness degli individui:
+    Individuo 1857 -> Fitness: -279.0834961
+    Individuo 5310 -> Fitness: -279.0892689
+    Individuo 9832 -> Fitness: -279.0925789
+    Individuo 7064 -> Fitness: -279.0875547
+    Individuo 9189 -> Fitness: -279.0907255
+    Individuo 8926 -> Fitness: -279.0801247
+    Individuo 8976 -> Fitness: -279.0945922
+    Individuo 8199 -> Fitness: -279.09247
+    Individuo 7157 -> Fitness: -279.0802455
+    Individuo 3262 -> Fitness: -279.090547
+    Individuo 9820 -> Fitness: -279.0884684
+    Individuo 2196 -> Fitness: -279.0905125
+    Individuo 5966 -> Fitness: -279.0895176
+    Individuo 8317 -> Fitness: -279.0936432
+    Individuo 9406 -> Fitness: -279.0884247
+    Individuo 3335 -> Fitness: -279.0879948
+    Individuo 6065 -> Fitness: -279.0957721
+    Individuo 6390 -> Fitness: -279.0822374
+    Individuo 6711 -> Fitness: -279.0906927
+    Individuo 1018 -> Fitness: -279.082313
+    Individuo 7364 -> Fitness: -279.082157
+    Individuo 9622 -> Fitness: -279.0906565
+    Individuo 7909 -> Fitness: -279.0898656
+    Individuo 4086 -> Fitness: -279.0893616
+    Individuo 3872 -> Fitness: -279.092415
+    Individuo 5218 -> Fitness: -279.0796776
+    Individuo 1889 -> Fitness: -279.0891744
+    Individuo 6303 -> Fitness: -279.0860911
+    Individuo 9869 -> Fitness: -279.0772337
+    Individuo 7175 -> Fitness: -279.0898193
+    Individuo 4705 -> Fitness: -279.0973636
+    Individuo 9674 -> Fitness: -279.088658
+    Individuo 8018 -> Fitness: -279.092216
+    Individuo 2267 -> Fitness: -279.0910861
+    Individuo 8814 -> Fitness: -279.0900063
+    Individuo 8172 -> Fitness: -279.0891837
+    Individuo 8388 -> Fitness: -279.088715
+    Individuo 4931 -> Fitness: -279.0975076
+    Individuo 1807 -> Fitness: -279.0899983
+    Individuo 3902 -> Fitness: -279.0888443
+
+Generazione 28:
+  Fitness media: -279.088954555
+  Fitness minima: -279.0967195
+  Fitness massima: -279.0772227
+  Fitness degli individui:
+    Individuo 7064 -> Fitness: -279.0805243
+    Individuo 2257 -> Fitness: -279.0913651
+    Individuo 8715 -> Fitness: -279.0880361
+    Individuo 5374 -> Fitness: -279.0910163
+    Individuo 2288 -> Fitness: -279.080342
+    Individuo 1105 -> Fitness: -279.0865776
+    Individuo 6460 -> Fitness: -279.0925789
+    Individuo 2864 -> Fitness: -279.0882481
+    Individuo 2665 -> Fitness: -279.0889772
+    Individuo 7545 -> Fitness: -279.0950776
+    Individuo 7000 -> Fitness: -279.078673
+    Individuo 8523 -> Fitness: -279.0913577
+    Individuo 2443 -> Fitness: -279.0816213
+    Individuo 2546 -> Fitness: -279.0967195
+    Individuo 7674 -> Fitness: -279.0936432
+    Individuo 1384 -> Fitness: -279.0876633
+    Individuo 3157 -> Fitness: -279.0949368
+    Individuo 7264 -> Fitness: -279.0949735
+    Individuo 9634 -> Fitness: -279.0906655
+    Individuo 6104 -> Fitness: -279.0939802
+    Individuo 5006 -> Fitness: -279.0772227
+    Individuo 7859 -> Fitness: -279.0894797
+    Individuo 9955 -> Fitness: -279.0955541
+    Individuo 4228 -> Fitness: -279.0944799
+    Individuo 3997 -> Fitness: -279.0903096
+    Individuo 3917 -> Fitness: -279.0955116
+    Individuo 5774 -> Fitness: -279.0898282
+    Individuo 1806 -> Fitness: -279.0825497
+    Individuo 5703 -> Fitness: -279.0880152
+    Individuo 7326 -> Fitness: -279.09247
+    Individuo 7706 -> Fitness: -279.087752
+    Individuo 5598 -> Fitness: -279.0932899
+    Individuo 4292 -> Fitness: -279.0843371
+    Individuo 6507 -> Fitness: -279.0867514
+    Individuo 5727 -> Fitness: -279.0877771
+    Individuo 8074 -> Fitness: -279.0854006
+    Individuo 9459 -> Fitness: -279.080841
+    Individuo 7075 -> Fitness: -279.0837933
+    Individuo 5644 -> Fitness: -279.0958361
+    Individuo 5296 -> Fitness: -279.0900058
+
+Generazione 29:
+  Fitness media: -279.09048244250005
+  Fitness minima: -279.0973005
+  Fitness massima: -279.0787483
+  Fitness degli individui:
+    Individuo 5218 -> Fitness: -279.0950776
+    Individuo 7878 -> Fitness: -279.0824617
+    Individuo 1120 -> Fitness: -279.0898258
+    Individuo 3894 -> Fitness: -279.0944819
+    Individuo 3779 -> Fitness: -279.0943516
+    Individuo 8282 -> Fitness: -279.0875357
+    Individuo 3384 -> Fitness: -279.0896622
+    Individuo 4940 -> Fitness: -279.0870351
+    Individuo 8057 -> Fitness: -279.085324
+    Individuo 3128 -> Fitness: -279.0888523
+    Individuo 8786 -> Fitness: -279.0787483
+    Individuo 8415 -> Fitness: -279.0929019
+    Individuo 2616 -> Fitness: -279.0880239
+    Individuo 1567 -> Fitness: -279.0897611
+    Individuo 4127 -> Fitness: -279.0846591
+    Individuo 6692 -> Fitness: -279.0954813
+    Individuo 4396 -> Fitness: -279.0922778
+    Individuo 1164 -> Fitness: -279.0871831
+    Individuo 4952 -> Fitness: -279.0894896
+    Individuo 2834 -> Fitness: -279.0902378
+    Individuo 2324 -> Fitness: -279.096588
+    Individuo 9788 -> Fitness: -279.0919977
+    Individuo 9046 -> Fitness: -279.095049
+    Individuo 2657 -> Fitness: -279.0940516
+    Individuo 5889 -> Fitness: -279.0943219
+    Individuo 7950 -> Fitness: -279.0917995
+    Individuo 7961 -> Fitness: -279.0941817
+    Individuo 9366 -> Fitness: -279.0900201
+    Individuo 8124 -> Fitness: -279.0890033
+    Individuo 3273 -> Fitness: -279.0903945
+    Individuo 6016 -> Fitness: -279.0903096
+    Individuo 1975 -> Fitness: -279.0933424
+    Individuo 8573 -> Fitness: -279.0946007
+    Individuo 3803 -> Fitness: -279.0914813
+    Individuo 8144 -> Fitness: -279.0973005
+    Individuo 3775 -> Fitness: -279.0875478
+    Individuo 2249 -> Fitness: -279.0886189
+    Individuo 1316 -> Fitness: -279.0798367
+    Individuo 5104 -> Fitness: -279.097237
+    Individuo 3356 -> Fitness: -279.0882437
+

@@ -1,0 +1,41 @@
+%Nprocshared=12
+%Mem=64GB
+#P HF OUTPUT=PICKETT                                              
+symmetry=loose geom=readallgic
+
+glycine
+
+  0  1
+  7    -1.88     0.13    -0.42
+  6    -0.92    -0.00     0.67
+  6     0.48    -0.09     0.13
+  8     0.98    -1.21    -0.16
+  8     1.21     1.08    -0.08
+  1    -1.79    -0.69    -1.05
+  1    -1.65     0.99    -0.97
+  1    -1.00     0.87     1.35
+  1    -1.15    -0.91     1.26
+  1     2.15     1.04    -0.46
+
+ Bond1(Frozen,Value= 1.45770) = R(  1,  2)
+ Bond2(Frozen,Value= 1.04519) = R(  1,  6)
+ Bond3(Frozen,Value= 1.04522) = R(  1,  7)
+ Bond4(Frozen,Value= 1.49559) = R(  2,  3)
+ Bond5(Frozen,Value= 1.10981) = R(  2,  8)
+ Bond6(Frozen,Value= 1.11027) = R(  2,  9)
+ Bond7(Frozen,Value= 1.25737) = R(  3,  4)
+ Bond8(Frozen,Value= 1.38855) = R(  3,  5)
+ Bond9(Frozen,Value= 1.01196) = R(  5, 10)
+ SymD1(frozen, Value=-0.0107)=[ 0.8165*A(  6,  1,  7)-0.4082*A(  2,  1,  6)-0.4082*A(  2,  1,  7)]
+ Rock2(frozen,Value=0.0035)=[ 0.7071*A(  2,  1,  6)-0.7071*A(  2,  1,  7)]
+ Bend3(frozen, Value=-0.0184)=[ 0.5000*A(  8,  2,  9)-0.2500*A(  1,  2,  8)-0.2500*A(  1,  2,  9)]
+ Bend4(frozen, Value=0.0038)=[ 0.5000*A(  1,  2,  8)-0.5000*A(  1,  2,  9)]
+ Bend5(frozen, Value=-0.0169)=[ 0.5000*A(  8,  2,  9)-0.2500*A(  3,  2,  8)-0.2500*A(  3,  2,  9)]
+ Bend6(frozen, Value=-0.0001)=[ 0.5000*A(  3,  2,  8)-0.5000*A(  3,  2,  9)]
+ AA(frozen, Value=110.4832) = A(  1,  2,  3)  
+ SymD8(frozen,Value=-0.012)=[ 0.8165*A(  2,  3,  5)-0.4082*A(  4,  3,  2)-0.4082*A(  4,  3,  5)]
+ Rock9(frozen, Value=0.0018)=[ 0.7071*A(  4,  3,  2)-0.7071*A(  4,  3,  5)]
+ AAA(frozen, Value=120.5378) = A(  3,  5, 10) 
+ UU(frozen, Value=-56.9769) = U(  1,  2,  6,  7) 
+ UUU(frozen, Value=1.4196) = U(  3,  2,  4,  5) 
+

@@ -1,0 +1,362 @@
+Log delle generazioni:
+
+Generazione 0:
+  Fitness media: -155.45727959666667
+  Fitness minima: -155.464774
+  Fitness massima: -155.4445314
+  Fitness degli individui:
+    Individuo 0 -> Fitness: -155.4547973
+    Individuo 1 -> Fitness: -155.4523596
+    Individuo 2 -> Fitness: -155.4495023
+    Individuo 3 -> Fitness: -155.4582945
+    Individuo 4 -> Fitness: -155.4571332
+    Individuo 5 -> Fitness: -155.4576
+    Individuo 6 -> Fitness: -155.4564267
+    Individuo 7 -> Fitness: -155.4617942
+    Individuo 8 -> Fitness: -155.4537487
+    Individuo 9 -> Fitness: -155.4520613
+    Individuo 10 -> Fitness: -155.4445314
+    Individuo 11 -> Fitness: -155.4495154
+    Individuo 12 -> Fitness: -155.459092
+    Individuo 13 -> Fitness: -155.4574726
+    Individuo 14 -> Fitness: -155.4618468
+    Individuo 15 -> Fitness: -155.4583008
+    Individuo 16 -> Fitness: -155.457
+    Individuo 17 -> Fitness: -155.456662
+    Individuo 18 -> Fitness: -155.4600782
+    Individuo 19 -> Fitness: -155.4564354
+    Individuo 20 -> Fitness: -155.45756
+    Individuo 21 -> Fitness: -155.4622681
+    Individuo 22 -> Fitness: -155.4612424
+    Individuo 23 -> Fitness: -155.464774
+    Individuo 24 -> Fitness: -155.45877
+    Individuo 25 -> Fitness: -155.4598244
+    Individuo 26 -> Fitness: -155.4643524
+    Individuo 27 -> Fitness: -155.4625852
+    Individuo 28 -> Fitness: -155.45646
+    Individuo 29 -> Fitness: -155.455899
+
+Generazione 1:
+  Fitness media: -155.45689179000001
+  Fitness minima: -155.4661634
+  Fitness massima: -155.446654
+  Fitness degli individui:
+    Individuo 2003 -> Fitness: -155.4553647
+    Individuo 1546 -> Fitness: -155.4501267
+    Individuo 6875 -> Fitness: -155.4661634
+    Individuo 6763 -> Fitness: -155.4578693
+    Individuo 1395 -> Fitness: -155.446654
+    Individuo 2348 -> Fitness: -155.4584
+    Individuo 6249 -> Fitness: -155.4546409
+    Individuo 7938 -> Fitness: -155.4628532
+    Individuo 6660 -> Fitness: -155.4552915
+    Individuo 7135 -> Fitness: -155.461149
+    Individuo 9227 -> Fitness: -155.4591332
+    Individuo 6025 -> Fitness: -155.4573224
+    Individuo 3112 -> Fitness: -155.45877
+    Individuo 1044 -> Fitness: -155.4627379
+    Individuo 5913 -> Fitness: -155.4506586
+    Individuo 9153 -> Fitness: -155.452392
+    Individuo 4242 -> Fitness: -155.4581985
+    Individuo 9511 -> Fitness: -155.4579179
+    Individuo 1150 -> Fitness: -155.4584974
+    Individuo 3559 -> Fitness: -155.4583779
+    Individuo 6255 -> Fitness: -155.460092
+    Individuo 8397 -> Fitness: -155.464715
+    Individuo 1975 -> Fitness: -155.452041
+    Individuo 7134 -> Fitness: -155.4518606
+    Individuo 8502 -> Fitness: -155.4525215
+    Individuo 8889 -> Fitness: -155.45877
+    Individuo 8591 -> Fitness: -155.4554872
+    Individuo 2988 -> Fitness: -155.4591375
+    Individuo 6698 -> Fitness: -155.4571
+    Individuo 2828 -> Fitness: -155.4525104
+
+Generazione 2:
+  Fitness media: -155.45995598666667
+  Fitness minima: -155.464683
+  Fitness massima: -155.4531983
+  Fitness degli individui:
+    Individuo 7456 -> Fitness: -155.4609649
+    Individuo 4180 -> Fitness: -155.4596002
+    Individuo 1538 -> Fitness: -155.4585384
+    Individuo 5659 -> Fitness: -155.4531983
+    Individuo 1279 -> Fitness: -155.4606959
+    Individuo 2031 -> Fitness: -155.4570251
+    Individuo 8048 -> Fitness: -155.45877
+    Individuo 6161 -> Fitness: -155.45916
+    Individuo 7609 -> Fitness: -155.46156
+    Individuo 5458 -> Fitness: -155.4606597
+    Individuo 7734 -> Fitness: -155.464683
+    Individuo 7714 -> Fitness: -155.4589864
+    Individuo 5324 -> Fitness: -155.4583779
+    Individuo 9895 -> Fitness: -155.4594567
+    Individuo 1065 -> Fitness: -155.461
+    Individuo 5502 -> Fitness: -155.463
+    Individuo 7987 -> Fitness: -155.4533072
+    Individuo 2242 -> Fitness: -155.4637477
+    Individuo 8994 -> Fitness: -155.4578185
+    Individuo 5297 -> Fitness: -155.4571019
+    Individuo 2263 -> Fitness: -155.45717
+    Individuo 1893 -> Fitness: -155.4591858
+    Individuo 7633 -> Fitness: -155.46218
+    Individuo 8268 -> Fitness: -155.46048
+    Individuo 2209 -> Fitness: -155.462412
+    Individuo 2160 -> Fitness: -155.459268
+    Individuo 5194 -> Fitness: -155.464386
+    Individuo 8354 -> Fitness: -155.4622375
+    Individuo 7304 -> Fitness: -155.4610024
+    Individuo 7852 -> Fitness: -155.4627061
+
+Generazione 3:
+  Fitness media: -155.45968187
+  Fitness minima: -155.464042
+  Fitness massima: -155.453
+  Fitness degli individui:
+    Individuo 6785 -> Fitness: -155.4560636
+    Individuo 4859 -> Fitness: -155.4624344
+    Individuo 1453 -> Fitness: -155.4590523
+    Individuo 3055 -> Fitness: -155.4562336
+    Individuo 3782 -> Fitness: -155.4599749
+    Individuo 8609 -> Fitness: -155.4605449
+    Individuo 9575 -> Fitness: -155.4597522
+    Individuo 2945 -> Fitness: -155.464042
+    Individuo 5049 -> Fitness: -155.4617512
+    Individuo 7852 -> Fitness: -155.460703
+    Individuo 4905 -> Fitness: -155.458634
+    Individuo 3578 -> Fitness: -155.4613171
+    Individuo 9262 -> Fitness: -155.4596002
+    Individuo 4293 -> Fitness: -155.4620175
+    Individuo 5983 -> Fitness: -155.4608022
+    Individuo 4872 -> Fitness: -155.4556843
+    Individuo 2194 -> Fitness: -155.458243
+    Individuo 6815 -> Fitness: -155.4611269
+    Individuo 1524 -> Fitness: -155.4565631
+    Individuo 9052 -> Fitness: -155.45704
+    Individuo 3800 -> Fitness: -155.4632123
+    Individuo 9306 -> Fitness: -155.4619088
+    Individuo 6803 -> Fitness: -155.453
+    Individuo 6074 -> Fitness: -155.46235
+    Individuo 6093 -> Fitness: -155.4596784
+    Individuo 9399 -> Fitness: -155.4557038
+    Individuo 7095 -> Fitness: -155.4616501
+    Individuo 7105 -> Fitness: -155.46299
+    Individuo 7933 -> Fitness: -155.458726
+    Individuo 9249 -> Fitness: -155.4596563
+
+Generazione 4:
+  Fitness media: -155.45891373999996
+  Fitness minima: -155.46334
+  Fitness massima: -155.444369
+  Fitness degli individui:
+    Individuo 2917 -> Fitness: -155.461202
+    Individuo 8656 -> Fitness: -155.4581393
+    Individuo 8394 -> Fitness: -155.444369
+    Individuo 6055 -> Fitness: -155.45767
+    Individuo 1611 -> Fitness: -155.4614661
+    Individuo 5868 -> Fitness: -155.4629489
+    Individuo 7822 -> Fitness: -155.459845
+    Individuo 6657 -> Fitness: -155.4599677
+    Individuo 6505 -> Fitness: -155.451783
+    Individuo 7367 -> Fitness: -155.46
+    Individuo 2627 -> Fitness: -155.4632176
+    Individuo 6339 -> Fitness: -155.4589766
+    Individuo 2317 -> Fitness: -155.4566496
+    Individuo 2992 -> Fitness: -155.4611053
+    Individuo 5867 -> Fitness: -155.46096
+    Individuo 9214 -> Fitness: -155.4625928
+    Individuo 8123 -> Fitness: -155.45594
+    Individuo 7244 -> Fitness: -155.4568956
+    Individuo 7555 -> Fitness: -155.456179
+    Individuo 5217 -> Fitness: -155.4548003
+    Individuo 4417 -> Fitness: -155.4546406
+    Individuo 5536 -> Fitness: -155.4621027
+    Individuo 7185 -> Fitness: -155.4614839
+    Individuo 7205 -> Fitness: -155.46334
+    Individuo 6536 -> Fitness: -155.4580603
+    Individuo 3319 -> Fitness: -155.4628466
+    Individuo 9839 -> Fitness: -155.4586575
+    Individuo 8162 -> Fitness: -155.461865
+    Individuo 1943 -> Fitness: -155.4589448
+    Individuo 1386 -> Fitness: -155.460763
+
+Generazione 5:
+  Fitness media: -155.45922405333334
+  Fitness minima: -155.4656268
+  Fitness massima: -155.4516071
+  Fitness degli individui:
+    Individuo 2805 -> Fitness: -155.4589448
+    Individuo 6802 -> Fitness: -155.4586575
+    Individuo 4944 -> Fitness: -155.4557809
+    Individuo 3171 -> Fitness: -155.462152
+    Individuo 4426 -> Fitness: -155.4640804
+    Individuo 9295 -> Fitness: -155.4618445
+    Individuo 6862 -> Fitness: -155.455761
+    Individuo 6257 -> Fitness: -155.4589319
+    Individuo 9228 -> Fitness: -155.4605916
+    Individuo 9693 -> Fitness: -155.457346
+    Individuo 1784 -> Fitness: -155.455925
+    Individuo 5418 -> Fitness: -155.46203
+    Individuo 3302 -> Fitness: -155.451639
+    Individuo 1287 -> Fitness: -155.4631801
+    Individuo 5343 -> Fitness: -155.45804
+    Individuo 7887 -> Fitness: -155.4516071
+    Individuo 2063 -> Fitness: -155.46
+    Individuo 3318 -> Fitness: -155.46318
+    Individuo 9184 -> Fitness: -155.4573241
+    Individuo 2568 -> Fitness: -155.4621421
+    Individuo 5036 -> Fitness: -155.4543248
+    Individuo 7459 -> Fitness: -155.4610762
+    Individuo 3925 -> Fitness: -155.457517
+    Individuo 2464 -> Fitness: -155.4586043
+    Individuo 7031 -> Fitness: -155.4628154
+    Individuo 9617 -> Fitness: -155.4598458
+    Individuo 4264 -> Fitness: -155.4597655
+    Individuo 1793 -> Fitness: -155.456
+    Individuo 8924 -> Fitness: -155.4656268
+    Individuo 3431 -> Fitness: -155.4619878
+
+Generazione 6:
+  Fitness media: -155.45965261666666
+  Fitness minima: -155.4661482
+  Fitness massima: -155.4517889
+  Fitness degli individui:
+    Individuo 4654 -> Fitness: -155.4595467
+    Individuo 4295 -> Fitness: -155.4625377
+    Individuo 4310 -> Fitness: -155.4580188
+    Individuo 2290 -> Fitness: -155.4597655
+    Individuo 2082 -> Fitness: -155.4517889
+    Individuo 7382 -> Fitness: -155.4603427
+    Individuo 4518 -> Fitness: -155.4596806
+    Individuo 6228 -> Fitness: -155.4661482
+    Individuo 1751 -> Fitness: -155.46358
+    Individuo 7410 -> Fitness: -155.4576753
+    Individuo 6181 -> Fitness: -155.4608449
+    Individuo 2354 -> Fitness: -155.4524279
+    Individuo 5827 -> Fitness: -155.4643425
+    Individuo 1591 -> Fitness: -155.4611
+    Individuo 9119 -> Fitness: -155.4650512
+    Individuo 5553 -> Fitness: -155.4597655
+    Individuo 9303 -> Fitness: -155.46521
+    Individuo 2048 -> Fitness: -155.4638645
+    Individuo 4862 -> Fitness: -155.46009
+    Individuo 4127 -> Fitness: -155.4533
+    Individuo 5045 -> Fitness: -155.4524137
+    Individuo 1945 -> Fitness: -155.4617116
+    Individuo 7306 -> Fitness: -155.4626
+    Individuo 3118 -> Fitness: -155.4627261
+    Individuo 3334 -> Fitness: -155.4591073
+    Individuo 1907 -> Fitness: -155.4532746
+    Individuo 9889 -> Fitness: -155.4568
+    Individuo 3396 -> Fitness: -155.4571464
+    Individuo 5219 -> Fitness: -155.46295
+    Individuo 4829 -> Fitness: -155.4557679
+
+Generazione 7:
+  Fitness media: -155.46023869
+  Fitness minima: -155.4648653
+  Fitness massima: -155.4543427
+  Fitness degli individui:
+    Individuo 1895 -> Fitness: -155.4543427
+    Individuo 8321 -> Fitness: -155.4600585
+    Individuo 9086 -> Fitness: -155.459
+    Individuo 3325 -> Fitness: -155.459507
+    Individuo 1850 -> Fitness: -155.4627155
+    Individuo 9805 -> Fitness: -155.4569858
+    Individuo 8537 -> Fitness: -155.4579568
+    Individuo 8301 -> Fitness: -155.4610115
+    Individuo 7630 -> Fitness: -155.4626332
+    Individuo 8347 -> Fitness: -155.4615087
+    Individuo 3795 -> Fitness: -155.463639
+    Individuo 2119 -> Fitness: -155.462045
+    Individuo 8991 -> Fitness: -155.4571687
+    Individuo 6730 -> Fitness: -155.4618776
+    Individuo 1587 -> Fitness: -155.4577926
+    Individuo 6463 -> Fitness: -155.4605787
+    Individuo 7415 -> Fitness: -155.4648653
+    Individuo 2174 -> Fitness: -155.4580576
+    Individuo 6195 -> Fitness: -155.457498
+    Individuo 7179 -> Fitness: -155.4623301
+    Individuo 2821 -> Fitness: -155.460644
+    Individuo 8817 -> Fitness: -155.4608449
+    Individuo 8089 -> Fitness: -155.4616108
+    Individuo 9707 -> Fitness: -155.46475
+    Individuo 9055 -> Fitness: -155.4569924
+    Individuo 3237 -> Fitness: -155.4598408
+    Individuo 1916 -> Fitness: -155.45728
+    Individuo 2962 -> Fitness: -155.4599627
+    Individuo 1205 -> Fitness: -155.4589429
+    Individuo 2823 -> Fitness: -155.4647199
+
+Generazione 8:
+  Fitness media: -155.4594071666667
+  Fitness minima: -155.4642362
+  Fitness massima: -155.44808
+  Fitness degli individui:
+    Individuo 9294 -> Fitness: -155.4590438
+    Individuo 5319 -> Fitness: -155.4636388
+    Individuo 2421 -> Fitness: -155.4642362
+    Individuo 7692 -> Fitness: -155.46357
+    Individuo 5671 -> Fitness: -155.4591
+    Individuo 9120 -> Fitness: -155.4616655
+    Individuo 6661 -> Fitness: -155.4601905
+    Individuo 5698 -> Fitness: -155.4588832
+    Individuo 5404 -> Fitness: -155.458
+    Individuo 9587 -> Fitness: -155.4599958
+    Individuo 4891 -> Fitness: -155.4617
+    Individuo 7524 -> Fitness: -155.4577744
+    Individuo 3153 -> Fitness: -155.458087
+    Individuo 2898 -> Fitness: -155.4622552
+    Individuo 8044 -> Fitness: -155.44808
+    Individuo 9029 -> Fitness: -155.45991
+    Individuo 8444 -> Fitness: -155.464101
+    Individuo 3461 -> Fitness: -155.4574504
+    Individuo 5059 -> Fitness: -155.4561
+    Individuo 4089 -> Fitness: -155.4487363
+    Individuo 8712 -> Fitness: -155.4610203
+    Individuo 4510 -> Fitness: -155.4641559
+    Individuo 5188 -> Fitness: -155.4616009
+    Individuo 2537 -> Fitness: -155.4589086
+    Individuo 5932 -> Fitness: -155.45607
+    Individuo 1337 -> Fitness: -155.4550814
+    Individuo 2475 -> Fitness: -155.4635543
+    Individuo 1205 -> Fitness: -155.4606686
+    Individuo 4354 -> Fitness: -155.4600511
+    Individuo 5522 -> Fitness: -155.4585858
+
+Generazione 9:
+  Fitness media: -155.45745477666668
+  Fitness minima: -155.4662606
+  Fitness massima: -155.4
+  Fitness degli individui:
+    Individuo 7862 -> Fitness: -155.4613028
+    Individuo 3044 -> Fitness: -155.4600511
+    Individuo 2354 -> Fitness: -155.4590438
+    Individuo 5273 -> Fitness: -155.46357
+    Individuo 7654 -> Fitness: -155.4551887
+    Individuo 2392 -> Fitness: -155.4583
+    Individuo 6590 -> Fitness: -155.4
+    Individuo 8889 -> Fitness: -155.4593195
+    Individuo 7212 -> Fitness: -155.46399
+    Individuo 2675 -> Fitness: -155.4623028
+    Individuo 1646 -> Fitness: -155.4596778
+    Individuo 9879 -> Fitness: -155.4599715
+    Individuo 3603 -> Fitness: -155.459859
+    Individuo 8829 -> Fitness: -155.4625
+    Individuo 6849 -> Fitness: -155.455348
+    Individuo 9984 -> Fitness: -155.4522136
+    Individuo 1443 -> Fitness: -155.458
+    Individuo 8212 -> Fitness: -155.4573805
+    Individuo 2328 -> Fitness: -155.4599503
+    Individuo 6072 -> Fitness: -155.4603411
+    Individuo 6640 -> Fitness: -155.4551441
+    Individuo 4584 -> Fitness: -155.4606686
+    Individuo 4409 -> Fitness: -155.4635543
+    Individuo 2019 -> Fitness: -155.4599958
+    Individuo 1356 -> Fitness: -155.4662606
+    Individuo 2035 -> Fitness: -155.4596865
+    Individuo 2081 -> Fitness: -155.4519142
+    Individuo 2380 -> Fitness: -155.4634303
+    Individuo 6479 -> Fitness: -155.4605631
+    Individuo 8507 -> Fitness: -155.4541153
+
