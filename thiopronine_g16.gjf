@@ -1,6 +1,5 @@
-%Nprocshared=8
-%Mem=48GB
-%chk=prova.chk
+%Nprocshared=12
+%Mem=64GB
 #P geom=readallgic Output=Pickett
 
  thiopronine                                                                    
@@ -77,3 +76,4 @@
  ImpD0001(Value= 180.00000) = D(  2,  4,  6,  5)
  ImpD0002(Value=-127.75824) = D(  4,  6, 16,  7)
  ImpD0003(Value= 180.00000) = D(  7,  8, 10,  9)
+
