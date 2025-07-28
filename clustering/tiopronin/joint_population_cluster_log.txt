@@ -1,0 +1,39 @@
+Processo la popolazione nella cartella: joint_population
+Utilizzo le seguenti definizioni di diedri: ['D( 15, 3, 2, 14)', 'D(  3, 2, 4, 5)', 'D(  4, 6, 7, 8)', 'D(  6, 7, 8, 9)', 'D(  9, 8, 10, 19)']
+
+Risultati del clustering:
+Cluster 7: Rappresentante: individuo_1343_opt, Membri: ['individuo_1343_opt', 'individuo_9930_opt', 'individuo_2164_opt']
+Cluster 3: Rappresentante: individuo_3024_opt, Membri: ['individuo_2543_opt', 'individuo_1165_opt', 'individuo_3024_opt', 'individuo_9294_opt']
+Cluster 11: Rappresentante: individuo_3340_opt, Membri: ['individuo_3340_opt']
+Cluster 8: Rappresentante: individuo_3346_opt, Membri: ['individuo_3346_opt', 'individuo_9542_opt']
+Cluster 1: Rappresentante: individuo_7643_opt, Membri: ['individuo_3638_opt', 'individuo_3392_opt', 'individuo_7643_opt']
+Cluster 12: Rappresentante: individuo_3673_opt, Membri: ['individuo_3673_opt', 'individuo_4374_opt']
+Cluster 5: Rappresentante: individuo_5047_opt, Membri: ['individuo_5047_opt', 'individuo_9399_opt']
+Cluster 9: Rappresentante: individuo_5993_opt, Membri: ['individuo_5993_opt']
+Cluster 6: Rappresentante: individuo_7955_opt, Membri: ['individuo_6407_opt', 'individuo_7955_opt', 'individuo_2542_opt', 'individuo_8026_opt']
+Cluster 0: Rappresentante: individuo_9467_opt, Membri: ['individuo_7614_opt', 'individuo_9467_opt', 'individuo_4108_opt', 'individuo_8160_opt', 'individuo_9422_opt']
+Cluster 4: Rappresentante: individuo_5272_opt, Membri: ['individuo_7629_opt', 'individuo_8297_opt', 'individuo_9179_opt', 'individuo_5272_opt']
+Cluster 10: Rappresentante: individuo_1141_opt, Membri: ['individuo_1141_opt']
+Cluster 2: Rappresentante: individuo_3436_opt, Membri: ['individuo_3436_opt', 'individuo_8518_opt']
+Cluster 14: Rappresentante: individuo_4530_opt, Membri: ['individuo_4530_opt', 'individuo_8922_opt']
+Cluster 13: Rappresentante: individuo_5208_opt, Membri: ['individuo_5208_opt']
+Cluster 15: Rappresentante: individuo_9577_opt, Membri: ['individuo_9577_opt']
+Immagine salvata in feature_space.png
+
+Copio i file .xyz dei centri dei cluster nella cartella: icluster_centers_joint_population
+Copiato individuo_1343_opt.xyz in icluster_centers_joint_population
+Copiato individuo_3024_opt.xyz in icluster_centers_joint_population
+Copiato individuo_3340_opt.xyz in icluster_centers_joint_population
+Copiato individuo_3346_opt.xyz in icluster_centers_joint_population
+Copiato individuo_7643_opt.xyz in icluster_centers_joint_population
+Copiato individuo_3673_opt.xyz in icluster_centers_joint_population
+Copiato individuo_5047_opt.xyz in icluster_centers_joint_population
+Copiato individuo_5993_opt.xyz in icluster_centers_joint_population
+Copiato individuo_7955_opt.xyz in icluster_centers_joint_population
+Copiato individuo_9467_opt.xyz in icluster_centers_joint_population
+Copiato individuo_5272_opt.xyz in icluster_centers_joint_population
+Copiato individuo_1141_opt.xyz in icluster_centers_joint_population
+Copiato individuo_3436_opt.xyz in icluster_centers_joint_population
+Copiato individuo_4530_opt.xyz in icluster_centers_joint_population
+Copiato individuo_5208_opt.xyz in icluster_centers_joint_population
+Copiato individuo_9577_opt.xyz in icluster_centers_joint_population

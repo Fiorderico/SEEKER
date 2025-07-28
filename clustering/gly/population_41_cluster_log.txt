@@ -1,0 +1,31 @@
+Processo la popolazione nella cartella: ../generations_gly/population_41
+Utilizzo le seguenti definizioni di diedri: ['D(  6,  1,  2,  3)', 'D(  1,  2,  3,  4)', 'D(  4,  3,  5, 10)']
+
+Risultati del clustering:
+Cluster 2: Rappresentante: individuo_5622, Membri: ['individuo_5916', 'individuo_1043', 'individuo_1554', 'individuo_5622', 'individuo_9800', 'individuo_7768', 'individuo_9435', 'individuo_7306', 'individuo_5468', 'individuo_4158', 'individuo_6197', 'individuo_9832', 'individuo_6384', 'individuo_5581', 'individuo_1676', 'individuo_3026', 'individuo_1089', 'individuo_5572']
+Cluster 0: Rappresentante: individuo_9986, Membri: ['individuo_7280', 'individuo_9986', 'individuo_6628', 'individuo_1115', 'individuo_7469', 'individuo_2001', 'individuo_8860']
+Cluster 4: Rappresentante: individuo_2387, Membri: ['individuo_2387', 'individuo_8127', 'individuo_1371']
+Cluster 1: Rappresentante: individuo_6473, Membri: ['individuo_7177', 'individuo_8702', 'individuo_5023', 'individuo_6992', 'individuo_6473']
+Cluster 11: Rappresentante: individuo_7595, Membri: ['individuo_7595', 'individuo_1744', 'individuo_9354']
+Cluster 9: Rappresentante: individuo_8154, Membri: ['individuo_8154', 'individuo_5645']
+Cluster 5: Rappresentante: individuo_7069, Membri: ['individuo_7034', 'individuo_7069', 'individuo_5759']
+Cluster 10: Rappresentante: individuo_4644, Membri: ['individuo_4644', 'individuo_1289']
+Cluster 6: Rappresentante: individuo_2239, Membri: ['individuo_9066', 'individuo_2239', 'individuo_1377']
+Cluster 7: Rappresentante: individuo_1379, Membri: ['individuo_1379']
+Cluster 3: Rappresentante: individuo_9865, Membri: ['individuo_9865', 'individuo_5803']
+Cluster 8: Rappresentante: individuo_4547, Membri: ['individuo_4547']
+Immagine salvata in feature_space.png
+
+Copio i file .xyz dei centri dei cluster nella cartella: icluster_centers_population_41
+Copiato individuo_5622.xyz in icluster_centers_population_41
+Copiato individuo_9986.xyz in icluster_centers_population_41
+Copiato individuo_2387.xyz in icluster_centers_population_41
+Copiato individuo_6473.xyz in icluster_centers_population_41
+Copiato individuo_7595.xyz in icluster_centers_population_41
+Copiato individuo_8154.xyz in icluster_centers_population_41
+Copiato individuo_7069.xyz in icluster_centers_population_41
+Copiato individuo_4644.xyz in icluster_centers_population_41
+Copiato individuo_2239.xyz in icluster_centers_population_41
+Copiato individuo_1379.xyz in icluster_centers_population_41
+Copiato individuo_9865.xyz in icluster_centers_population_41
+Copiato individuo_4547.xyz in icluster_centers_population_41

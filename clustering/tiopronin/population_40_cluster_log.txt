@@ -1,0 +1,45 @@
+Processo la popolazione nella cartella: ../generations_tiopronin/population_40
+Utilizzo le seguenti definizioni di diedri: ['D( 15, 3, 2, 14)', 'D(  3, 2, 4, 5)', 'D(  4, 6, 7, 8)', 'D(  6, 7, 8, 9)', 'D(  9, 8, 10, 19)']
+
+Risultati del clustering:
+Cluster 10: Rappresentante: individuo_9179, Membri: ['individuo_9179', 'individuo_6713', 'individuo_1669', 'individuo_7431']
+Cluster 15: Rappresentante: individuo_6407, Membri: ['individuo_6407', 'individuo_2888']
+Cluster 11: Rappresentante: individuo_3340, Membri: ['individuo_5268', 'individuo_4140', 'individuo_3340', 'individuo_4918']
+Cluster 16: Rappresentante: individuo_9930, Membri: ['individuo_9930', 'individuo_9923']
+Cluster 9: Rappresentante: individuo_9467, Membri: ['individuo_1655', 'individuo_9467', 'individuo_7386', 'individuo_5907']
+Cluster 12: Rappresentante: individuo_3346, Membri: ['individuo_3346']
+Cluster 2: Rappresentante: individuo_1343, Membri: ['individuo_1343', 'individuo_6666']
+Cluster 5: Rappresentante: individuo_8297, Membri: ['individuo_3964', 'individuo_1417', 'individuo_1332', 'individuo_8297', 'individuo_5092']
+Cluster 7: Rappresentante: individuo_2543, Membri: ['individuo_2543', 'individuo_4355', 'individuo_1993']
+Cluster 3: Rappresentante: individuo_9542, Membri: ['individuo_9542', 'individuo_3961']
+Cluster 1: Rappresentante: individuo_7955, Membri: ['individuo_3490', 'individuo_4155', 'individuo_1382', 'individuo_2347', 'individuo_7573', 'individuo_9350', 'individuo_3733', 'individuo_7955', 'individuo_2732']
+Cluster 0: Rappresentante: individuo_5047, Membri: ['individuo_5047', 'individuo_6547']
+Cluster 8: Rappresentante: individuo_9399, Membri: ['individuo_9399', 'individuo_8262']
+Cluster 4: Rappresentante: individuo_5993, Membri: ['individuo_5993', 'individuo_2873', 'individuo_6097']
+Cluster 18: Rappresentante: individuo_3673, Membri: ['individuo_3673']
+Cluster 13: Rappresentante: individuo_7614, Membri: ['individuo_7614']
+Cluster 14: Rappresentante: individuo_7629, Membri: ['individuo_7629']
+Cluster 17: Rappresentante: individuo_4374, Membri: ['individuo_4374']
+Cluster 6: Rappresentante: individuo_3638, Membri: ['individuo_3638']
+Immagine salvata in feature_space.png
+
+Copio i file .xyz dei centri dei cluster nella cartella: icluster_centers_population_40
+Copiato individuo_9179.xyz in icluster_centers_population_40
+Copiato individuo_6407.xyz in icluster_centers_population_40
+Copiato individuo_3340.xyz in icluster_centers_population_40
+Copiato individuo_9930.xyz in icluster_centers_population_40
+Copiato individuo_9467.xyz in icluster_centers_population_40
+Copiato individuo_3346.xyz in icluster_centers_population_40
+Copiato individuo_1343.xyz in icluster_centers_population_40
+Copiato individuo_8297.xyz in icluster_centers_population_40
+Copiato individuo_2543.xyz in icluster_centers_population_40
+Copiato individuo_9542.xyz in icluster_centers_population_40
+Copiato individuo_7955.xyz in icluster_centers_population_40
+Copiato individuo_5047.xyz in icluster_centers_population_40
+Copiato individuo_9399.xyz in icluster_centers_population_40
+Copiato individuo_5993.xyz in icluster_centers_population_40
+Copiato individuo_3673.xyz in icluster_centers_population_40
+Copiato individuo_7614.xyz in icluster_centers_population_40
+Copiato individuo_7629.xyz in icluster_centers_population_40
+Copiato individuo_4374.xyz in icluster_centers_population_40
+Copiato individuo_3638.xyz in icluster_centers_population_40

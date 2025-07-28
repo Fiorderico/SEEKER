@@ -1,0 +1,45 @@
+Processo la popolazione nella cartella: ../generations_gly/population_49
+Utilizzo le seguenti definizioni di diedri: ['D(  6,  1,  2,  3)', 'D(  1,  2,  3,  4)', 'D(  4,  3,  5, 10)']
+
+Risultati del clustering:
+Cluster 10: Rappresentante: individuo_6936, Membri: ['individuo_9666', 'individuo_6369', 'individuo_4484', 'individuo_6936']
+Cluster 13: Rappresentante: individuo_5629, Membri: ['individuo_9855', 'individuo_5629', 'individuo_5204']
+Cluster 1: Rappresentante: individuo_2904, Membri: ['individuo_3845', 'individuo_5743', 'individuo_5150', 'individuo_2904', 'individuo_3190', 'individuo_9491', 'individuo_9456']
+Cluster 17: Rappresentante: individuo_8496, Membri: ['individuo_8496']
+Cluster 8: Rappresentante: individuo_7873, Membri: ['individuo_1358', 'individuo_7873', 'individuo_2566', 'individuo_1737']
+Cluster 2: Rappresentante: individuo_6178, Membri: ['individuo_6178', 'individuo_5484', 'individuo_9526']
+Cluster 15: Rappresentante: individuo_7231, Membri: ['individuo_7231']
+Cluster 16: Rappresentante: individuo_4760, Membri: ['individuo_4760']
+Cluster 11: Rappresentante: individuo_4105, Membri: ['individuo_4105', 'individuo_1845']
+Cluster 9: Rappresentante: individuo_2184, Membri: ['individuo_2043', 'individuo_2184', 'individuo_6003']
+Cluster 0: Rappresentante: individuo_9062, Membri: ['individuo_6591', 'individuo_7821', 'individuo_8472', 'individuo_9062', 'individuo_8757']
+Cluster 14: Rappresentante: individuo_6515, Membri: ['individuo_6515']
+Cluster 3: Rappresentante: individuo_7455, Membri: ['individuo_7455', 'individuo_9008', 'individuo_2105']
+Cluster 4: Rappresentante: individuo_1651, Membri: ['individuo_4338', 'individuo_5803', 'individuo_1651', 'individuo_5780']
+Cluster 5: Rappresentante: individuo_2126, Membri: ['individuo_2126', 'individuo_1778']
+Cluster 7: Rappresentante: individuo_5182, Membri: ['individuo_5182', 'individuo_8967']
+Cluster 18: Rappresentante: individuo_4990, Membri: ['individuo_4990']
+Cluster 12: Rappresentante: individuo_5055, Membri: ['individuo_5055']
+Cluster 6: Rappresentante: individuo_6021, Membri: ['individuo_6021', 'individuo_2910']
+Immagine salvata in feature_space.png
+
+Copio i file .xyz dei centri dei cluster nella cartella: icluster_centers_population_49
+Copiato individuo_6936.xyz in icluster_centers_population_49
+Copiato individuo_5629.xyz in icluster_centers_population_49
+Copiato individuo_2904.xyz in icluster_centers_population_49
+Copiato individuo_8496.xyz in icluster_centers_population_49
+Copiato individuo_7873.xyz in icluster_centers_population_49
+Copiato individuo_6178.xyz in icluster_centers_population_49
+Copiato individuo_7231.xyz in icluster_centers_population_49
+Copiato individuo_4760.xyz in icluster_centers_population_49
+Copiato individuo_4105.xyz in icluster_centers_population_49
+Copiato individuo_2184.xyz in icluster_centers_population_49
+Copiato individuo_9062.xyz in icluster_centers_population_49
+Copiato individuo_6515.xyz in icluster_centers_population_49
+Copiato individuo_7455.xyz in icluster_centers_population_49
+Copiato individuo_1651.xyz in icluster_centers_population_49
+Copiato individuo_2126.xyz in icluster_centers_population_49
+Copiato individuo_5182.xyz in icluster_centers_population_49
+Copiato individuo_4990.xyz in icluster_centers_population_49
+Copiato individuo_5055.xyz in icluster_centers_population_49
+Copiato individuo_6021.xyz in icluster_centers_population_49

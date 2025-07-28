@@ -1,0 +1,403 @@
+ Entering Gaussian System, Link 0=gdv
+ Input=../generations_tiopronin/population_40/temp_processing/individuo_7386.gjf
+ Output=../generations_tiopronin/population_40/temp_processing/individuo_7386.log
+ Initial command:
+ /home/enzo/gaussian_versions/gdv.j21/gdv/l1.exe "/local/home/enzo/scratch/Gau-2337480.inp" -scrdir="/local/home/enzo/scratch/"
+ Entering Link 1 = /home/enzo/gaussian_versions/gdv.j21/gdv/l1.exe PID=   2337481.
+  
+ Copyright (c) 1988-2022, Gaussian, Inc.  All Rights Reserved.
+  
+ This is the private, development version of
+ the Gaussian(R) DV system of programs. It is based on
+ the Gaussian(R) 16 system (copyright 2016, Gaussian, Inc.),
+ the Gaussian(R) 09 system (copyright 2009, Gaussian, Inc.),
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian Development Version, Revision J.21,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, 
+ G. A. Petersson, H. Nakatsuji, X. Li, A. V. Marenich, M. Caricato, 
+ J. Bloino, B. G. Janesko, J. Zheng, R. Gomperts, B. Mennucci, 
+ H. P. Hratchian, J. V. Ortiz, A. F. Izmaylov, J. L. Sonnenberg, 
+ D. Williams-Young, F. Ding, F. Lipparini, F. Egidi, J. Goings, 
+ B. Peng, A. Petrone, T. Henderson, D. Ranasinghe, V. G. Zakrzewski, 
+ J. Gao, N. Rega, G. Zheng, W. Liang, M. Hada, M. Ehara, K. Toyota, 
+ R. Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, Y. Honda, O. Kitao, 
+ H. Nakai, T. Vreven, K. Throssell, J. A. Montgomery, Jr., 
+ J. E. Peralta, F. Ogliaro, M. J. Bearpark, J. J. Heyd, 
+ E. N. Brothers, K. N. Kudin, V. N. Staroverov, T. A. Keith, 
+ R. Kobayashi, J. Normand, K. Raghavachari, A. P. Rendell, 
+ J. C. Burant, S. S. Iyengar, J. Tomasi, M. Cossi, J. M. Millam, 
+ M. Klene, C. Adamo, R. Cammi, J. W. Ochterski, R. L. Martin, 
+ K. Morokuma, O. Farkas, J. B. Foresman, and D. J. Fox, 
+ Gaussian, Inc., Wallingford CT, 2020.
+ 
+ ******************************************
+ Gaussian DV:  ES64L-GDVRevJ.21 25-Jul-2022
+                14-Mar-2025 
+ ******************************************
+ -------------------------------------
+ #p UFF GEOM=READALLGIC OUTPUT=PICKETT
+ -------------------------------------
+ 1/18=20,37=210000000,38=1,56=1,64=2,145=602,172=1/1;
+ 2/12=2/2;
+ 3/5=30,11=9,25=1,30=1,41=10020000,43=2/1;
+ 4/20=10,24=3/2;
+ 99/5=1,9=1,10=1024/99;
+ Leave Link    1 at Fri Mar 14 15:10:51 2025, MaxMem=           0 cpu:               0.0 elap:               0.0
+ (Enter /home/enzo/gaussian_versions/gdv.j21/gdv/l101.exe)
+ ------------------
+ individuo_7386.xyz
+ ------------------
+ Symbolic Z-matrix:
+ Charge =     0 Multiplicity =     1
+ 6                     2.77609   1.34118   0.58196 
+ 6                     1.96028   0.44385  -0.34087 
+ 16                    2.39097  -1.29905  -0.05122 
+ 6                     0.49054   0.65678  -0.11971 
+ 8                     0.07658   1.01855   1.01329 
+ 7                    -0.43612   0.4628   -1.19331 
+ 6                    -1.86766   0.67592  -1.00774 
+ 6                    -2.41134  -0.26386   0.01701 
+ 8                    -1.75085  -1.27916   0.35446 
+ 8                    -3.6599   -0.02886   0.57727 
+ 1                     3.8589    1.19893   0.38635 
+ 1                     2.52486   2.40644   0.39762 
+ 1                     2.57065   1.10038   1.64595 
+ 1                     2.22475   0.68904  -1.39074 
+ 1                     1.1148   -1.61043   0.45047 
+ 1                    -0.07193   0.1632   -2.12556 
+ 1                    -2.04856   1.72258  -0.68416 
+ 1                    -2.39467   0.50926  -1.9702 
+ 1                    -4.19962  -0.78545   0.9777 
+ 
+ Initializing the GIC definitions file.
+
+ CrInp1: Reading the GIC input below.
+ Dihed1 = D( 15, 3, 2, 14)
+ Dihed2 = D( 3, 2, 4, 5)
+ Dihed3 = D( 4, 6, 7, 8)
+ Dihed4 = D( 6, 7, 8, 9)
+ Dihed5 = D( 9, 8, 10, 19)
+ 
+ Warning:  Number of GICs=     5 3N-6=    51.
+ ITRead=  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ MicOpt= -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+                           ----------------------------
+                           !    Current Parameters    !
+                           ! (Angstroms and Degrees)  !
+ --------------------------                            --------------------------
+ ! Name   Definition             Value                                          !
+ --------------------------------------------------------------------------------
+ ! Dihed1 D(15,3,2,14)        -128.0547                                         !
+ ! Dihed2 D(3,2,4,5)            92.7712                                         !
+ ! Dihed3 D(4,6,7,8)           -61.8508                                         !
+ ! Dihed4 D(6,7,8,9)           -16.622                                          !
+ ! Dihed5 D(9,8,10,19)         -22.5299                                         !
+ --------------------------------------------------------------------------------
+ NAtoms=     19 NQM=       19 NQMF=       0 NMMI=      0 NMMIF=      0
+                NMic=       0 NMicF=      0.
+                    Isotopes and Nuclear Properties:
+ (Nuclear quadrupole moments (NQMom) in fm**2, nuclear magnetic moments (NMagM)
+  in nuclear magnetons)
+
+  Atom         1           2           3           4           5           6           7           8           9          10
+ IAtWgt=          12          12          32          12          16          14          12          12          16          16
+ AtmWgt=  12.0000000  12.0000000  31.9720718  12.0000000  15.9949146  14.0030740  12.0000000  12.0000000  15.9949146  15.9949146
+ NucSpn=           0           0           0           0           0           2           0           0           0           0
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   2.0440000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.4037610   0.0000000   0.0000000   0.0000000   0.0000000
+ AtZNuc=   6.0000000   6.0000000  16.0000000   6.0000000   8.0000000   7.0000000   6.0000000   6.0000000   8.0000000   8.0000000
+
+  Atom        11          12          13          14          15          16          17          18          19
+ IAtWgt=           1           1           1           1           1           1           1           1           1
+ AtmWgt=   1.0078250   1.0078250   1.0078250   1.0078250   1.0078250   1.0078250   1.0078250   1.0078250   1.0078250
+ NucSpn=           1           1           1           1           1           1           1           1           1
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    2.7928460   2.7928460   2.7928460   2.7928460   2.7928460   2.7928460   2.7928460   2.7928460   2.7928460
+ AtZNuc=   1.0000000   1.0000000   1.0000000   1.0000000   1.0000000   1.0000000   1.0000000   1.0000000   1.0000000
+ Generating MM parameters.
+ Include all MM classes
+
+ MM sanity checks:
+ All charges sum to:                0.00000000
+ Charges of atoms sum to:           0.00000000
+ MMInit generated parameter data with length LenPar=        2803.
+ Leave Link  101 at Fri Mar 14 15:10:51 2025, MaxMem=   104857600 cpu:               0.1 elap:               0.1
+ (Enter /home/enzo/gaussian_versions/gdv.j21/gdv/l202.exe)
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6    10061003        2.776091    1.341181    0.581962
+      2          6    10061003        1.960282    0.443850   -0.340868
+      3         16    10161003        2.390971   -1.299050   -0.051223
+      4          6    10061002        0.490544    0.656784   -0.119710
+      5          8    10081002        0.076582    1.018548    1.013294
+      6          7    10071000       -0.436123    0.462802   -1.193313
+      7          6    10061003       -1.867657    0.675923   -1.007741
+      8          6    10061000       -2.411340   -0.263858    0.017013
+      9          8    10081002       -1.750846   -1.279156    0.354461
+     10          8    10081000       -3.659899   -0.028861    0.577274
+     11          1    10011000        3.858897    1.198928    0.386352
+     12          1    10011000        2.524859    2.406441    0.397622
+     13          1    10011000        2.570646    1.100376    1.645946
+     14          1    10011000        2.224750    0.689039   -1.390743
+     15          1    10011000        1.114802   -1.610426    0.450468
+     16          1    10011000       -0.071925    0.163202   -2.125559
+     17          1    10011000       -2.048556    1.722582   -0.684164
+     18          1    10011000       -2.394672    0.509259   -1.970204
+     19          1    10011000       -4.199619   -0.785450    0.977696
+ ---------------------------------------------------------------------
+                    Distance matrix (angstroms):
+                    1          2          3          4          5
+     1  C    0.000000
+     2  C    1.523930   0.000000
+     3  S    2.742273   1.818540   0.000000
+     4  C    2.486859   1.501460   2.727930   0.000000
+     5  O    2.752724   2.390054   3.443959   1.259339   0.000000
+     6  N    3.773787   2.543576   3.521499   1.431420   2.332560
+     7  C    4.953193   3.892518   4.790758   2.519936   2.825250
+     8  C    5.459373   4.442973   4.913092   3.047492   2.971009
+     9  O    5.235559   4.150265   4.161685   2.999422   3.008820
+    10  O    6.580198   5.714269   6.214613   4.264044   3.904929
+    11  H    1.109490   2.168809   2.930217   3.449032   3.838164
+    12  H    1.109900   2.171607   3.734977   2.732649   2.880861
+    13  H    1.110071   2.179679   2.944471   2.764261   2.574354
+    14  H    2.149612   1.110089   2.403007   2.150357   3.240771
+    15  H    3.389566   2.358198   1.406149   2.419719   2.882044
+    16  H    4.102377   2.719145   3.536511   2.140893   3.256696
+    17  H    5.002575   4.221823   5.407428   2.810972   2.809491
+    18  H    5.826014   4.650230   5.463959   3.430825   3.907395
+    19  H    7.303403   6.418268   6.690167   5.028118   4.641290
+                    6          7          8          9         10
+     6  N    0.000000
+     7  C    1.459160   0.000000
+     8  C    2.427840   1.492950   0.000000
+     9  O    2.675541   2.385702   1.257360   0.000000
+    10  O    3.710720   2.494218   1.388530   2.292895   0.000000
+    11  H    4.635129   5.916963   6.449188   6.132792   7.620775
+    12  H    3.882811   4.925844   5.625071   5.645099   6.649376
+    13  H    4.184322   5.188521   5.416156   5.099549   6.421598
+    14  H    2.677762   4.110311   4.937927   4.767063   6.246404
+    15  H    3.066865   4.030983   3.799317   2.886329   5.031421
+    16  H    1.044741   2.176477   3.200915   3.324105   4.496193
+    17  H    2.108606   1.110370   2.137570   3.190267   2.693549
+    18  H    2.107518   1.109890   2.132374   3.002833   2.894826
+    19  H    4.520544   3.393467   2.095927   2.574618   1.011960
+                   11         12         13         14         15
+    11  H    0.000000
+    12  H    1.799409   0.000000
+    13  H    1.804406   1.807267   0.000000
+    14  H    2.467487   2.497556   3.083881   0.000000
+    15  H    3.927676   4.257496   3.301075   3.147949   0.000000
+    16  H    4.778471   4.259325   4.699545   2.468031   3.345145
+    17  H    6.026460   4.749110   5.210910   4.452933   4.733198
+    18  H    6.718342   5.779938   6.170927   4.659094   4.761210
+    19  H    8.320284   7.466141   7.059702   7.004009   5.403853
+                   16         17         18         19
+    16  H    0.000000
+    17  H    2.901096   0.000000
+    18  H    2.353517   1.801624   0.000000
+    19  H    5.250523   3.698523   3.691100   0.000000
+ Stoichiometry    C5H9NO3S
+ Framework group  C1[X(C5H9NO3S)]
+ Deg. of freedom    51
+ Full point group                 C1      NOp   1
+ Largest Abelian subgroup         C1      NOp   1
+ Largest concise Abelian subgroup C1      NOp   1
+                         Standard orientation:                         
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6    10061003        2.782620   -1.248037   -0.601466
+      2          6    10061003        1.943449   -0.387147    0.335029
+      3         16    10161003        2.346108    1.369326    0.090582
+      4          6    10061002        0.479587   -0.620064    0.095782
+      5          8    10081002        0.081663   -0.961816   -1.049119
+      6          7    10071000       -0.459431   -0.467723    1.165361
+      7          6    10061003       -1.885396   -0.701015    0.962025
+      8          6    10061000       -2.436652    0.253399   -0.045006
+      9          8    10081002       -1.791127    1.287687   -0.352414
+     10          8    10081000       -3.676104    0.010323   -0.621796
+     11          1    10011000        3.861074   -1.091834   -0.392886
+     12          1    10011000        2.548456   -2.321560   -0.444646
+     13          1    10011000        2.582071   -0.985529   -1.661243
+     14          1    10011000        2.203207   -0.652683    1.381124
+     15          1    10011000        1.069018    1.670514   -0.414969
+     16          1    10011000       -0.108468   -0.184183    2.107653
+     17          1    10011000       -2.045242   -1.742631    0.612159
+     18          1    10011000       -2.423415   -0.566441    1.923421
+     19          1    10011000       -4.225516    0.766818   -1.008996
+ ---------------------------------------------------------------------
+ Rotational constants (GHZ):           2.2226655           0.6011041           0.5524943
+ Leave Link  202 at Fri Mar 14 15:10:51 2025, MaxMem=   104857600 cpu:               0.0 elap:               0.0
+ (Enter /home/enzo/gaussian_versions/gdv.j21/gdv/l301.exe)
+ Standard basis: Dummy (5D, 7F)
+ There are    19 symmetry adapted cartesian basis functions of A   symmetry.
+ There are    19 symmetry adapted basis functions of A   symmetry.
+    19 basis functions,    19 primitive gaussians,    19 cartesian basis functions
+    14 alpha electrons       14 beta electrons
+       nuclear repulsion energy        69.2665032093 Hartrees.
+ IExCor=         0 DFT=F Ex=HF Corr=None N6=None ScaHFX=  1.000000
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000  1.000000  0.000000
+ ScaDFX=  0.000000  0.000000  0.000000  0.000000  0.000000  0.000000
+ IRadAn=      5 IRanWt=     -1 IRanGd=            0 ICorTp=0 IEmpDi=  4
+ NAtoms=   19 NActive=   19 NUniq=   19 SFac= 1.00D+00 NAtFMM=   60 NAOKFM=F Big=F
+ Integral buffers will be    131072 words long.
+ Raffenetti 1 integral format.
+ Two-electron integral symmetry is turned on.
+ Leave Link  301 at Fri Mar 14 15:10:51 2025, MaxMem=   104857600 cpu:               0.0 elap:               0.0
+ (Enter /home/enzo/gaussian_versions/gdv.j21/gdv/l402.exe)
+ UFF calculation of energy.
+ Energy per function type:
+ Direct Coulomb + vdW (small)                           0.026650268
+ Direct Coulomb (large)                                 0.000000000
+ Direct vdW (large)                                   682.406828251
+ Non-direct Coulomb + vdW (small)                      -0.014071895
+ Non-direct Coulomb (large)                             0.000000000
+ Non-direct vdW (large)                              -682.406828251
+ Harmonic stretch III                                   0.010506187
+ UFF 3-term bend                                        0.004904401
+ UFF 2-term bend                                        0.000135019
+ UFF torsion fixed V                                    0.004065480
+ UFF torsion w/ bond order V                            0.006654288
+ UFF torsion w/ sp3 V                                   0.001558815
+ Three term Wilson angle                                0.000018416
+ Energy per function class:
+        Coulomb               0.000000000
+    Vanderwaals               0.012578373
+     Stretching               0.010506187
+        Bending               0.005039420
+        Torsion               0.012278583
+   Out-of-plane               0.000018416
+ Energy=    4.042097795E-02 NIter=   0.
+ Dipole moment=       0.000000       0.000000       0.000000
+ Leave Link  402 at Fri Mar 14 15:10:51 2025, MaxMem=   104857600 cpu:               0.0 elap:               0.0
+ (Enter /home/enzo/gaussian_versions/gdv.j21/gdv/l9999.exe)
+ Unable to Open any file for archive entry.
+ 1\1\GINC-ORACLE\SP\UFF\ZDO\C5H9N1O3S1\ENZO\14-Mar-2025\0\\#p UFF GEOM=
+ READALLGIC OUTPUT=PICKETT\\individuo_7386.xyz\\0,1\C,0,2.776091,1.3411
+ 81,0.581962\C,0,1.960282,0.44385,-0.340868\S,0,2.390971,-1.29905,-0.05
+ 1223\C,0,0.490544,0.656784,-0.11971\O,0,0.076582,1.018548,1.013294\N,0
+ ,-0.436123,0.462802,-1.193313\C,0,-1.867657,0.675923,-1.007741\C,0,-2.
+ 41134,-0.263858,0.017013\O,0,-1.750846,-1.279156,0.354461\O,0,-3.65989
+ 9,-0.028861,0.577274\H,0,3.858897,1.198928,0.386352\H,0,2.524859,2.406
+ 441,0.397622\H,0,2.570646,1.100376,1.645946\H,0,2.22475,0.689039,-1.39
+ 0743\H,0,1.114802,-1.610426,0.450468\H,0,-0.071925,0.163202,-2.125559\
+ H,0,-2.048556,1.722582,-0.684164\H,0,-2.394672,0.509259,-1.970204\H,0,
+ -4.199619,-0.78545,0.977696\\Version=ES64L-GDVRevJ.21\HF=0.040421\RMSD
+ =0.000e+00\Dipole=0.,0.,0.\PG=C01 [X(C5H9N1O3S1)]\\@
+ The archive entry for this job was punched.
+ DoSRE=F DoSRN=F DoDH=F DoFC=F DoNQ=F DoQCD=F DoSCD=F
+ Inertia tensor (amu-bohr**2): 
+                 1             2             3 
+      1   0.811972D+03 -0.212186D-03  0.109218D-03
+      2  -0.212186D-03  0.300238D+04  0.256988D-04
+      3   0.109218D-03  0.256988D-04  0.326653D+04
+ Principal inertia moments (amu-bohr**2):
+ Iaa = 0.811972D+03 Ibb= 0.300238D+04 Icc= 0.326653D+04
+ Rotation matrix to Principal Axis frame: 
+                 1             2             3 
+      1   0.100000D+01  0.000000D+00  0.000000D+00
+      2   0.000000D+00  0.100000D+01  0.000000D+00
+      3   0.000000D+00  0.000000D+00  0.100000D+01
+                Principal axis orientation:                
+ ---------------------------------------------------------------------
+ Center     Atomic                     Coordinates (Angstroms)
+ Number     Number                        X           Y           Z
+ ---------------------------------------------------------------------
+      1          6                    2.776091    1.341181    0.581962
+      2          6                    1.960282    0.443850   -0.340868
+      3         16                    2.390971   -1.299050   -0.051223
+      4          6                    0.490544    0.656784   -0.119710
+      5          8                    0.076582    1.018548    1.013294
+      6          7                   -0.436123    0.462802   -1.193313
+      7          6                   -1.867657    0.675923   -1.007741
+      8          6                   -2.411340   -0.263858    0.017013
+      9          8                   -1.750846   -1.279156    0.354461
+     10          8                   -3.659899   -0.028861    0.577274
+     11          1                    3.858897    1.198927    0.386352
+     12          1                    2.524859    2.406441    0.397622
+     13          1                    2.570646    1.100375    1.645946
+     14          1                    2.224750    0.689039   -1.390743
+     15          1                    1.114802   -1.610426    0.450468
+     16          1                   -0.071925    0.163202   -2.125559
+     17          1                   -2.048556    1.722582   -0.684164
+     18          1                   -2.394672    0.509259   -1.970204
+     19          1                   -4.199619   -0.785450    0.977696
+ ---------------------------------------------------------------------
+ Rotational constants (MHZ):
+   2222.6654661    601.1040628    552.4943040
+ Dipole moment (Debye):
+      0.0000000      0.0000000      0.0000000  Tot=      0.0000000
+
+ Atoms with significant hyperfine tensors: 
+
+--------------------------------------------------------------------------------
+ individuo_7386.xyz                                      
+   99  1000  50  0.1760E-11  0.1000E+07  0.1000E+01 1.0000000000
+a   1  0  0  0  1  1   1  0  1  0
+     10000   0.22226655E+04    0.0000E+00   /  A  /
+     20000   0.60110406E+03    0.0000E+00   /  B  /
+     30000   0.55249430E+03    0.0000E+00   /  C  /
+--------------------------------------------------------------------------------
+
+
+
+ THERE IS MORE TO LIFE THAN INCREASING ITS SPEED.
+
+                                       -- GANDHI
+ Job cpu time:       0 days  0 hours  0 minutes  0.2 seconds.
+ Elapsed time:       0 days  0 hours  0 minutes  0.2 seconds.
+ File lengths (MBytes):  RWF=     14 Int=      0 D2E=      0 Chk=      9 Scr=      1
+ Normal termination of Gaussian DV at Fri Mar 14 15:10:51 2025.

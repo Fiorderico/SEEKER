@@ -1,4 +1,5 @@
 import os
+import csv
 import re
 import math
 import random
@@ -7,25 +8,44 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # --- Parametri di configurazione ---
-INPUT_FILE = "input_reference.gjf"  # file di riferimento fornito dall'utente
+#INPUT_FILE = "gly.gjf"  # file di riferimento fornito dall'utente
+INPUT_FILE = "tiopronin.gjf"  # file di riferimento fornito dall'utente
 #INPUT_FILE = "butano.gjf"  # file di riferimento fornito dall'utente
 TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_butano"
-GENERATIONS_DIR = "generations"
-GENERATIONS_DIR = "generations_gly_prob"
-NUM_GENERAZIONI = 30
-POPOLAZIONE_INIZIALE = 20
-POPOLAZIONE_TARGET = 20
-MUTATION_RATE = 0.5
-CROSSOVER_RATE = 0.5
+#GENERATIONS_DIR = "generations_gly"
+GENERATIONS_DIR = "generations_tiopronin"
+NUM_GENERAZIONI = 50
+POPOLAZIONE_INIZIALE = 80
+POPOLAZIONE_TARGET = 50
 
-# Esempio di lista di geni: (periodicità, definizione)
-#Gly
+# Parametri per penalità similarità
+SIMILARITY_THRESHOLD = 0.9  # soglia di similarità oltre la quale si penalizza
+CUTOFF_ANGLE = 10*math.sqrt(5)
+GAMMA = -math.log(SIMILARITY_THRESHOLD)/(CUTOFF_ANGLE*CUTOFF_ANGLE) # parametro della funzione esponenziale (toonabile)
+
+# --- Parametri aggiuntivi per oscillazione ---
+BASE_RATE_MUTATION = 0.6       # Valore di base per crossover e mutazione
+BASE_RATE_CROSSOVER = 0.6       # Valore di base per crossover e mutazione
+DELTA_RATE_MUTATION = 0.1      # Δ: ampiezza massima dell'oscillazione
+DELTA_RATE_CROSSOVER = 0.1      # Δ: ampiezza massima dell'oscillazione
+NUM_OSCILLATIONS = 2  # n: numero di ondate da avere durante P generazioni
+
+#Tiopronin
 GENI = [
-    (3, "D(  6,  1,  2,  3)"),
-    (3, "D(  1,  2,  3,  4)"),
-    (2, "D(  4,  3,  5, 10)")
+    (3, "D( 15, 3, 2, 14)"), #chi1
+    (3, "D(  3, 2, 4, 5)"), #psi1
+    (3, "D(  4, 6, 7, 8)"), #phi2
+    (3, "D(  6, 7, 8, 9)"), #psi2
+    (2, "D(  9, 8, 10, 19)") #omega2
 ]
+
+#Gly
+#GENI = [
+#    (3, "D(  6,  1,  2,  3)"),
+#    (3, "D(  1,  2,  3,  4)"),
+#    (2, "D(  4,  3,  5, 10)")
+#]
 
 #Butano
 #GENI = [
@@ -52,21 +72,20 @@ def remove_frozen_substring(lines):
         new_lines.append(new_line)
     return new_lines
 
-#def generate_random_allele(periodicity):
-#    """Genera un allele casuale in base alla periodicità."""
-#    if periodicity == 2:
-#        return random.uniform(0, 360)
-#    elif periodicity == 3:
-#        return random.uniform(0, 360)
-#    else:
-#        return random.uniform(0, 360/periodicity)
+def save_statistics(file_name,generations_data):
+    fields = ["Generation", "Avg. Fitness", "MAX Fitness", "MIN Fitness", "Mutation rate", "Crossover rate"]
+    with open(file_name,"w",newline="") as csvfile:
+        writer = csv.DictWriter(csvfile,fieldnames=fields)
+        writer.writeheader()
+        for row in generations_data:
+            writer.writerow(row)
 
 def generate_random_allele(periodicity):
     """Genera un allele casuale in [0,360] (in gradi) secondo la distribuzione:
        P(ang)=b+w*(1+cos(n*ang)), dove ang è in radianti, n=periodicity, w=0.1 e b=1/(2*pi)-w.
        Il campionamento viene effettuato in radianti e il risultato convertito in gradi.
     """
-    w = 0.1
+    w = 0.08
     b = 1/(2*math.pi) - w
     M = 1/(2*math.pi) + w  # valore massimo di P(ang)
     n = periodicity       # periodicità
@@ -184,6 +203,13 @@ def cleanup_tmp(directory):
         if fname.endswith((".gjf", ".log", ".chk")):
             os.remove(os.path.join(directory, fname))
 
+def similarity(ind1, ind2, gamma):
+    """Calcola la similarità tra due individui usando i loro vettori degli alleli.
+       S(A,B)=exp(-gamma * ||A-B||^2)
+    """
+    diff_sq = sum((a - b) ** 2 for a, b in zip(ind1["alleli"], ind2["alleli"]))
+    return math.exp(-gamma * diff_sq)
+
 # --- Funzioni per il Genetic Algorithm ---
 
 def initialize_population(pop_size, geni):
@@ -241,6 +267,33 @@ def crossover(parent1, parent2):
         child_alleles.append(a1 if random.random() < 0.5 else a2)
     return child_alleles
 
+#def crossover(parent1, parent2, eta=1):
+#    """Crossover SBX: per ogni allele, genera due possibili valori tramite SBX e ne seleziona uno casualmente."""
+#    child_alleles = []
+#    for a1, a2 in zip(parent1["alleli"], parent2["alleli"]):
+#        if abs(a1 - a2) < 1e-14:
+#            # Se i valori sono quasi identici, copia il valore
+#            child_alleles.append(a1)
+#        else:
+#            # Assicura che x1 sia il minore e x2 il maggiore
+#            if a1 < a2:
+#                x1, x2 = a1, a2
+#            else:
+#                x1, x2 = a2, a1
+#            u = random.random()
+#            if u <= 0.5:
+#                beta = (2*u)**(1.0/(eta+1))
+#            else:
+#                beta = (1/(2*(1-u)))**(1.0/(eta+1))
+#            c1 = 0.5 * ((x1+x2) - beta*(x2-x1))
+#            c2 = 0.5 * ((x1+x2) + beta*(x2-x1))
+#            # Seleziona uno dei due figli casualmente
+#            child = c1 if random.random() < 0.5 else c2
+#            # Limita l'allele tra 0 e 360 gradi
+#            child = max(0, min(child, 360))
+#            child_alleles.append(child)
+#    return child_alleles
+
 def mutate(alleles, mutation_rate, geni):
     """Applica mutazioni casuali sugli alleli."""
     new_alleles = []
@@ -251,12 +304,18 @@ def mutate(alleles, mutation_rate, geni):
             new_alleles.append(allele)
     return new_alleles
 
+def tournament_selection(population, tournament_size=3):
+    """Seleziona il migliore tra un campione casuale di 'tournament_size' individui."""
+    competitors = random.sample(population, tournament_size)
+    return min(competitors, key=lambda ind: ind["fitness"])
+
 # --- Main Genetic Algorithm ---
 def genetic_algorithm():
     os.makedirs(TMP_DIR, exist_ok=True)
     os.makedirs(GENERATIONS_DIR, exist_ok=True)
     
     # Prepara un file di log per le statistiche delle generazioni
+    generations_data = []
     generation_log_path = os.path.join(GENERATIONS_DIR, "generation_log.txt")
     with open(generation_log_path, "w") as logf:
         logf.write("Log delle generazioni:\n\n")
@@ -266,11 +325,34 @@ def genetic_algorithm():
     
     for gen in range(NUM_GENERAZIONI):
         print(f"Generazione {gen}")
+        
+        # Calcola i tassi correnti secondo la formula oscillante
+        current_mutation_rate = BASE_RATE_MUTATION + DELTA_RATE_MUTATION * math.sin((math.pi * NUM_OSCILLATIONS / (NUM_GENERAZIONI-1)) * gen)
+        current_crossover_rate = BASE_RATE_CROSSOVER - DELTA_RATE_CROSSOVER * math.sin((math.pi * NUM_OSCILLATIONS / (NUM_GENERAZIONI-1)) * gen)
+        
+        #if gen <= int(NUM_GENERAZIONI/2):
+        #    current_mutation_rate = 0.7
+        #    current_crossover_rate = 0.5
+        #else:
+        #    current_mutation_rate = 0.5
+        #    current_crossover_rate = 0.7
+
         # Esecuzione in parallelo per ogni individuo della generazione
         with ThreadPoolExecutor(max_workers=len(population)) as executor:
             futures = [executor.submit(evaluate_individual, ind, reference_lines, GENI, TMP_DIR) for ind in population]
             for future in as_completed(futures):
                 future.result()  # Aspetta che ogni conto sia terminato
+        
+        # --- Nuovo blocco: Penalizzazione per similarità ---
+        #penalty_unit = 1e-2 / len(population)
+        #for i, ind in enumerate(population):
+        #    similar_count = 0
+        #    for j, other in enumerate(population):
+        #        if i != j:
+        #            if similarity(ind, other, GAMMA) > SIMILARITY_THRESHOLD:
+        #                similar_count += 1
+        #    ind["fitness"] += similar_count * penalty_unit
+        # ---------------------------------------------------
         
         # Calcola e logga le statistiche della generazione
         fitness_list = [ind["fitness"] for ind in population if ind["fitness"] is not None]
@@ -286,11 +368,22 @@ def genetic_algorithm():
             logf.write(f"  Fitness media: {avg_fit}\n")
             logf.write(f"  Fitness minima: {min_fit}\n")
             logf.write(f"  Fitness massima: {max_fit}\n")
+            logf.write(f"  Mutation rate: {current_mutation_rate}\n")
+            logf.write(f"  Crossover rate: {current_crossover_rate}\n")
             logf.write("  Fitness degli individui:\n")
             for ind in population:
                 logf.write(f"    Individuo {ind['id']} -> Fitness: {ind['fitness']}\n")
             logf.write("\n")
         
+        generations_data.append({
+            "Generation": gen,
+            "Avg. Fitness": avg_fit,
+            "MAX Fitness": max_fit,
+            "MIN Fitness": min_fit,
+            "Mutation rate": current_mutation_rate,
+            "Crossover rate": current_crossover_rate
+        })
+
         population = selection(population, POPOLAZIONE_TARGET)
         
         gen_dir = os.path.join(GENERATIONS_DIR, f"population_{gen}")
@@ -301,12 +394,13 @@ def genetic_algorithm():
         
         new_population = []
         while len(new_population) < POPOLAZIONE_INIZIALE:
-            parents = random.sample(population, 2)
-            if random.random() < CROSSOVER_RATE:
-                child_alleles = crossover(parents[0], parents[1])
+            parent1 = tournament_selection(population)
+            parent2 = tournament_selection(population)
+            if random.random() < current_crossover_rate:
+                child_alleles = crossover(parent1, parent2)
             else:
-                child_alleles = parents[0]["alleli"].copy()
-            child_alleles = mutate(child_alleles, MUTATION_RATE, GENI)
+                child_alleles = parent1["alleli"].copy()
+            child_alleles = mutate(child_alleles, current_mutation_rate, GENI)
             new_population.append({
                 "id": random.randint(1000, 9999),
                 "alleli": child_alleles,
@@ -317,9 +411,11 @@ def genetic_algorithm():
         
         population = new_population
         cleanup_tmp(TMP_DIR)
-    
+
+    save_statistics("evolution.csv",generations_data)
     print("Algoritmo completato.")
 
 if __name__ == "__main__":
     genetic_algorithm()
+
 
