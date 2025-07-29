@@ -1,0 +1,149 @@
+Processo la popolazione nella cartella: thiopronin_new_49
+Utilizzo le seguenti definizioni di diedri: ['D(15, 3, 2, 11)', 'D(3, 2, 4, 5)', 'D(4, 6, 7, 8)', 'D(6, 7, 8, 9)', 'D(9, 8, 10, 19)']
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_2312.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_2312.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_2312.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_2312.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_2312.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_2312.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_2312.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_5346.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_5346.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_5346.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_5346.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_5346.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_5346.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_5346.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_6730.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_6730.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_6730.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_6730.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_6730.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_6730.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_6730.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_7461.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_7461.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_7461.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_7461.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_7461.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_7461.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_7461.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_5164.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_5164.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_5164.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_5164.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_5164.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_5164.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_5164.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_2455.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_2455.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_2455.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_2455.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_2455.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_2455.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_2455.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_8949.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_8949.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_8949.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_8949.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_8949.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_8949.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_8949.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_4002.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_4002.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_4002.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_4002.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_4002.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_4002.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_4002.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_1532.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_1532.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_1532.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_1532.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_1532.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_1532.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_1532.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_5185.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_5185.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_5185.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_5185.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_5185.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_5185.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_5185.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_6906.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_6906.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_6906.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_6906.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_6906.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_6906.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_6906.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_3600.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_3600.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_3600.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_3600.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_3600.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_3600.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_3600.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_8415.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_8415.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_8415.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_8415.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_8415.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_8415.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_8415.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_9743.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_9743.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_9743.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_9743.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_9743.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_9743.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_9743.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_8866.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_8866.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_8866.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_8866.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_8866.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_8866.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_8866.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_6261.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_6261.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_6261.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_6261.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_6261.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_6261.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_6261.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_2646.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_2646.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_2646.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_2646.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_2646.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_2646.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_2646.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_7870.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_7870.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_7870.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_7870.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_7870.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_7870.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_7870.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_2152.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_2152.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_2152.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_2152.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_2152.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_2152.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_2152.log
+Errore nell'esecuzione di gdv per thiopronin_new_49/temp_processing/individuo_2553.gjf
+Attenzione: Rotational constants non trovate in thiopronin_new_49/temp_processing/individuo_2553.log
+Attenzione: Valore per Dihed1 non trovato in thiopronin_new_49/temp_processing/individuo_2553.log
+Attenzione: Valore per Dihed2 non trovato in thiopronin_new_49/temp_processing/individuo_2553.log
+Attenzione: Valore per Dihed3 non trovato in thiopronin_new_49/temp_processing/individuo_2553.log
+Attenzione: Valore per Dihed4 non trovato in thiopronin_new_49/temp_processing/individuo_2553.log
+Attenzione: Valore per Dihed5 non trovato in thiopronin_new_49/temp_processing/individuo_2553.log
+
+Risultati del clustering:
+Cluster 0: Rappresentante: individuo_2312, Membri: ['individuo_2312', 'individuo_5346', 'individuo_6730', 'individuo_7461', 'individuo_5164', 'individuo_2455', 'individuo_8949', 'individuo_4002', 'individuo_1532', 'individuo_5185', 'individuo_6906', 'individuo_3600', 'individuo_8415', 'individuo_9743', 'individuo_8866', 'individuo_6261', 'individuo_2646', 'individuo_7870', 'individuo_2152', 'individuo_2553']
+Immagine salvata in feature_space.png
+
+Copio i file .xyz dei centri dei cluster nella cartella: icluster_centers_thiopronin_new_49
+Copiato individuo_2312.xyz in icluster_centers_thiopronin_new_49

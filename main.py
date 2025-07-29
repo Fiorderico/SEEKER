@@ -9,15 +9,18 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # --- Parametri di configurazione ---
 #INPUT_FILE = "gly.gjf"  # file di riferimento fornito dall'utente
-INPUT_FILE = "tiopronin.gjf"  # file di riferimento fornito dall'utente
+INPUT_FILE = "thiopronine_g16_to_use.gjf"  # file di riferimento fornito dall'utente
 #INPUT_FILE = "butano.gjf"  # file di riferimento fornito dall'utente
 TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_butano"
 #GENERATIONS_DIR = "generations_gly"
-GENERATIONS_DIR = "generations_tiopronin"
+GENERATIONS_DIR = "generations_tiopronin_new"
+#NUM_GENERAZIONI = 50
+#POPOLAZIONE_INIZIALE = 80
+#POPOLAZIONE_TARGET = 50
 NUM_GENERAZIONI = 50
-POPOLAZIONE_INIZIALE = 80
-POPOLAZIONE_TARGET = 50
+POPOLAZIONE_INIZIALE = 40
+POPOLAZIONE_TARGET = 20
 
 # Parametri per penalità similarità
 SIMILARITY_THRESHOLD = 0.9  # soglia di similarità oltre la quale si penalizza
@@ -33,12 +36,21 @@ NUM_OSCILLATIONS = 2  # n: numero di ondate da avere durante P generazioni
 
 #Tiopronin
 GENI = [
-    (3, "D( 15, 3, 2, 14)"), #chi1
+    (3, "D( 15, 3, 2, 11)"), #chi1
     (3, "D(  3, 2, 4, 5)"), #psi1
     (3, "D(  4, 6, 7, 8)"), #phi2
     (3, "D(  6, 7, 8, 9)"), #psi2
     (2, "D(  9, 8, 10, 19)") #omega2
 ]
+
+#Tiopronin old
+#GENI = [
+#    (3, "D( 15, 3, 2, 14)"), #chi1
+#    (3, "D(  3, 2, 4, 5)"), #psi1
+#    (3, "D(  4, 6, 7, 8)"), #phi2
+#    (3, "D(  6, 7, 8, 9)"), #psi2
+#    (2, "D(  9, 8, 10, 19)") #omega2
+#]
 
 #Gly
 #GENI = [
@@ -123,9 +135,9 @@ def write_individual_file(directory, individual_id, content_lines):
 def run_gdv(gjf_file, log_file):
     """Esegue il comando 'gdv' sul file gjf e scrive l'output su log_file."""
     with open(gjf_file, 'r') as infile, open(log_file, 'w') as outfile:
-        result = subprocess.run(["gdv"], stdin=infile, stdout=outfile, stderr=subprocess.PIPE, universal_newlines=True)
+        result = subprocess.run(["g16"], stdin=infile, stdout=outfile, stderr=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:
-        print(f"Errore nell'esecuzione di gdv per {gjf_file}: {result.stderr}")
+        print(f"Errore nell'esecuzione di g16 per {gjf_file}: {result.stderr}")
     return result.returncode
 
 def parse_fitness(log_file):

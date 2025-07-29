@@ -1,5 +1,5 @@
-%Nprocshared=12
-%Mem=64GB
+%Nprocshared=4
+%Mem=16GB
 #P geom=readallgic Output=Pickett
 
  thiopronine                                                                    

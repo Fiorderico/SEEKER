@@ -1,0 +1,122 @@
+ Entering Gaussian System, Link 0=g16
+ Input=thiopronin_new_49/temp_processing/individuo_2646.gjf
+ Output=thiopronin_new_49/temp_processing/individuo_2646.log
+ Initial command:
+ /opt/g16.c01/g16/l1.exe "/home/f.lazzari/Gaussian_scratch/Gau-79017.inp" -scrdir="/home/f.lazzari/Gaussian_scratch/"
+ Entering Link 1 = /opt/g16.c01/g16/l1.exe PID=     79019.
+  
+ Copyright (c) 1988-2019, Gaussian, Inc.  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 16 program.  It is based on
+ the Gaussian(R) 09 system (copyright 2009, Gaussian, Inc.),
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 16, Revision C.01,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, 
+ G. A. Petersson, H. Nakatsuji, X. Li, M. Caricato, A. V. Marenich, 
+ J. Bloino, B. G. Janesko, R. Gomperts, B. Mennucci, H. P. Hratchian, 
+ J. V. Ortiz, A. F. Izmaylov, J. L. Sonnenberg, D. Williams-Young, 
+ F. Ding, F. Lipparini, F. Egidi, J. Goings, B. Peng, A. Petrone, 
+ T. Henderson, D. Ranasinghe, V. G. Zakrzewski, J. Gao, N. Rega, 
+ G. Zheng, W. Liang, M. Hada, M. Ehara, K. Toyota, R. Fukuda, 
+ J. Hasegawa, M. Ishida, T. Nakajima, Y. Honda, O. Kitao, H. Nakai, 
+ T. Vreven, K. Throssell, J. A. Montgomery, Jr., J. E. Peralta, 
+ F. Ogliaro, M. J. Bearpark, J. J. Heyd, E. N. Brothers, K. N. Kudin, 
+ V. N. Staroverov, T. A. Keith, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. P. Rendell, J. C. Burant, S. S. Iyengar, 
+ J. Tomasi, M. Cossi, J. M. Millam, M. Klene, C. Adamo, R. Cammi, 
+ J. W. Ochterski, R. L. Martin, K. Morokuma, O. Farkas, 
+ J. B. Foresman, and D. J. Fox, Gaussian, Inc., Wallingford CT, 2019.
+ 
+ ******************************************
+ Gaussian 16:  ES64L-G16RevC.01  3-Jul-2019
+                29-Jul-2025 
+ ******************************************
+ -------------------------------------
+ #p UFF GEOM=READALLGIC OUTPUT=PICKETT
+ -------------------------------------
+ 1/18=20,38=1,56=1,64=2,145=602,172=1/1;
+ 2/12=2,17=6,18=5,40=1/2;
+ 3/5=30,11=9,25=1,30=1,41=10200000,43=2/1;
+ 4/20=10,24=3/2;
+ 99/5=1,9=1,10=1024/99;
+ Leave Link    1 at Tue Jul 29 17:13:46 2025, MaxMem=           0 cpu:               0.0 elap:               0.0
+ (Enter /opt/g16.c01/g16/l101.exe)
+ ------------------
+ individuo_2646.xyz
+ ------------------
+ Symbolic Z-matrix:
+ Charge =  0 Multiplicity = 1
+ 6                    -3.05304  -0.59702  -0.93362 
+ 6                    -2.16342  -0.15165   0.30224 
+ 16                   -1.6218    1.7089    0.15526 
+ 6                    -0.91173  -1.04292   0.25091 
+ 8                    -0.98029  -2.33783   0.32836 
+ 7                     0.24973  -0.06298   0.1029 
+ 6                     1.46805  -0.93047   0.05294 
+ 6                     2.6679    0.0529   -0.09834 
+ 8                     3.90077  -0.4098   -0.17197 
+ 8                     2.06535   1.44505  -0.12713 
+ 1                    -2.74543  -0.31043   1.30821 
+ 1                    -3.37681  -1.70919  -0.84576 
+ 1                    -3.94592   0.03875  -0.897 
+ 1                    -2.47103  -0.43824  -1.93959 
+ 1                    -0.73978   1.90913   1.37743 
+ 1                     0.05248   0.70439  -0.70333 
+ 1                     1.56881  -1.54631   1.03484 
+ 1                     1.40418  -1.65188  -0.85757 
+ 1                     2.82599   2.12041  -0.22592 
+ 
+ Initializing the GIC definitions file.
+ Number of GICs ready for optimization =    5
+ CrdGIC: Number of GICs < 3N-6
+ Error termination via Lnk1e in /opt/g16.c01/g16/l101.exe at Tue Jul 29 17:13:46 2025.
+ Job cpu time:       0 days  0 hours  0 minutes  0.2 seconds.
+ Elapsed time:       0 days  0 hours  0 minutes  0.2 seconds.
+ File lengths (MBytes):  RWF=      6 Int=      0 D2E=      0 Chk=      1 Scr=      1
