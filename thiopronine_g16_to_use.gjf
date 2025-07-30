@@ -1,6 +1,6 @@
 %Nprocshared=4
 %Mem=16GB
-#P geom=readallgic Output=Pickett
+#P geom=(modredundant,readallgic) Output=Pickett
 
  thiopronine                                                                    
 

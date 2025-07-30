@@ -15,9 +15,11 @@ TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_butano"
 #GENERATIONS_DIR = "generations_gly"
 GENERATIONS_DIR = "generations_tiopronin_new"
+#---- oracle ----
 #NUM_GENERAZIONI = 50
 #POPOLAZIONE_INIZIALE = 80
 #POPOLAZIONE_TARGET = 50
+#---- morpheus ----
 NUM_GENERAZIONI = 50
 POPOLAZIONE_INIZIALE = 40
 POPOLAZIONE_TARGET = 20
@@ -119,7 +121,7 @@ def add_gene_lines(lines, geni, alleli):
     new_lines = lines.copy()
     # Appende le righe dei geni senza spazi vuoti intermedi
     for idx, ((period, definition), allele) in enumerate(zip(geni, alleli), start=1):
-        gene_line = f"GENE{idx}(frozen,Value={allele:.4f}) = {definition}\n"
+        gene_line = f"GENE{idx}(Value={allele:.4f}) = {definition}\n"
         new_lines.append(gene_line)
     # Aggiunge una riga vuota extra alla fine
     new_lines.append("\n")

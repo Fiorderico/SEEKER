@@ -2,6 +2,20 @@ Generazione 0
 Generazione 1
 Generazione 2
 Generazione 3
+Errore nell'esecuzione di g16 per tmp/individuo_8045.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014c4842ae0f7
+   rdx 0x000000000000000f, rsp 0x00007ffed1e32df8, rbp 0x00007ffed1e33370
+   rsi 0x000000000000000b, rdi 0x0000000000016ca2, r8  0x000014c08424c000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffed1e333b8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14c4845a0140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14c4842ae0f7]
+  /opt/g16.c01/g16/l202.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14c484298d7a]
+  /opt/g16.c01/g16/l202.exe() [0x406d29]
+Aborted
+
 Generazione 4
 Generazione 5
 Generazione 6
@@ -13,10 +27,38 @@ Generazione 11
 Generazione 12
 Generazione 13
 Generazione 14
+Errore nell'esecuzione di g16 per tmp/individuo_4306.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000150a1bb3d0f7
+   rdx 0x000000000000000f, rsp 0x00007ffdd06e5c18, rbp 0x00007ffdd06e6190
+   rsi 0x000000000000000b, rdi 0x000000000001a63a, r8  0x000015061badb000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffdd06e61d8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x150a1be2f140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x150a1bb3d0f7]
+  /opt/g16.c01/g16/l202.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x150a1bb27d7a]
+  /opt/g16.c01/g16/l202.exe() [0x406d29]
+Aborted
+
 Generazione 15
 Generazione 16
 Generazione 17
 Generazione 18
+Errore nell'esecuzione di g16 per tmp/individuo_2123.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014ad22c1d0f7
+   rdx 0x000000000000000f, rsp 0x00007ffe8ebe9328, rbp 0x00007ffe8ebe98a0
+   rsi 0x000000000000000b, rdi 0x000000000001bb97, r8  0x000014a922bbb000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffe8ebe98e8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14ad22f0f140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14ad22c1d0f7]
+  /opt/g16.c01/g16/l202.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14ad22c07d7a]
+  /opt/g16.c01/g16/l202.exe() [0x406d29]
+Aborted
+
 Generazione 19
 Generazione 20
 Generazione 21
