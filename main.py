@@ -20,9 +20,12 @@ GENERATIONS_DIR = "generations_tiopronin_new"
 #POPOLAZIONE_INIZIALE = 80
 #POPOLAZIONE_TARGET = 50
 #---- morpheus ----
-NUM_GENERAZIONI = 50
-POPOLAZIONE_INIZIALE = 40
-POPOLAZIONE_TARGET = 20
+#NUM_GENERAZIONI = 50
+#POPOLAZIONE_INIZIALE = 40
+#POPOLAZIONE_TARGET = 20
+NUM_GENERAZIONI = 3
+POPOLAZIONE_INIZIALE = 4
+POPOLAZIONE_TARGET = 2
 
 # Parametri per penalità similarità
 SIMILARITY_THRESHOLD = 0.9  # soglia di similarità oltre la quale si penalizza
@@ -424,7 +427,7 @@ def genetic_algorithm():
             })
         
         population = new_population
-        cleanup_tmp(TMP_DIR)
+        #cleanup_tmp(TMP_DIR)
 
     save_statistics("evolution.csv",generations_data)
     print("Algoritmo completato.")
