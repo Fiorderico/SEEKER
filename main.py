@@ -3,26 +3,20 @@ import csv
 import re
 import math
 import random
-import shutil
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # --- Parametri di configurazione ---
-#INPUT_FILE = "gly.gjf"  # file di riferimento fornito dall'utente
-INPUT_FILE = "thiopronine_g16_to_use.gjf"  # file di riferimento fornito dall'utente
-#INPUT_FILE = "butano.gjf"  # file di riferimento fornito dall'utente
+# Example input files are stored in the `examples/` directory.
+#INPUT_FILE = "examples/gly.gjf"
+#INPUT_FILE = "examples/butano.gjf"
+INPUT_FILE = "examples/thiopronine_g16_to_use.gjf"  # file di riferimento fornito dall'utente
+
 TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_butano"
 #GENERATIONS_DIR = "generations_gly"
 GENERATIONS_DIR = "generations_tiopronin_new"
-#---- oracle ----
-#NUM_GENERAZIONI = 50
-#POPOLAZIONE_INIZIALE = 80
-#POPOLAZIONE_TARGET = 50
-#---- morpheus ----
-#NUM_GENERAZIONI = 50
-#POPOLAZIONE_INIZIALE = 40
-#POPOLAZIONE_TARGET = 20
+
 NUM_GENERAZIONI = 3
 POPOLAZIONE_INIZIALE = 4
 POPOLAZIONE_TARGET = 2
@@ -41,35 +35,12 @@ NUM_OSCILLATIONS = 2  # n: numero di ondate da avere durante P generazioni
 
 #Tiopronin
 GENI = [
-    (3, "D( 15, 3, 2, 11)"), #chi1
-    (3, "D(  3, 2, 4, 5)"), #psi1
-    (3, "D(  4, 6, 7, 8)"), #phi2
-    (3, "D(  6, 7, 8, 9)"), #psi2
-    (2, "D(  9, 8, 10, 19)") #omega2
+    (3, "D( 15, 3, 2, 11)"),  # chi1
+    (3, "D(  3, 2, 4, 5)"),  # psi1
+    (3, "D(  4, 6, 7, 8)"),  # phi2
+    (3, "D(  6, 7, 8, 9)"),  # psi2
+    (2, "D(  9, 8, 10, 19)")  # omega2
 ]
-
-#Tiopronin old
-#GENI = [
-#    (3, "D( 15, 3, 2, 14)"), #chi1
-#    (3, "D(  3, 2, 4, 5)"), #psi1
-#    (3, "D(  4, 6, 7, 8)"), #phi2
-#    (3, "D(  6, 7, 8, 9)"), #psi2
-#    (2, "D(  9, 8, 10, 19)") #omega2
-#]
-
-#Gly
-#GENI = [
-#    (3, "D(  6,  1,  2,  3)"),
-#    (3, "D(  1,  2,  3,  4)"),
-#    (2, "D(  4,  3,  5, 10)")
-#]
-
-#Butano
-#GENI = [
-#    (3, "D(5,1,2,3)"),
-#    (3, "D(1,2,3,4)"),
-#    (3, "D(2,3,4,13)")
-#]
 
 # --- Funzioni di supporto ---
 
@@ -89,10 +60,11 @@ def remove_frozen_substring(lines):
         new_lines.append(new_line)
     return new_lines
 
-def save_statistics(file_name,generations_data):
+def save_statistics(file_name, generations_data):
+    """Scrive le statistiche delle generazioni in un file CSV."""
     fields = ["Generation", "Avg. Fitness", "MAX Fitness", "MIN Fitness", "Mutation rate", "Crossover rate"]
-    with open(file_name,"w",newline="") as csvfile:
-        writer = csv.DictWriter(csvfile,fieldnames=fields)
+    with open(file_name, "w", newline="") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fields)
         writer.writeheader()
         for row in generations_data:
             writer.writerow(row)
@@ -157,45 +129,36 @@ def parse_fitness(log_file):
         print(f"Fitness non trovata in {log_file}")
     return fitness
 
-def parse_xyz_from_log(log_file, fitness):
+def parse_xyz_from_log(log_file):
+    """Estrae il numero di atomi e le coordinate ottimizzate dal log di g16."""
     with open(log_file, 'r') as f:
         content = f.read()
-    # Verifica la presenza della sezione
     if "Principal axis orientation:" not in content:
         print(f"Sezione 'Principal axis orientation:' non trovata in {log_file}")
         return None, []
 
-    # Divide il contenuto in base a "Principal axis orientation:"
     parts = content.split("Principal axis orientation:")
     after = parts[1]
-
-    # Divide la parte successiva usando la linea di separazione
     sections = after.split(" ---------------------------------------------------------------------")
     if len(sections) < 3:
         print(f"Impossibile individuare la sezione delle coordinate in {log_file}")
         return None, []
 
-    # Il penultimo elemento contiene le coordinate
     coord_block = sections[-2]
-
-    # Divide in righe, eliminando quelle vuote
     lines = [line.strip() for line in coord_block.strip().splitlines() if line.strip()]
     if not lines:
         print(f"Nessuna coordinata trovata in {log_file}")
         return None, []
 
-    # Il numero di atomi viene preso dal primo token dell'ultima riga
     try:
         num_atoms = int(lines[-1].split()[0])
-    except Exception as e:
+    except Exception:
         num_atoms = len(lines)
 
     xyz_lines = []
     for line in lines:
         tokens = line.split()
-        # Assicurati che la riga contenga almeno 5 token
         if len(tokens) >= 5:
-            # Il primo token è l'indice, il secondo il numero atomico, i successivi le coordinate
             atomic_num = tokens[1]
             x, y, z = tokens[2:5]
             xyz_lines.append(f"{atomic_num} {x} {y} {z}")
@@ -242,17 +205,14 @@ def initialize_population(pop_size, geni):
             "id": i,
             "alleli": alleli,
             "fitness": None,
-            "gjf_file": None,
             "xyz_file": None
         })
     return population
 
-def evaluate_individual(ind, reference_lines, geni, tmp_dir):
-    # Rimuovi la sottostringa "frozen" dalle righe
+def evaluate_individual(ind, reference_lines, geni, tmp_dir, gen_dir):
+    """Prepara l'input di un individuo, esegue g16 e salva il corrispondente file XYZ."""
     base_lines = remove_frozen_substring(reference_lines)
-    # Aggiungi le righe dei geni con i valori attuali degli alleli
     individual_lines = add_gene_lines(base_lines, geni, ind["alleli"])
-    # Scrivi il file .gjf
     gjf_file = write_individual_file(tmp_dir, ind["id"], individual_lines)
     log_file = os.path.join(tmp_dir, f"individuo_{ind['id']}.log")
 
@@ -264,11 +224,8 @@ def evaluate_individual(ind, reference_lines, geni, tmp_dir):
     fitness = parse_fitness(log_file)
     ind["fitness"] = fitness if fitness is not None else float("inf")
 
-    # Ottieni il numero di atomi e le righe xyz
-    num_atoms, xyz_lines = parse_xyz_from_log(log_file, ind["fitness"])
+    num_atoms, xyz_lines = parse_xyz_from_log(log_file)
     if xyz_lines:
-        gen_dir = os.path.join(GENERATIONS_DIR, f"population_gen")
-        os.makedirs(gen_dir, exist_ok=True)
         xyz_file = write_xyz_file(gen_dir, ind["id"], ind["fitness"], num_atoms, xyz_lines)
         ind["xyz_file"] = xyz_file
 
@@ -283,33 +240,6 @@ def crossover(parent1, parent2):
     for a1, a2 in zip(parent1["alleli"], parent2["alleli"]):
         child_alleles.append(a1 if random.random() < 0.5 else a2)
     return child_alleles
-
-#def crossover(parent1, parent2, eta=1):
-#    """Crossover SBX: per ogni allele, genera due possibili valori tramite SBX e ne seleziona uno casualmente."""
-#    child_alleles = []
-#    for a1, a2 in zip(parent1["alleli"], parent2["alleli"]):
-#        if abs(a1 - a2) < 1e-14:
-#            # Se i valori sono quasi identici, copia il valore
-#            child_alleles.append(a1)
-#        else:
-#            # Assicura che x1 sia il minore e x2 il maggiore
-#            if a1 < a2:
-#                x1, x2 = a1, a2
-#            else:
-#                x1, x2 = a2, a1
-#            u = random.random()
-#            if u <= 0.5:
-#                beta = (2*u)**(1.0/(eta+1))
-#            else:
-#                beta = (1/(2*(1-u)))**(1.0/(eta+1))
-#            c1 = 0.5 * ((x1+x2) - beta*(x2-x1))
-#            c2 = 0.5 * ((x1+x2) + beta*(x2-x1))
-#            # Seleziona uno dei due figli casualmente
-#            child = c1 if random.random() < 0.5 else c2
-#            # Limita l'allele tra 0 e 360 gradi
-#            child = max(0, min(child, 360))
-#            child_alleles.append(child)
-#    return child_alleles
 
 def mutate(alleles, mutation_rate, geni):
     """Applica mutazioni casuali sugli alleli."""
@@ -328,6 +258,7 @@ def tournament_selection(population, tournament_size=3):
 
 # --- Main Genetic Algorithm ---
 def genetic_algorithm():
+    """Esegue l'algoritmo genetico completo."""
     os.makedirs(TMP_DIR, exist_ok=True)
     os.makedirs(GENERATIONS_DIR, exist_ok=True)
     
@@ -344,32 +275,27 @@ def genetic_algorithm():
         print(f"Generazione {gen}")
         
         # Calcola i tassi correnti secondo la formula oscillante
-        current_mutation_rate = BASE_RATE_MUTATION + DELTA_RATE_MUTATION * math.sin((math.pi * NUM_OSCILLATIONS / (NUM_GENERAZIONI-1)) * gen)
-        current_crossover_rate = BASE_RATE_CROSSOVER - DELTA_RATE_CROSSOVER * math.sin((math.pi * NUM_OSCILLATIONS / (NUM_GENERAZIONI-1)) * gen)
-        
-        #if gen <= int(NUM_GENERAZIONI/2):
-        #    current_mutation_rate = 0.7
-        #    current_crossover_rate = 0.5
-        #else:
-        #    current_mutation_rate = 0.5
-        #    current_crossover_rate = 0.7
+        current_mutation_rate = BASE_RATE_MUTATION + DELTA_RATE_MUTATION * math.sin((math.pi * NUM_OSCILLATIONS / (NUM_GENERAZIONI - 1)) * gen)
+        current_crossover_rate = BASE_RATE_CROSSOVER - DELTA_RATE_CROSSOVER * math.sin((math.pi * NUM_OSCILLATIONS / (NUM_GENERAZIONI - 1)) * gen)
 
-        # Esecuzione in parallelo per ogni individuo della generazione
-        with ThreadPoolExecutor(max_workers=len(population)) as executor:
-            futures = [executor.submit(evaluate_individual, ind, reference_lines, GENI, TMP_DIR) for ind in population]
+        gen_dir = os.path.join(GENERATIONS_DIR, f"population_{gen}")
+        os.makedirs(gen_dir, exist_ok=True)
+
+        max_workers = min(len(population), os.cpu_count() or 1)
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = [
+                executor.submit(evaluate_individual, ind, reference_lines, GENI, TMP_DIR, gen_dir)
+                for ind in population
+            ]
             for future in as_completed(futures):
-                future.result()  # Aspetta che ogni conto sia terminato
+                future.result()
         
-        # --- Nuovo blocco: Penalizzazione per similarità ---
-        #penalty_unit = 1e-2 / len(population)
-        #for i, ind in enumerate(population):
-        #    similar_count = 0
-        #    for j, other in enumerate(population):
-        #        if i != j:
-        #            if similarity(ind, other, GAMMA) > SIMILARITY_THRESHOLD:
-        #                similar_count += 1
-        #    ind["fitness"] += similar_count * penalty_unit
-        # ---------------------------------------------------
+        # Penalizzazione per similarità (abilitare se necessario)
+        # penalty_unit = 1e-2 / len(population)
+        # for i, ind in enumerate(population):
+        #     for j, other in enumerate(population):
+        #         if i != j and similarity(ind, other, GAMMA) > SIMILARITY_THRESHOLD:
+        #             ind["fitness"] += penalty_unit
         
         # Calcola e logga le statistiche della generazione
         fitness_list = [ind["fitness"] for ind in population if ind["fitness"] is not None]
@@ -403,12 +329,6 @@ def genetic_algorithm():
 
         population = selection(population, POPOLAZIONE_TARGET)
         
-        gen_dir = os.path.join(GENERATIONS_DIR, f"population_{gen}")
-        os.makedirs(gen_dir, exist_ok=True)
-        for ind in population:
-            if ind.get("xyz_file"):
-                shutil.copy(ind["xyz_file"], gen_dir)
-        
         new_population = []
         while len(new_population) < POPOLAZIONE_INIZIALE:
             parent1 = tournament_selection(population)
@@ -422,7 +342,6 @@ def genetic_algorithm():
                 "id": random.randint(1000, 9999),
                 "alleli": child_alleles,
                 "fitness": None,
-                "gjf_file": None,
                 "xyz_file": None
             })
         

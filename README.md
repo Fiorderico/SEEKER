@@ -47,16 +47,44 @@ S(A,B) = \exp\bigl(-\gamma\|A-B\|^{2}\bigr)
 
 and a penalty is applied if `S(A,B)` exceeds the threshold `SIMILARITY_THRESHOLD`.
 
+### Implementation Workflow
+
+1. **Initialization** – `initialize_population` samples every allele using the importance distribution above and stores individuals as dictionaries containing identifiers, allele vectors and placeholders for fitness and file paths.
+2. **Evaluation** – for each individual `evaluate_individual`
+   1. removes any `frozen` constraints from the reference input,
+   2. inserts the current allele values as `GENE` lines,
+   3. runs `g16` (invoked as `gdv` in the scripts) and parses the last `HF=` field as fitness,
+   4. extracts the optimized Cartesian coordinates from the log and writes a corresponding `.xyz` file.
+   The evaluations of a generation are executed in parallel through `ThreadPoolExecutor`,
+   using at most the available CPU cores.
+3. **Selection** – `selection` keeps the best `POPOLAZIONE_TARGET` individuals according to the HF energy.
+4. **Reproduction** – new individuals are produced until the population size reaches `POPOLAZIONE_INIZIALE` using tournament selection, uniform crossover and the mutation operator described above.
+5. **Logging** – per–generation statistics (mean/min/max fitness and current rates) are written to `generation_log.txt` and to `evolution.csv`.
+
+### Post‑processing and Analysis
+
+The `clustering/` folder contains utilities for analysing the resulting populations:
+
+* `cluster_population.py` converts the `.xyz` geometries into feature vectors consisting of rotational constants and dihedral angles.  After normalising the features,
+
+  \[
+  r' = \frac{r - r_{\min}}{r_{\max} - r_{\min}}, \qquad d' = \frac{d + 180}{360},
+  \]
+
+  a principal component analysis (PCA) reduces the dimensionality and an agglomerative clustering (average linkage with a distance threshold) groups similar structures.  The script also copies one representative `.xyz` for each cluster.
+* `exploration_gif.py` repeats the same feature extraction for every `population_i` folder and creates an animated GIF showing the evolution of the feature space.
+* `opt_population.py` re‑optimises a set of `.xyz` structures at a higher theory level and extracts the optimised coordinates.
+
 ## Project Structure
 
 ```
 .
-├── input_reference.gjf         # Reference Gaussian input file (modifiable)
-├── main.py                     # Main script with genetic algorithm
-├── <GENERATIONS_DIR>/          # Output directory set by `GENERATIONS_DIR`
-│   └── population_*/           # Contains `.xyz` files of evaluated structures
-├── tmp/                        # Temporary working directory
-└── README.md                   # This file
+├── examples/                  # Sample Gaussian input files
+├── main.py                    # Main script with genetic algorithm
+├── <GENERATIONS_DIR>/         # Output directory set by `GENERATIONS_DIR`
+│   └── population_*/          # Contains `.xyz` files of evaluated structures
+├── tmp/                       # Temporary working directory
+└── README.md                  # This file
 ```
 
 ## Configuration
@@ -84,7 +112,7 @@ GENI = [
 ## How to Run
 
 1. Make sure the binary `gdv` is available in your `PATH`. This should accept `.gjf` from stdin and print output to stdout.
-2. Place your reference input file (e.g., `input_reference.gjf`) in the root directory.
+2. Place your reference input file in the `examples/` directory and update `INPUT_FILE` in `main.py`.
 3. Run the script:
 
 ```
