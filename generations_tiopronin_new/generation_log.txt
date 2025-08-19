@@ -1,14 +1,482 @@
 Log delle generazioni:
 
 Generazione 0:
-  Fitness media: -860.630110675
-  Fitness minima: -860.6409786
-  Fitness massima: -860.62518
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
   Mutation rate: 0.6
   Crossover rate: 0.6
   Fitness degli individui:
-    Individuo 0 -> Fitness: -860.62518
-    Individuo 1 -> Fitness: -860.6278365
-    Individuo 2 -> Fitness: -860.6264476
-    Individuo 3 -> Fitness: -860.6409786
+    Individuo 0 -> Fitness: -860.6369525
+    Individuo 1 -> Fitness: -860.6369525
+    Individuo 2 -> Fitness: -860.6369525
+    Individuo 3 -> Fitness: -860.6369525
+    Individuo 4 -> Fitness: -860.6369525
+    Individuo 5 -> Fitness: -860.6369525
+    Individuo 6 -> Fitness: -860.6369525
+    Individuo 7 -> Fitness: -860.6369525
+    Individuo 8 -> Fitness: -860.6369525
+    Individuo 9 -> Fitness: -860.6369525
+    Individuo 10 -> Fitness: -860.6369525
+    Individuo 11 -> Fitness: -860.6369525
+    Individuo 12 -> Fitness: -860.6369525
+    Individuo 13 -> Fitness: -860.6369525
+    Individuo 14 -> Fitness: -860.6369525
+    Individuo 15 -> Fitness: -860.6369525
+
+Generazione 1:
+  Fitness media: inf
+  Fitness minima: -860.6369525
+  Fitness massima: inf
+  Mutation rate: 0.6324699469204683
+  Crossover rate: 0.5675300530795316
+  Fitness degli individui:
+    Individuo 1586 -> Fitness: -860.6369525
+    Individuo 9132 -> Fitness: -860.6369525
+    Individuo 8869 -> Fitness: -860.6369525
+    Individuo 1059 -> Fitness: -860.6369525
+    Individuo 8363 -> Fitness: -860.6369525
+    Individuo 5942 -> Fitness: -860.6369525
+    Individuo 4523 -> Fitness: -860.6369525
+    Individuo 9684 -> Fitness: -860.6369525
+    Individuo 4924 -> Fitness: -860.6369525
+    Individuo 9614 -> Fitness: inf
+    Individuo 8694 -> Fitness: -860.6369525
+    Individuo 3753 -> Fitness: -860.6369525
+    Individuo 9043 -> Fitness: -860.6369525
+    Individuo 9614 -> Fitness: -860.6369525
+    Individuo 3325 -> Fitness: -860.6369525
+    Individuo 1249 -> Fitness: -860.6369525
+
+Generazione 2:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6614212712689668
+  Crossover rate: 0.5385787287310332
+  Fitness degli individui:
+    Individuo 9333 -> Fitness: -860.6369525
+    Individuo 3562 -> Fitness: -860.6369525
+    Individuo 7981 -> Fitness: -860.6369525
+    Individuo 2923 -> Fitness: -860.6369525
+    Individuo 8833 -> Fitness: -860.6369525
+    Individuo 4093 -> Fitness: -860.6369525
+    Individuo 1319 -> Fitness: -860.6369525
+    Individuo 3887 -> Fitness: -860.6369525
+    Individuo 3952 -> Fitness: -860.6369525
+    Individuo 1490 -> Fitness: -860.6369525
+    Individuo 1852 -> Fitness: -860.6369525
+    Individuo 2195 -> Fitness: -860.6369525
+    Individuo 3406 -> Fitness: -860.6369525
+    Individuo 4320 -> Fitness: -860.6369525
+    Individuo 1709 -> Fitness: -860.6369525
+    Individuo 2053 -> Fitness: -860.6369525
+
+Generazione 3:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6837166478262529
+  Crossover rate: 0.5162833521737471
+  Fitness degli individui:
+    Individuo 6595 -> Fitness: -860.6369525
+    Individuo 4055 -> Fitness: -860.6369525
+    Individuo 7765 -> Fitness: -860.6369525
+    Individuo 5637 -> Fitness: -860.6369525
+    Individuo 9120 -> Fitness: -860.6369525
+    Individuo 4265 -> Fitness: -860.6369525
+    Individuo 6372 -> Fitness: -860.6369525
+    Individuo 8620 -> Fitness: -860.6369525
+    Individuo 3074 -> Fitness: -860.6369525
+    Individuo 2858 -> Fitness: -860.6369525
+    Individuo 5030 -> Fitness: -860.6369525
+    Individuo 7313 -> Fitness: -860.6369525
+    Individuo 5227 -> Fitness: -860.6369525
+    Individuo 8491 -> Fitness: -860.6369525
+    Individuo 2952 -> Fitness: -860.6369525
+    Individuo 7128 -> Fitness: -860.6369525
+
+Generazione 4:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6969400265939331
+  Crossover rate: 0.5030599734060669
+  Fitness degli individui:
+    Individuo 9795 -> Fitness: -860.6369525
+    Individuo 8622 -> Fitness: -860.6369525
+    Individuo 5360 -> Fitness: -860.6369525
+    Individuo 8274 -> Fitness: -860.6369525
+    Individuo 9418 -> Fitness: -860.6369525
+    Individuo 9522 -> Fitness: -860.6369525
+    Individuo 7431 -> Fitness: -860.6369525
+    Individuo 9722 -> Fitness: -860.6369525
+    Individuo 3418 -> Fitness: -860.6369525
+    Individuo 2972 -> Fitness: -860.6369525
+    Individuo 5441 -> Fitness: -860.6369525
+    Individuo 5020 -> Fitness: -860.6369525
+    Individuo 3720 -> Fitness: -860.6369525
+    Individuo 1647 -> Fitness: -860.6369525
+    Individuo 2880 -> Fitness: -860.6369525
+    Individuo 3142 -> Fitness: -860.6369525
+
+Generazione 5:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.699658449300667
+  Crossover rate: 0.500341550699333
+  Fitness degli individui:
+    Individuo 2819 -> Fitness: -860.6369525
+    Individuo 5921 -> Fitness: -860.6369525
+    Individuo 1044 -> Fitness: -860.6369525
+    Individuo 6007 -> Fitness: -860.6369525
+    Individuo 9169 -> Fitness: -860.6369525
+    Individuo 8023 -> Fitness: -860.6369525
+    Individuo 9157 -> Fitness: -860.6369525
+    Individuo 9270 -> Fitness: -860.6369525
+    Individuo 2935 -> Fitness: -860.6369525
+    Individuo 9490 -> Fitness: -860.6369525
+    Individuo 9543 -> Fitness: -860.6369525
+    Individuo 5190 -> Fitness: -860.6369525
+    Individuo 1797 -> Fitness: -860.6369525
+    Individuo 4730 -> Fitness: -860.6369525
+    Individuo 3745 -> Fitness: -860.6369525
+    Individuo 8445 -> Fitness: -860.6369525
+
+Generazione 6:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6915773326655057
+  Crossover rate: 0.5084226673344943
+  Fitness degli individui:
+    Individuo 1561 -> Fitness: -860.6369525
+    Individuo 3012 -> Fitness: -860.6369525
+    Individuo 8749 -> Fitness: -860.6369525
+    Individuo 8806 -> Fitness: -860.6369525
+    Individuo 8899 -> Fitness: -860.6369525
+    Individuo 2527 -> Fitness: -860.6369525
+    Individuo 7406 -> Fitness: -860.6369525
+    Individuo 1786 -> Fitness: -860.6369525
+    Individuo 1654 -> Fitness: -860.6369525
+    Individuo 8609 -> Fitness: -860.6369525
+    Individuo 4459 -> Fitness: -860.6369525
+    Individuo 5646 -> Fitness: -860.6369525
+    Individuo 4500 -> Fitness: -860.6369525
+    Individuo 9830 -> Fitness: -860.6369525
+    Individuo 7900 -> Fitness: -860.6369525
+    Individuo 2870 -> Fitness: -860.6369525
+
+Generazione 7:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6735723910673131
+  Crossover rate: 0.5264276089326868
+  Fitness degli individui:
+    Individuo 2973 -> Fitness: -860.6369525
+    Individuo 9735 -> Fitness: -860.6369525
+    Individuo 9597 -> Fitness: -860.6369525
+    Individuo 9223 -> Fitness: -860.6369525
+    Individuo 3705 -> Fitness: -860.6369525
+    Individuo 7923 -> Fitness: -860.6369525
+    Individuo 8375 -> Fitness: -860.6369525
+    Individuo 8287 -> Fitness: -860.6369525
+    Individuo 7873 -> Fitness: -860.6369525
+    Individuo 4353 -> Fitness: -860.6369525
+    Individuo 7545 -> Fitness: -860.6369525
+    Individuo 1691 -> Fitness: -860.6369525
+    Individuo 2730 -> Fitness: -860.6369525
+    Individuo 9744 -> Fitness: -860.6369525
+    Individuo 4262 -> Fitness: -860.6369525
+    Individuo 4884 -> Fitness: -860.6369525
+
+Generazione 8:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6475947393037074
+  Crossover rate: 0.5524052606962926
+  Fitness degli individui:
+    Individuo 1038 -> Fitness: -860.6369525
+    Individuo 7718 -> Fitness: -860.6369525
+    Individuo 8317 -> Fitness: -860.6369525
+    Individuo 8169 -> Fitness: -860.6369525
+    Individuo 5729 -> Fitness: -860.6369525
+    Individuo 9278 -> Fitness: -860.6369525
+    Individuo 3669 -> Fitness: -860.6369525
+    Individuo 6757 -> Fitness: -860.6369525
+    Individuo 5039 -> Fitness: -860.6369525
+    Individuo 6533 -> Fitness: -860.6369525
+    Individuo 6618 -> Fitness: -860.6369525
+    Individuo 7155 -> Fitness: -860.6369525
+    Individuo 9695 -> Fitness: -860.6369525
+    Individuo 2251 -> Fitness: -860.6369525
+    Individuo 5661 -> Fitness: -860.6369525
+    Individuo 5717 -> Fitness: -860.6369525
+
+Generazione 9:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6164594590280734
+  Crossover rate: 0.5835405409719265
+  Fitness degli individui:
+    Individuo 6534 -> Fitness: -860.6369525
+    Individuo 3260 -> Fitness: -860.6369525
+    Individuo 5966 -> Fitness: -860.6369525
+    Individuo 4786 -> Fitness: -860.6369525
+    Individuo 5677 -> Fitness: -860.6369525
+    Individuo 1839 -> Fitness: -860.6369525
+    Individuo 5497 -> Fitness: -860.6369525
+    Individuo 8982 -> Fitness: -860.6369525
+    Individuo 3790 -> Fitness: -860.6369525
+    Individuo 3329 -> Fitness: -860.6369525
+    Individuo 7229 -> Fitness: -860.6369525
+    Individuo 3183 -> Fitness: -860.6369525
+    Individuo 5397 -> Fitness: -860.6369525
+    Individuo 8486 -> Fitness: -860.6369525
+    Individuo 7212 -> Fitness: -860.6369525
+    Individuo 3485 -> Fitness: -860.6369525
+
+Generazione 10:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5835405409719266
+  Crossover rate: 0.6164594590280733
+  Fitness degli individui:
+    Individuo 2824 -> Fitness: -860.6369525
+    Individuo 9418 -> Fitness: -860.6369525
+    Individuo 7530 -> Fitness: -860.6369525
+    Individuo 7488 -> Fitness: -860.6369525
+    Individuo 5699 -> Fitness: -860.6369525
+    Individuo 9872 -> Fitness: -860.6369525
+    Individuo 9229 -> Fitness: -860.6369525
+    Individuo 9272 -> Fitness: -860.6369525
+    Individuo 8494 -> Fitness: -860.6369525
+    Individuo 1687 -> Fitness: -860.6369525
+    Individuo 9868 -> Fitness: -860.6369525
+    Individuo 1992 -> Fitness: -860.6369525
+    Individuo 2304 -> Fitness: -860.6369525
+    Individuo 5041 -> Fitness: -860.6369525
+    Individuo 2106 -> Fitness: -860.6369525
+    Individuo 4733 -> Fitness: -860.6369525
+
+Generazione 11:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5524052606962926
+  Crossover rate: 0.6475947393037074
+  Fitness degli individui:
+    Individuo 5406 -> Fitness: -860.6369525
+    Individuo 3663 -> Fitness: -860.6369525
+    Individuo 3478 -> Fitness: -860.6369525
+    Individuo 5384 -> Fitness: -860.6369525
+    Individuo 4652 -> Fitness: -860.6369525
+    Individuo 4385 -> Fitness: -860.6369525
+    Individuo 7034 -> Fitness: -860.6369525
+    Individuo 1666 -> Fitness: -860.6369525
+    Individuo 2013 -> Fitness: -860.6369525
+    Individuo 4608 -> Fitness: -860.6369525
+    Individuo 8856 -> Fitness: -860.6369525
+    Individuo 7273 -> Fitness: -860.6369525
+    Individuo 6549 -> Fitness: -860.6369525
+    Individuo 9131 -> Fitness: -860.6369525
+    Individuo 4214 -> Fitness: -860.6369525
+    Individuo 9462 -> Fitness: -860.6369525
+
+Generazione 12:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5264276089326868
+  Crossover rate: 0.6735723910673131
+  Fitness degli individui:
+    Individuo 2651 -> Fitness: -860.6369525
+    Individuo 2248 -> Fitness: -860.6369525
+    Individuo 2257 -> Fitness: -860.6369525
+    Individuo 7664 -> Fitness: -860.6369525
+    Individuo 3841 -> Fitness: -860.6369525
+    Individuo 1066 -> Fitness: -860.6369525
+    Individuo 8063 -> Fitness: -860.6369525
+    Individuo 7606 -> Fitness: -860.6369525
+    Individuo 6953 -> Fitness: -860.6369525
+    Individuo 1935 -> Fitness: -860.6369525
+    Individuo 5872 -> Fitness: -860.6369525
+    Individuo 1639 -> Fitness: -860.6369525
+    Individuo 3604 -> Fitness: -860.6369525
+    Individuo 1073 -> Fitness: -860.6369525
+    Individuo 8584 -> Fitness: -860.6369525
+    Individuo 9274 -> Fitness: -860.6369525
+
+Generazione 13:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5084226673344943
+  Crossover rate: 0.6915773326655057
+  Fitness degli individui:
+    Individuo 4027 -> Fitness: -860.6369525
+    Individuo 6452 -> Fitness: -860.6369525
+    Individuo 5377 -> Fitness: -860.6369525
+    Individuo 4162 -> Fitness: -860.6369525
+    Individuo 3877 -> Fitness: -860.6369525
+    Individuo 3677 -> Fitness: -860.6369525
+    Individuo 5718 -> Fitness: -860.6369525
+    Individuo 6479 -> Fitness: -860.6369525
+    Individuo 1257 -> Fitness: -860.6369525
+    Individuo 2457 -> Fitness: -860.6369525
+    Individuo 9565 -> Fitness: -860.6369525
+    Individuo 8369 -> Fitness: -860.6369525
+    Individuo 2565 -> Fitness: -860.6369525
+    Individuo 6289 -> Fitness: -860.6369525
+    Individuo 2175 -> Fitness: -860.6369525
+    Individuo 4798 -> Fitness: -860.6369525
+
+Generazione 14:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.500341550699333
+  Crossover rate: 0.699658449300667
+  Fitness degli individui:
+    Individuo 9442 -> Fitness: -860.6369525
+    Individuo 1606 -> Fitness: -860.6369525
+    Individuo 2759 -> Fitness: -860.6369525
+    Individuo 2649 -> Fitness: -860.6369525
+    Individuo 3741 -> Fitness: -860.6369525
+    Individuo 5823 -> Fitness: -860.6369525
+    Individuo 2739 -> Fitness: -860.6369525
+    Individuo 4638 -> Fitness: -860.6369525
+    Individuo 4762 -> Fitness: -860.6369525
+    Individuo 5325 -> Fitness: -860.6369525
+    Individuo 5112 -> Fitness: -860.6369525
+    Individuo 1684 -> Fitness: -860.6369525
+    Individuo 4085 -> Fitness: -860.6369525
+    Individuo 9625 -> Fitness: -860.6369525
+    Individuo 4585 -> Fitness: -860.6369525
+    Individuo 9926 -> Fitness: -860.6369525
+
+Generazione 15:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5030599734060669
+  Crossover rate: 0.6969400265939331
+  Fitness degli individui:
+    Individuo 4758 -> Fitness: -860.6369525
+    Individuo 4096 -> Fitness: -860.6369525
+    Individuo 8830 -> Fitness: -860.6369525
+    Individuo 6647 -> Fitness: -860.6369525
+    Individuo 9844 -> Fitness: -860.6369525
+    Individuo 4458 -> Fitness: -860.6369525
+    Individuo 6463 -> Fitness: -860.6369525
+    Individuo 7500 -> Fitness: -860.6369525
+    Individuo 9615 -> Fitness: -860.6369525
+    Individuo 3387 -> Fitness: -860.6369525
+    Individuo 5182 -> Fitness: -860.6369525
+    Individuo 4129 -> Fitness: -860.6369525
+    Individuo 7683 -> Fitness: -860.6369525
+    Individuo 6748 -> Fitness: -860.6369525
+    Individuo 8652 -> Fitness: -860.6369525
+    Individuo 3707 -> Fitness: -860.6369525
+
+Generazione 16:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5162833521737471
+  Crossover rate: 0.6837166478262529
+  Fitness degli individui:
+    Individuo 7717 -> Fitness: -860.6369525
+    Individuo 6813 -> Fitness: -860.6369525
+    Individuo 7283 -> Fitness: -860.6369525
+    Individuo 9232 -> Fitness: -860.6369525
+    Individuo 8550 -> Fitness: -860.6369525
+    Individuo 8682 -> Fitness: -860.6369525
+    Individuo 3382 -> Fitness: -860.6369525
+    Individuo 8385 -> Fitness: -860.6369525
+    Individuo 8017 -> Fitness: -860.6369525
+    Individuo 5697 -> Fitness: -860.6369525
+    Individuo 8280 -> Fitness: -860.6369525
+    Individuo 4931 -> Fitness: -860.6369525
+    Individuo 1265 -> Fitness: -860.6369525
+    Individuo 9905 -> Fitness: -860.6369525
+    Individuo 4607 -> Fitness: -860.6369525
+    Individuo 2947 -> Fitness: -860.6369525
+
+Generazione 17:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5385787287310332
+  Crossover rate: 0.6614212712689668
+  Fitness degli individui:
+    Individuo 5318 -> Fitness: -860.6369525
+    Individuo 3575 -> Fitness: -860.6369525
+    Individuo 2288 -> Fitness: -860.6369525
+    Individuo 7778 -> Fitness: -860.6369525
+    Individuo 9129 -> Fitness: -860.6369525
+    Individuo 1269 -> Fitness: -860.6369525
+    Individuo 5029 -> Fitness: -860.6369525
+    Individuo 2097 -> Fitness: -860.6369525
+    Individuo 2386 -> Fitness: -860.6369525
+    Individuo 9130 -> Fitness: -860.6369525
+    Individuo 6332 -> Fitness: -860.6369525
+    Individuo 1461 -> Fitness: -860.6369525
+    Individuo 1993 -> Fitness: -860.6369525
+    Individuo 3984 -> Fitness: -860.6369525
+    Individuo 5527 -> Fitness: -860.6369525
+    Individuo 6697 -> Fitness: -860.6369525
+
+Generazione 18:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.5675300530795316
+  Crossover rate: 0.6324699469204683
+  Fitness degli individui:
+    Individuo 3808 -> Fitness: -860.6369525
+    Individuo 9527 -> Fitness: -860.6369525
+    Individuo 6722 -> Fitness: -860.6369525
+    Individuo 2954 -> Fitness: -860.6369525
+    Individuo 6289 -> Fitness: -860.6369525
+    Individuo 6691 -> Fitness: -860.6369525
+    Individuo 4724 -> Fitness: -860.6369525
+    Individuo 9025 -> Fitness: -860.6369525
+    Individuo 4930 -> Fitness: -860.6369525
+    Individuo 3031 -> Fitness: -860.6369525
+    Individuo 5230 -> Fitness: -860.6369525
+    Individuo 1216 -> Fitness: -860.6369525
+    Individuo 7119 -> Fitness: -860.6369525
+    Individuo 2261 -> Fitness: -860.6369525
+    Individuo 2866 -> Fitness: -860.6369525
+    Individuo 2694 -> Fitness: -860.6369525
+
+Generazione 19:
+  Fitness media: -860.6369525000002
+  Fitness minima: -860.6369525
+  Fitness massima: -860.6369525
+  Mutation rate: 0.6
+  Crossover rate: 0.6
+  Fitness degli individui:
+    Individuo 6746 -> Fitness: -860.6369525
+    Individuo 7063 -> Fitness: -860.6369525
+    Individuo 3386 -> Fitness: -860.6369525
+    Individuo 6035 -> Fitness: -860.6369525
+    Individuo 6883 -> Fitness: -860.6369525
+    Individuo 5317 -> Fitness: -860.6369525
+    Individuo 8309 -> Fitness: -860.6369525
+    Individuo 6609 -> Fitness: -860.6369525
+    Individuo 6154 -> Fitness: -860.6369525
+    Individuo 9916 -> Fitness: -860.6369525
+    Individuo 1914 -> Fitness: -860.6369525
+    Individuo 8534 -> Fitness: -860.6369525
+    Individuo 1641 -> Fitness: -860.6369525
+    Individuo 1709 -> Fitness: -860.6369525
+    Individuo 6506 -> Fitness: -860.6369525
+    Individuo 5986 -> Fitness: -860.6369525
 

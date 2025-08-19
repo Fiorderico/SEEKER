@@ -17,9 +17,9 @@ TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_gly"
 GENERATIONS_DIR = "generations_tiopronin_new"
 
-NUM_GENERAZIONI = 3
-POPOLAZIONE_INIZIALE = 4
-POPOLAZIONE_TARGET = 2
+NUM_GENERAZIONI = 20
+POPOLAZIONE_INIZIALE = 16
+POPOLAZIONE_TARGET = 10
 
 # Parametri per penalità similarità
 SIMILARITY_THRESHOLD = 0.9  # soglia di similarità oltre la quale si penalizza
@@ -56,8 +56,9 @@ def remove_frozen_substring(lines):
     """
     new_lines = []
     for line in lines:
-        new_line = re.sub(r'(?i)frozen,?', '', line)
-        new_lines.append(new_line)
+        #new_line = re.sub(r'(?i)frozen,?', '', line)
+        #new_lines.append(new_line)
+        new_lines.append(line)	
     return new_lines
 
 def save_statistics(file_name, generations_data):
@@ -96,7 +97,7 @@ def add_gene_lines(lines, geni, alleli):
     new_lines = lines.copy()
     # Appende le righe dei geni senza spazi vuoti intermedi
     for idx, ((period, definition), allele) in enumerate(zip(geni, alleli), start=1):
-        gene_line = f"GENE{idx}(Value={allele:.4f}) = {definition}\n"
+        gene_line = f"GENE{idx}(Frozen,Value={allele:.4f}) = {definition}\n"
         new_lines.append(gene_line)
     # Aggiunge una riga vuota extra alla fine
     new_lines.append("\n")
@@ -346,7 +347,7 @@ def genetic_algorithm():
             })
         
         population = new_population
-        #cleanup_tmp(TMP_DIR)
+        cleanup_tmp(TMP_DIR)
 
     save_statistics("evolution.csv",generations_data)
     print("Algoritmo completato.")
