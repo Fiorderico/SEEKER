@@ -114,7 +114,6 @@ def main():
     parser = argparse.ArgumentParser(description='Agglomerative clustering of a population of XYZ molecules.')
     parser.add_argument('population', help='Path to population folder containing XYZ files')
     parser.add_argument('--clusters', type=int, default=2, help='Number of clusters to build')
-    parser.add_argument('--pdf', action='store_true', help='Generate a PDF with 3D structures')
     args = parser.parse_args()
 
     feats, names = compute_features(args.population)
@@ -142,15 +141,6 @@ def main():
 
     reps = select_representatives(feats_scaled, labels, names, args.population)
     print('Cluster representatives:', reps)
-
-    if args.pdf:
-        pdf_path = os.path.join(args.population, 'structures.pdf')
-        with PdfPages(pdf_path) as pdf:
-            for file in sorted(os.listdir(args.population)):
-                if file.endswith('.xyz'):
-                    atoms, coord = read_xyz(os.path.join(args.population, file))
-                    draw_molecule(atoms, coord, os.path.splitext(file)[0], pdf)
-        print('Saved PDF to', pdf_path)
 
 if __name__ == '__main__':
     main()
