@@ -63,17 +63,11 @@ ection** – `selection` keeps the best `POPOLAZIONE_TARGET` individuals accordi
 
 ### Post‑processing and Analysis
 
-The `clustering/` folder contains utilities for analysing the resulting populations:
+The repository also includes utilities for analysing the resulting populations:
 
-* `cluster_population.py` converts the `.xyz` geometries into feature vectors consisting of rotational constants and dihedral angles.  After normalising the features,
-
-  \[
-  r' = \frac{r - r_{\min}}{r_{\max} - r_{\min}}, \qquad d' = \frac{d + 180}{360},
-  \]
-
-  a principal component analysis (PCA) reduces the dimensionality and an agglomerative clustering (average linkage with a distance threshold) groups similar structures.  The script also copies one representative `.xyz` for each cluster.
-* `exploration_gif.py` repeats the same feature extraction for every `population_i` folder and creates an animated GIF showing the evolution of the feature space.
-* `opt_population.py` re‑optimises a set of `.xyz` structures at a higher theory level and extracts the optimised coordinates.
+* `cluster_population.py` – standalone script that takes the path to a folder of `.xyz` molecules and performs agglomerative clustering using the gene definitions in the project. It produces a PCA plot coloured by cluster, copies one representative structure per cluster in a `cluster_representatives/` sub‑folder and, with the `--pdf` flag, saves a PDF with 3D drawings of all molecules.  Providing a Gaussian template through `--template` runs a geometry optimisation of the representatives by inserting the `Opt` keyword before executing `g16`.
+* `clustering/exploration_gif.py` repeats the feature extraction for every `population_i` folder and creates an animated GIF showing the evolution of the feature space.
+* `clustering/opt_population.py` re‑optimises a set of `.xyz` structures at a higher theory level and extracts the optimised coordinates.
 
 ## Project Structure
 
