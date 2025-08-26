@@ -17,9 +17,9 @@ TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_gly"
 GENERATIONS_DIR = "generations_tiopronin_new"
 
-NUM_GENERAZIONI = 50
-POPOLAZIONE_INIZIALE =20
-POPOLAZIONE_TARGET = 15
+NUM_GENERAZIONI = 80
+POPOLAZIONE_INIZIALE =40
+POPOLAZIONE_TARGET = 30
 
 # Parametri per penalità similarità
 SIMILARITY_THRESHOLD = 0.9  # soglia di similarità oltre la quale si penalizza
