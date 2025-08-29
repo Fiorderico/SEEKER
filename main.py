@@ -113,22 +113,37 @@ def write_individual_file(directory, individual_id, content_lines):
 def run_gdv(gjf_file, log_file):
     """Esegue il comando 'gdv' sul file gjf e scrive l'output su log_file."""
     with open(gjf_file, 'r') as infile, open(log_file, 'w') as outfile:
-        result = subprocess.run(["g16"], stdin=infile, stdout=outfile, stderr=subprocess.PIPE, universal_newlines=True)
+        result = subprocess.run(["gdv"], stdin=infile, stdout=outfile, stderr=subprocess.PIPE, universal_newlines=True)
     if result.returncode != 0:
         print(f"Errore nell'esecuzione di g16 per {gjf_file}: {result.stderr}")
     return result.returncode
 
 def parse_fitness(log_file):
-    """Estrae l'ultimo valore di fitness cercando 'HF=' nel file log."""
-    fitness = None
+    """Estrae l'energia SCF in Hartree dal log (riga 'SCF Done: E(...) = ...').
+       Se non trovata, prova anche a leggere 'HF=' nell'archivio, tollerando newline spezzati.
+    """
     with open(log_file, 'r') as f:
         content = f.read()
-    matches = re.findall(r"HF=([-+]?\d+\.\d+)", content)
-    if matches:
-        fitness = float(matches[-1])
-    else:
-        print(f"Fitness non trovata in {log_file}")
-    return fitness
+
+    # 1) Percorso robusto: usa la riga "SCF Done:  E(method) =  value"
+    m = re.search(r"SCF Done:\s+E\([^\)]+\)\s*=\s*([-+]?\d+\.\d+)", content)
+    if m:
+        return float(m.group(1))
+
+    # 2) Fallback: cattura HF= anche se è spezzato su due righe (es. 'HF=-860\n .6380506')
+    #    - Opzione A: elimina i ritorni a capo tra segno/cifre e parte decimale
+    content_no_wrap = re.sub(r"(HF=[+-]?\d+)\s*\n\s*(\.\d+)", r"\1\2", content)
+    m2 = re.findall(r"HF=([-+]?\d+\.\d+)", content_no_wrap)
+    if m2:
+        return float(m2[-1])
+
+    # 3) Ulteriore tolleranza: consenti spazio fra parte intera e decimale
+    m3 = re.search(r"HF=\s*([-+]?\d+)\s*(\.\d+)", content, flags=re.MULTILINE)
+    if m3:
+        return float(m3.group(1) + m3.group(2))
+
+    print(f"Fitness non trovata in {log_file}")
+    return None
 
 def parse_xyz_from_log(log_file):
     """Estrae il numero di atomi e le coordinate ottimizzate dal log di g16."""
@@ -347,7 +362,7 @@ def genetic_algorithm():
             })
         
         population = new_population
-        cleanup_tmp(TMP_DIR)
+        #cleanup_tmp(TMP_DIR)
 
     save_statistics("evolution.csv",generations_data)
     print("Algoritmo completato.")
