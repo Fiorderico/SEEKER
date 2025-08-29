@@ -10,16 +10,18 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Example input files are stored in the `examples/` directory.
 #INPUT_FILE = "examples/gly.gjf"
 #INPUT_FILE = "examples/butano.gjf"
-INPUT_FILE = "examples/thiopronine_g16_to_use.gjf"  # file di riferimento fornito dall'utente
+#INPUT_FILE = "examples/thiopronine_g16_to_use.gjf"  # file di riferimento fornito dall'utente
+INPUT_FILE = "examples/benzylpenicillin_reduced.gjf"  # file di riferimento fornito dall'utente
 
 TMP_DIR = "tmp"
 #GENERATIONS_DIR = "generations_butano"
 #GENERATIONS_DIR = "generations_gly"
-GENERATIONS_DIR = "generations_tiopronin_new"
+#GENERATIONS_DIR = "generations_tiopronin_new"
+GENERATIONS_DIR = "generations_benzylpenicillin"
 
-NUM_GENERAZIONI = 80
-POPOLAZIONE_INIZIALE =40
-POPOLAZIONE_TARGET = 30
+NUM_GENERAZIONI = 8
+POPOLAZIONE_INIZIALE = 10
+POPOLAZIONE_TARGET = 8
 
 # Parametri per penalità similarità
 SIMILARITY_THRESHOLD = 0.9  # soglia di similarità oltre la quale si penalizza
@@ -41,6 +43,19 @@ GENI = [
     (3, "D(  6, 7, 8, 9)"),  # psi2
     (2, "D(  9, 8, 10, 19)")  # omega2
 ]
+
+#Benzylpenicillin
+GENI = [
+   (3, "D( 4, 3, 20, 21)"), # CARBOSSILE
+   (3, "D( 7, 10, 11, 12)"), #PEPTIDE
+   (3, "D( 8, 7, 10, 11)"), #ATTACCO ALLA PENICILLINA
+   (3, "D( 12, 11, 13, 14)"), #ATTACCO AL TOLUENE
+   (3, "D( 11, 13, 14, 19)"), #ATTACCO AL BENZENE
+   (2, "D( 21, 20, 22, 38)") #OH
+
+]
+
+
 
 # --- Funzioni di supporto ---
 
@@ -95,6 +110,7 @@ def add_gene_lines(lines, geni, alleli):
     while lines and lines[-1].strip() == "":
         lines.pop()
     new_lines = lines.copy()
+    new_lines.append("\n")
     # Appende le righe dei geni senza spazi vuoti intermedi
     for idx, ((period, definition), allele) in enumerate(zip(geni, alleli), start=1):
         gene_line = f"GENE{idx}(Value={allele:.4f}) = {definition}\n"
@@ -347,9 +363,9 @@ def genetic_algorithm():
             })
         
         population = new_population
-        cleanup_tmp(TMP_DIR)
+        #cleanup_tmp(TMP_DIR)
 
-    save_statistics("evolution.csv",generations_data)
+    save_statistics("evolution_penycillin.csv",generations_data)
     print("Algoritmo completato.")
 
 if __name__ == "__main__":
