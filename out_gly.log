@@ -1,0 +1,472 @@
+Donatori (0-based):
+  Atomo 11 (Z=7) con H legati -> [25, 24]
+  Atomo 13 (Z=8) con H legati -> [26]
+Accettori (0-based): [1, 5, 10, 11, 13, 14]
+Generazione 0
+Errore nell'esecuzione di g16/gdv per tmp/individuo_12.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014a38e5f10f7
+   rdx 0x000000000000000f, rsp 0x00007ffe3e48e908, rbp 0x00007ffe3e48ee80
+   rsi 0x000000000000000b, rdi 0x00000000001fcf9c, r8  0x0000149b8e58f000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffe3e48eec8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14a38e8e3140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14a38e5f10f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14a38e5dbd7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_17.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000146840de80f7
+   rdx 0x000000000000000f, rsp 0x00007ffd8f416098, rbp 0x00007ffd8f416610
+   rsi 0x000000000000000b, rdi 0x00000000001fcfc6, r8  0x0000146040d86000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffd8f416658, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1468410da140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x146840de80f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x146840dd2d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_17.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014b1635120f7
+   rdx 0x000000000000000f, rsp 0x00007fffa52aa5d8, rbp 0x00007fffa52aab50
+   rsi 0x000000000000000b, rdi 0x00000000001fd140, r8  0x000014a9634b0000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007fffa52aab98, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14b163804140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14b1635120f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14b1634fcd7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_19.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001508c11600f7
+   rdx 0x000000000000000f, rsp 0x00007fffdd1cfe98, rbp 0x00007fffdd1d0410
+   rsi 0x000000000000000b, rdi 0x00000000001fcfc8, r8  0x00001500c10fe000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007fffdd1d0458, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1508c1452140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1508c11600f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1508c114ad7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_12.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001527f6b190f7
+   rdx 0x000000000000000f, rsp 0x00007ffc617c4f88, rbp 0x00007ffc617c5500
+   rsi 0x000000000000000b, rdi 0x00000000001fd101, r8  0x0000151ff6ab7000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffc617c5548, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1527f6e0b140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1527f6b190f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1527f6b03d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_19.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000015543f87e0f7
+   rdx 0x000000000000000f, rsp 0x00007ffe6832e748, rbp 0x00007ffe6832ecc0
+   rsi 0x000000000000000b, rdi 0x00000000001fd1af, r8  0x0000154c3f81c000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffe6832ed08, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x15543fb70140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x15543f87e0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x15543f868d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_12.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014cf795db0f7
+   rdx 0x000000000000000f, rsp 0x00007ffd21f6b698, rbp 0x00007ffd21f6bc10
+   rsi 0x000000000000000b, rdi 0x00000000001fd1ee, r8  0x000014c779579000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffd21f6bc58, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14cf798cd140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14cf795db0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14cf795c5d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_19.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000152db281d0f7
+   rdx 0x000000000000000f, rsp 0x00007ffd34fee978, rbp 0x00007ffd34feeef0
+   rsi 0x000000000000000b, rdi 0x00000000001fd39e, r8  0x00001525b27bb000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffd34feef38, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x152db2b0f140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x152db281d0f7]
+  /opt/g16.c01/g16/l202.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x152db2807d7a]
+  /opt/g16.c01/g16/l202.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_19.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000149cf3af00f7
+   rdx 0x000000000000000f, rsp 0x00007fffd8e3a968, rbp 0x00007fffd8e3aee0
+   rsi 0x000000000000000b, rdi 0x00000000001fd3f0, r8  0x00001494f3a8e000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007fffd8e3af28, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x149cf3de2140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x149cf3af00f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x149cf3adad7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_19.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000152a391570f7
+   rdx 0x000000000000000f, rsp 0x00007ffeb78141e8, rbp 0x00007ffeb7814760
+   rsi 0x000000000000000b, rdi 0x00000000001fd41a, r8  0x00001522390f5000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffeb78147a8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x152a39449140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x152a391570f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x152a39141d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Generazione 1
+Errore nell'esecuzione di g16/gdv per tmp/individuo_1821.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014e0220b90f7
+   rdx 0x000000000000000f, rsp 0x00007ffd23496698, rbp 0x00007ffd23496c10
+   rsi 0x000000000000000b, rdi 0x00000000001fd4d5, r8  0x000014d822057000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffd23496c58, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14e0223ab140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14e0220b90f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14e0220a3d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8007.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014d40f10d0f7
+   rdx 0x000000000000000f, rsp 0x00007ffddff23d48, rbp 0x00007ffddff242c0
+   rsi 0x000000000000000b, rdi 0x00000000001fd4b3, r8  0x000014cc0f0ab000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffddff24308, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14d40f3ff140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14d40f10d0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14d40f0f7d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_2160.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014c23f1f70f7
+   rdx 0x000000000000000f, rsp 0x00007ffef5d678f8, rbp 0x00007ffef5d67e70
+   rsi 0x000000000000000b, rdi 0x00000000001fd484, r8  0x000014ba3f195000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffef5d67eb8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14c23f4e9140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14c23f1f70f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14c23f1e1d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3646.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001477bac4c0f7
+   rdx 0x000000000000000f, rsp 0x00007fff9adfa4c8, rbp 0x00007fff9adfaa40
+   rsi 0x000000000000000b, rdi 0x00000000001fd46f, r8  0x0000146fbabea000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007fff9adfaa88, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1477baf3e140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1477bac4c0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1477bac36d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8007.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014a5287f60f7
+   rdx 0x000000000000000f, rsp 0x00007ffefdeb2cc8, rbp 0x00007ffefdeb3240
+   rsi 0x000000000000000b, rdi 0x00000000001fd685, r8  0x0000149d28794000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffefdeb3288, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14a528ae8140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14a5287f60f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14a5287e0d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3646.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014bf2cb900f7
+   rdx 0x000000000000000f, rsp 0x00007ffd36accda8, rbp 0x00007ffd36acd320
+   rsi 0x000000000000000b, rdi 0x00000000001fd6f5, r8  0x000014b72cb2e000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffd36acd368, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14bf2ce82140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14bf2cb900f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14bf2cb7ad7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3646.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014b317cee0f7
+   rdx 0x000000000000000f, rsp 0x00007ffda959ad68, rbp 0x00007ffda959b2e0
+   rsi 0x000000000000000b, rdi 0x00000000001fd7a8, r8  0x000014ab17c8c000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffda959b328, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14b317fe0140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14b317cee0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14b317cd8d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3646.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001474af27b0f7
+   rdx 0x000000000000000f, rsp 0x00007ffe29dde398, rbp 0x00007ffe29dde910
+   rsi 0x000000000000000b, rdi 0x00000000001fd838, r8  0x0000146caf219000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffe29dde958, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1474af56d140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1474af27b0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1474af265d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Generazione 2
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3881.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014ca85ba00f7
+   rdx 0x000000000000000f, rsp 0x00007ffd3f1e41f8, rbp 0x00007ffd3f1e4770
+   rsi 0x000000000000000b, rdi 0x00000000001fd8f7, r8  0x000014c285b3e000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffd3f1e47b8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14ca85e92140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14ca85ba00f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14ca85b8ad7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8136.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000150f6f2220f7
+   rdx 0x000000000000000f, rsp 0x00007ffdfb2d95f8, rbp 0x00007ffdfb2d9b70
+   rsi 0x000000000000000b, rdi 0x00000000001fd943, r8  0x000015076f1c0000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffdfb2d9bb8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x150f6f514140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x150f6f2220f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x150f6f20cd7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8251.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000015362f6cf0f7
+   rdx 0x000000000000000f, rsp 0x00007fff21e52328, rbp 0x00007fff21e528a0
+   rsi 0x000000000000000b, rdi 0x00000000001fd91c, r8  0x0000152e2f66d000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007fff21e528e8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x15362f9c1140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x15362f6cf0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x15362f6b9d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_5133.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000151e3a9d60f7
+   rdx 0x000000000000000f, rsp 0x00007ffe77a43fc8, rbp 0x00007ffe77a44540
+   rsi 0x000000000000000b, rdi 0x00000000001fd92e, r8  0x000015163a974000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffe77a44588, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x151e3acc8140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x151e3a9d60f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x151e3a9c0d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_7624.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000153d3a5630f7
+   rdx 0x000000000000000f, rsp 0x00007ffe8fa140a8, rbp 0x00007ffe8fa14620
+   rsi 0x000000000000000b, rdi 0x00000000001fd921, r8  0x000015353a501000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffe8fa14668, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x153d3a855140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x153d3a5630f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x153d3a54dd7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8136.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000152d231550f7
+   rdx 0x000000000000000f, rsp 0x00007fffd8d29228, rbp 0x00007fffd8d297a0
+   rsi 0x000000000000000b, rdi 0x00000000001fdcab, r8  0x00001525230f3000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007fffd8d297e8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x152d23447140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x152d231550f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x152d2313fd7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3223.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014a762ed30f7
+   rdx 0x000000000000000f, rsp 0x00007ffecde1a2f8, rbp 0x00007ffecde1a870
+   rsi 0x000000000000000b, rdi 0x00000000001fdcf3, r8  0x0000149f62e71000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffecde1a8b8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14a7631c5140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14a762ed30f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14a762ebdd7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8136.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001516d29a70f7
+   rdx 0x000000000000000f, rsp 0x00007fff82f7b428, rbp 0x00007fff82f7b9a0
+   rsi 0x000000000000000b, rdi 0x00000000001fdce1, r8  0x0000150ed2945000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007fff82f7b9e8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1516d2c99140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1516d29a70f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1516d2991d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_3223.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014718ad090f7
+   rdx 0x000000000000000f, rsp 0x00007ffe3720b4f8, rbp 0x00007ffe3720ba70
+   rsi 0x000000000000000b, rdi 0x00000000001fdd1a, r8  0x000014698aca7000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007ffe3720bab8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14718affb140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14718ad090f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14718acf3d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Generazione 3
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8486.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001479ed99e0f7
+   rdx 0x000000000000000f, rsp 0x00007ffe46a77c78, rbp 0x00007ffe46a781f0
+   rsi 0x000000000000000b, rdi 0x00000000001fde15, r8  0x00001471ed93c000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffe46a78238, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1479edc90140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1479ed99e0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1479ed988d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8141.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000150d68b480f7
+   rdx 0x000000000000000f, rsp 0x00007fffc039b5e8, rbp 0x00007fffc039bb60
+   rsi 0x000000000000000b, rdi 0x00000000001fddb9, r8  0x0000150568ae6000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007fffc039bba8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x150d68e3a140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x150d68b480f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x150d68b32d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_4697.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014c6dda3b0f7
+   rdx 0x000000000000000f, rsp 0x00007ffded7f0b88, rbp 0x00007ffded7f1100
+   rsi 0x000000000000000b, rdi 0x00000000001fddc2, r8  0x000014bedd9d9000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffded7f1148, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14c6ddd2d140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14c6dda3b0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14c6dda25d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_8141.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x00001494f01750f7
+   rdx 0x000000000000000f, rsp 0x00007ffef768cc78, rbp 0x00007ffef768d1f0
+   rsi 0x000000000000000b, rdi 0x00000000001fe0be, r8  0x0000148cf0113000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007ffef768d238, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x1494f0467140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x1494f01750f7]
+  /opt/g16.c01/g16/l202.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x1494f015fd7a]
+  /opt/g16.c01/g16/l202.exe() [0x406d29]
+Aborted
+
+Generazione 4
+Errore nell'esecuzione di g16/gdv per tmp/individuo_9984.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x000014a8b4fa90f7
+   rdx 0x000000000000000f, rsp 0x00007fff93dca818, rbp 0x00007fff93dcad90
+   rsi 0x000000000000000b, rdi 0x00000000001fe17e, r8  0x000014a0b4f47000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000206
+   r12 0x00007fff93dcadd8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x14a8b529b140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x14a8b4fa90f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x14a8b4f93d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Errore nell'esecuzione di g16/gdv per tmp/individuo_7086.gjf: Error: segmentation violation
+   rax 0x0000000000000000, rbx 0xffffffffffffffff, rcx 0x0000148ab85ee0f7
+   rdx 0x000000000000000f, rsp 0x00007fff8a7d0438, rbp 0x00007fff8a7d09b0
+   rsi 0x000000000000000b, rdi 0x00000000001fe12c, r8  0x00001482b858c000
+   r9  0x0000000000000022, r10 0xffffffffffffff8c, r11 0x0000000000000202
+   r12 0x00007fff8a7d09f8, r13 0x0000000000000000, r14 0x0000000000000000
+   r15 0x00000000000003e6
+  /lib/x86_64-linux-gnu/libpthread.so.0(+0x13140) [0x148ab88e0140]
+  /lib/x86_64-linux-gnu/libc.so.6(kill+0x7) [0x148ab85ee0f7]
+  /opt/g16.c01/g16/l101.exe() [0x406e25]
+  /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xea) [0x148ab85d8d7a]
+  /opt/g16.c01/g16/l101.exe() [0x406d29]
+Aborted
+
+Algoritmo completato.

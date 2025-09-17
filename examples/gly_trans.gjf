@@ -37,7 +37,7 @@
  Bend0010(Frozen,Value= 120.84463) = A(  3,  5, 10)
  GENE0001(periodicity= 3) = D(  6,  1,  2,  3)
  GENE0002(periodicity= 3) = D(  1,  2,  3,  4)
- GENE0003(periodicity= 2) = D(  4,  3,  5, 10)
+ OHDihed(Frozen, Value=180.0) = D(  4,  3,  5, 10)
  ImpD0001(Frozen,Value=-117.75352) = D(  2,  1,  7,  6)
  ImpD0002(Frozen,Value= 177.85445) = D(  2,  3,  5,  4)
 
