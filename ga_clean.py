@@ -301,6 +301,14 @@ def cov_bonded(Z1: int, Z2: int, d: float, tol: float = 0.4) -> bool:
 def build_bond_graph(
     coords: Sequence[Tuple[int, float, float, float]]
 ) -> List[Set[int]]:
+    """Return an adjacency list representing covalent connectivity.
+
+    Two atoms are considered bonded when their interatomic distance is below the
+    sum of the covalent radii (falling back to generic values) plus a small
+    tolerance.  The resulting graph is used to propagate torsion rotations to
+    the entire "side" of the molecule connected to the rotating atom.
+    """
+
     n = len(coords)
     P = [(x, y, z) for (_, x, y, z) in coords]
     Z = [Z for (Z, _, _, _) in coords]
@@ -558,6 +566,8 @@ def parse_dihedral_atoms(definition: str) -> Optional[Tuple[int, int, int, int]]
 
 @dataclass
 class GeneInfo:
+    """Container describing how to interpret and apply a torsional gene."""
+
     period: int
     definition: str
     atoms: Tuple[int, int, int, int]
@@ -570,16 +580,34 @@ def compute_rotation_group(
     k_idx: int,
     l_idx: int,
 ) -> Set[int]:
+    """Return atoms that must follow the rotation around the j–k bond.
+
+    The molecular graph is explored with a depth-first search that starts from
+    atom ``l_idx`` and never traverses the ``j_idx``–``k_idx`` bond.  This
+    effectively "cuts" the graph on the rotation axis so every atom on the
+    ``l`` side of the torsion (except the pivot atoms themselves) is rotated.
+    """
+
+    n = len(bonds)
+    for name, idx in {"j": j_idx, "k": k_idx, "l": l_idx}.items():
+        if idx < 0 or idx >= n:
+            raise ValueError(
+                f"Indice atomo fuori range per la torsione ({name}={idx + 1}, atomi totali={n})."
+            )
+
     rotate: Set[int] = set()
     stack = [l_idx]
-    visited = set()
+    visited: Set[int] = set()
     while stack:
         idx = stack.pop()
         if idx in visited:
             continue
         visited.add(idx)
-        rotate.add(idx)
+        if idx not in (j_idx, k_idx):
+            rotate.add(idx)
         for nb in bonds[idx]:
+            if nb < 0 or nb >= n:
+                continue
             if (idx == j_idx and nb == k_idx) or (idx == k_idx and nb == j_idx):
                 continue
             if nb not in visited:
@@ -612,6 +640,13 @@ def apply_rotation(
     axis: Sequence[float],
     angle_deg: float,
 ) -> None:
+    """Rotate selected atoms around ``axis`` passing through ``pivot``.
+
+    ``indices`` contains the atoms that must be moved as a consequence of the
+    torsional allele.  The axis is expressed in Cartesian coordinates and the
+    rotation angle is in degrees, matching the allele representation.
+    """
+
     if abs(angle_deg) < 1e-9:
         return
     mat = rotation_matrix(axis, math.radians(angle_deg))
@@ -668,6 +703,8 @@ def prepare_gene_infos(
     genes: Sequence[Tuple[int, str]],
     bonds: Sequence[Set[int]],
 ) -> List[GeneInfo]:
+    """Pre-compute structural data required to apply torsional alleles."""
+
     infos: List[GeneInfo] = []
     for period, definition in genes:
         atoms = parse_dihedral_atoms(definition)
@@ -1208,6 +1245,7 @@ def main() -> None:
     parser.add_argument("--pairs", type=str, default="")
     parser.add_argument("--weights", type=str, default="")
     parser.add_argument("--max-tries", type=int, default=3)
+    parser.add_argument("--seed", type=int, default=None, help="Seed RNG (default: None).")
     args = parser.parse_args()
 
     INPUT_FILE = args.input_file
@@ -1222,6 +1260,9 @@ def main() -> None:
     HB_CONTACT_THRESHOLD = float(args.hb_contact)
     NEAR_PAIRS = parse_pairs_arg(args.pairs)
     NEAR_WEIGHTS = parse_weights_arg(args.weights)
+
+    if args.seed is not None:
+        random.seed(args.seed)
 
     os.makedirs(TMP_DIR, exist_ok=True)
     os.makedirs(GENERATIONS_DIR, exist_ok=True)
