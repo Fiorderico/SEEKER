@@ -1,10 +1,8 @@
 .DS_Store
-generations_tiopronin_new
-generations_tiopronin
-generations_gly
-generations_butano
+generations_*
 evolution.csv
 fort.7
 main.log
 OPT_JOBS
+*.chk
 

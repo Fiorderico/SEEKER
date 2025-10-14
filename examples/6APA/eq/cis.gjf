@@ -1,5 +1,5 @@
-%Nprocshared=4
-%Mem=32GB
+%Nprocshared=1
+%Mem=2GB
 #P HF geom=(gic,modredundant) Output=Pickett
 
  6APA                                                                          

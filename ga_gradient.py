@@ -13,7 +13,8 @@ import shutil
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import copy
-from typing import Optional
+from typing import Optional, List
+
 
 # --- Parametri di configurazione (come originali) ---
 INPUT_FILE = ""          # .gjf di riferimento
@@ -31,36 +32,38 @@ DELTA_RATE_MUTATION = 0.1
 DELTA_RATE_CROSSOVER = 0.1
 NUM_OSCILLATIONS = 2
 
-# --- H-bond objective (NUOVO) ---
-HB_SPHERE = 2.5               # Å: raggio per considerare H-bond (H...A)
-HB_BONUS_PER_BOND = 0.02      # quanto RIDUCE (migliora) la seconda fitness per ciascun H-bond
-HB_MUTUAL_PENALTY = 0.05      # penalità se trovi A→B e B→A nella stessa geometria
+# --- H-bond objective ---
+HB_SPHERE = 2.5
+HB_BONUS_PER_BOND = 0.02
+HB_MUTUAL_PENALTY = 0.05
 
-# --- Pesi diversi per tipologia di H-bond (NUOVO) ---
-HB_EPS_BASE = 1.0     # default (ad es. N–H...O e altri)
-HB_EPS_OHN  = 1.1     # più profondo per O–H...N (AUMENTA a piacere)
-HB_EPS_OHO  = 1.2     # più profondo per O–H...O (AUMENTA a piacere)
-HB_EPS_NHO  = 1.0     # esplicito per N–H...O (puoi variare se vuoi)
-HB_EPS_SHO  = 1.0     # esplicito per S–H...O
-HB_EPS_SHN  = 1.0     # esplicito per S–H...N
-HB_EPS_OHS  = 1.2     # esplicito per O–H...S
-HB_EPS_NHS  = 1.2     # esplicito per N–H...S
+# --- H-bond biforcati ---
+HB_CONTACT_THRESHOLD = -0.3   # soglia energia Ek per considerare un H-bond "attivo"
 
-# --- H–H penalty params (NUOVO) ---
+# --- Pesi diversi per tipologia di H-bond ---
+HB_EPS_BASE = 1.0
+HB_EPS_OHN  = 1.1
+HB_EPS_OHO  = 1.2
+HB_EPS_NHO  = 1.1
+HB_EPS_SHO  = 1.0
+HB_EPS_SHN  = 1.0
+HB_EPS_OHS  = 1.2
+HB_EPS_NHS  = 1.2
+
+# --- H–H penalty params ---
 HH_EPS   = 0.1
 HH_ALPHA = 15.0
 HH_XM    = 1.5  # Å
-#TODO: Se tre idrogeni stanno sul triangolo non ce lo metti (ponte a idrogeno non lineare)
 
-# --- SBX (NUOVO) ---
-SBX_ETA = 15.0                # indice di distribuzione
+# --- SBX ---
+SBX_ETA = 15.0
 ANGLE_LOW = 0.0
 ANGLE_HIGH = 360.0
 
 # --- Orientazioni parse ---
 USE_STANDARD_ORIENTATION = True
 
-# (Manteniamo, ma NON usiamo più le coppie vicino/lontano)
+# (legacy, non usati)
 PAIR_SPHERE = 2.5
 NEAR_PAIRS = []
 NEAR_WEIGHTS = []
@@ -69,28 +72,23 @@ NEAR_WEIGHTS = []
 GENI = []
 
 # --- Mappa simbolo -> Z ---
-ELEMENT_Z = {
-    "H": 1, "C": 6, "N": 7, "O": 8, "S": 16
-    # estendi se serve
-}
+ELEMENT_Z = {"H": 1, "C": 6, "N": 7, "O": 8, "S": 16}
 
 # --- Raggi covalenti (Å) ---
-COV_RADII = {
-    1: 0.31,  # H
-    6: 0.76,  # C
-    7: 0.71,  # N
-    8: 0.66,  # O
-    16: 1.01  # S
-}
+COV_RADII = {1: 0.31, 6: 0.76, 7: 0.71, 8: 0.66, 16: 1.01}
 
 # --- Raggi di van der Waals (Å) (Bondi) ---
-VDW_RADII = {
-    1: 1.20,  # H
-    6: 1.70,  # C
-    7: 1.55,  # N
-    8: 1.52,  # O
-    16: 1.80, # S
-}
+VDW_RADII = {1: 1.20, 6: 1.70, 7: 1.55, 8: 1.52, 16: 1.80}
+
+# =========================
+# OBIETTIVI MULTI-OUTPUT
+# =========================
+# Ordine di minimizzazione richiesto:
+# 1) HBond fitness (fitness_hbond)
+# 2) Energia (fitness_energy)
+# 3) GRMS (fitness_grms)
+# 4) GMAX (fitness_gmax)
+OBJECTIVES: List[str] = ["fitness_hbond", "fitness_hb_bifork", "fitness_energy", "fitness_grms", "fitness_gmax"]
 
 # ========== UTIL =============================================================
 
@@ -153,11 +151,6 @@ def same_topology(bonds_a, bonds_b):
     return True
 
 def tweak_some_alleles_random(alleles, geni, k: Optional[int]=None, eps_deg=1e-6):
-    """
-    Cambia un numero casuale di geni (k in [1, n]) estraendo nuovi alleli
-    coerenti con la periodicità. Evita (per quanto possibile) di ripescare
-    esattamente lo stesso valore.
-    """
     n = len(alleles)
     if n == 0:
         return alleles, []
@@ -178,11 +171,14 @@ def tweak_some_alleles_random(alleles, geni, k: Optional[int]=None, eps_deg=1e-6
     return new, idxs
 
 def snapshot_for_rescue(ind):
-    """Copia 'leggera' di quanto serve per duplicare un individuo sano."""
     return {
         "alleli": ind["alleli"][:],
-        "fitness_energy": ind["fitness_energy"],
         "fitness_hbond": ind["fitness_hbond"],
+        # in snapshot_for_rescue
+        "fitness_hb_bifork": ind.get("fitness_hb_bifork", float("inf")),
+        "fitness_energy": ind["fitness_energy"],
+        "fitness_grms": ind["fitness_grms"],
+        "fitness_gmax": ind["fitness_gmax"],
         "num_atoms": ind.get("num_atoms"),
         "xyz_lines": ind.get("xyz_lines", [])[:],
         "helped": ind.get("helped", False),
@@ -190,16 +186,12 @@ def snapshot_for_rescue(ind):
     }
 
 def clone_from_rescue(ind, rescue_pool):
-    """
-    Se possibile, clona su 'ind' un individuo sano scelto dal rescue_pool.
-    Ritorna True se il clone è avvenuto, altrimenti False.
-    """
     if not rescue_pool:
         return False
     donor = random.choice(rescue_pool)
     ind["alleli"]         = donor["alleli"][:]
-    ind["fitness_energy"] = donor["fitness_energy"]
-    ind["fitness_hbond"]  = donor["fitness_hbond"]
+    for k in OBJECTIVES:
+        ind[k] = donor[k]
     ind["num_atoms"]      = donor.get("num_atoms")
     ind["xyz_lines"]      = donor.get("xyz_lines", [])[:]
     ind["xyz_file"]       = None
@@ -247,126 +239,133 @@ def parse_last_orientation_coords(log_file, use_standard=True):
             return []
     return rows
 
+# --- ENERGY PARSER (SCF Done / HF= robusto) ---
 def parse_fitness(log_file):
-    """
-    Restituisce l'energia (float, in Hartree) letta dal .log.
-    Priorità: ultimo 'SCF Done' > ultimo 'HF=' dall'archivio > altri pattern affidabili.
-    Gestisce anche i casi con line-break dopo il segno (es. 'HF=-\\n 874.614245').
-    """
     with open(log_file, 'r', errors='ignore') as f:
         content = f.read()
-
-    # 1) 'SCF Done' (Gaussian): prendi l'ULTIMO
     scf_matches = re.findall(
         r"SCF Done:\s+E\([^)]+\)\s*=\s*([-+]?\d+(?:\.\d+)?(?:[EeDd][+-]?\d+)?)",
         content
     )
     if scf_matches:
         val = scf_matches[-1].replace('D', 'E').replace('d', 'E')
-        try:
-            return float(val)
-        except:
-            pass  # passa a HF
-
-    # 2) Archivio 'HF=' spezzato: normalizza tutto lo whitespace
-    #    (toglie \n, spazi, tab — così 'HF=-\n 874.6' diventa 'HF=-874.6')
+        try: return float(val)
+        except: pass
     compact = re.sub(r"\s+", "", content)
     hf_matches = re.findall(r"HF=([+-]?\d+(?:\.\d+)?(?:[EeDd][+-]?\d+)?)\\", compact)
     if hf_matches:
         raw = hf_matches[-1].replace('D', 'E').replace('d', 'E')
-        try:
-            return float(raw)
-        except:
-            pass
-
-    # 3) Altri pattern utili (ma evitiamo gli 'Energy = 0.00000' fuorvianti)
-    #    Prova anche una versione che tollera uno spazio dopo il segno.
-    m = re.search(
-        r"HF=\s*([+-]?\s*\d+(?:\.\d+)?(?:[EeDd][+-]?\d+)?)",
-        content,
-        flags=re.IGNORECASE | re.MULTILINE
-    )
+        try: return float(raw)
+        except: pass
+    m = re.search(r"HF=\s*([+-]?\s*\d+(?:\.\d+)?(?:[EeDd][+-]?\d+)?)", content, flags=re.IGNORECASE|re.MULTILINE)
     if m:
-        raw = m.group(1).replace(" ", "").replace('D', 'E').replace('d', 'E')
-        try:
-            return float(raw)
-        except:
-            pass
-
-    # 4) Fallback "Energy =" ma scartiamo zeri sospetti
-    other_matches = re.findall(
-        r"\bEnergy\s*=\s*([-+]?\d+(?:\.\d+)?(?:[EeDd][+-]?\d+)?)",
-        content,
-        flags=re.IGNORECASE
-    )
+        raw = m.group(1).replace(" ", "").replace('D','E').replace('d','E')
+        try: return float(raw)
+        except: pass
+    other_matches = re.findall(r"\bEnergy\s*=\s*([-+]?\d+(?:\.\d+)?(?:[EeDd][+-]?\d+)?)", content, flags=re.IGNORECASE)
     if other_matches:
         val = other_matches[-1].replace('D', 'E').replace('d', 'E')
         try:
             x = float(val)
-            # se è zero, è probabilmente una riga non utile: ignorala
             if abs(x) > 1e-12:
                 return x
-        except:
-            pass
-
+        except: pass
     print(f"[parse_fitness] Energia non trovata in {log_file}")
     return None
-    
-def parse_xyz_from_log(log_file):
-    with open(log_file, 'r') as f:
-        content = f.read()
-    if "Principal axis orientation:" not in content:
-        return None, []
-    parts = content.split("Principal axis orientation:")
-    after = parts[1]
-    sections = after.split(" ---------------------------------------------------------------------")
-    if len(sections) < 3:
-        return None, []
-    coord_block = sections[-2]
-    lines = [line.strip() for line in coord_block.strip().splitlines() if line.strip()]
-    if not lines:
-        return None, []
-    try:
-        num_atoms = int(lines[-1].split()[0])
-    except Exception:
-        num_atoms = len(lines)
-    xyz_lines = []
-    for line in lines:
-        tokens = line.split()
-        if len(tokens) >= 5:
-            atomic_num = tokens[1]
-            x, y, z = tokens[2:5]
-            xyz_lines.append(f"{atomic_num} {x} {y} {z}")
-    return num_atoms, xyz_lines
 
+# --- CARTESIAN FORCES PARSER (GRMS, GMAX) ---
+_CF_LINE = re.compile(
+    r"Cartesian\s+Forces:\s*Max\s+([-\d\.Ee+]+)\s*RMS\s+([-\d\.Ee+]+)",
+    flags=re.IGNORECASE
+)
+
+def parse_cartesian_forces_rms(log_file: str):
+    try:
+        with open(log_file, "r", errors="ignore") as f:
+            txt = f.read()
+    except:
+        return None, None
+    m = _CF_LINE.search(txt)
+    if not m:
+        compact = re.sub(r"\s+", " ", txt)
+        m = _CF_LINE.search(compact)
+        if not m:
+            return None, None
+    gmax = float(m.group(1))
+    grms = float(m.group(2))
+    return grms, gmax
+
+#def parse_xyz_from_log(log_file):
+#    with open(log_file, 'r', errors='ignore') as f:
+#        content = f.read()
+#    if "Principal axis orientation:" not in content:
+#        return None, []
+#    parts = content.split("Principal axis orientation:")
+#    after = parts[1]
+#    sections = after.split(" ---------------------------------------------------------------------")
+#    if len(sections) < 3:
+#        return None, []
+#    coord_block = sections[-2]
+#    lines = [line.strip() for line in coord_block.strip().splitlines() if line.strip()]
+#    if not lines:
+#        return None, []
+#    try:
+#        num_atoms = int(lines[-1].split()[0])
+#    except Exception:
+#        num_atoms = len(lines)
+#    xyz_lines = []
+#    for line in lines:
+#        tokens = line.split()
+#        if len(tokens) >= 5:
+#            atomic_num = tokens[1]
+#            x, y, z = tokens[2:5]
+#            xyz_lines.append(f"{atomic_num} {x} {y} {z}")
+#    return num_atoms, xyz_lines
+
+def parse_xyz_from_log(log_file):
+    # riutilizza il parser robusto già presente
+    INV_Z = {v:k for k,v in ELEMENT_Z.items()}
+    coords = parse_last_orientation_coords(log_file, use_standard=True)
+    if not coords:
+        coords = parse_last_orientation_coords(log_file, use_standard=False)
+    if not coords:
+        return None, []
+    num_atoms = len(coords)
+    xyz_lines = []
+    for Z, x, y, z in coords:
+        # Mantengo atomic number per coerenza col tuo formato corrente
+        #xyz_lines.append(f"{Z} {x:.10f} {y:.10f} {z:.10f}")
+        sym = INV_Z.get(Z, str(Z))
+        xyz_lines.append(f"{sym} {x:.10f} {y:.10f} {z:.10f}")
+    return num_atoms, xyz_lines
+    
 def parse_rotational_constants_mhz(log_file):
-    """
-    Cerca il blocco:
-      ' Rotational constants (MHZ):'
-      <A> <B> <C>
-    Ritorna (A, B, C) come float, oppure (None, None, None) se non trovati.
-    """
     A = B = C = None
     try:
         with open(log_file, 'r', errors='ignore') as f:
-            lines = f.readlines()
-        for i, line in enumerate(lines):
-            if "Rotational constants (MHZ):" in line:
-                if i + 1 < len(lines):
-                    parts = lines[i+1].strip().split()
+            for line in f:
+                if "Rotational constants" in line and "MHZ" in line.upper():
+                    # prova stessa riga
+                    parts = re.findall(r"([-\d\.EeDd\+]+)", line)
+                    nums = [float(p.replace('D','E').replace('d','E')) for p in parts[-3:]] if len(parts) >= 3 else []
+                    if len(nums) == 3:
+                        A, B, C = nums
+                        break
+                    # altrimenti prova riga successiva
+                    nxt = next(f, "")
+                    parts = nxt.strip().split()
                     if len(parts) >= 3:
                         A = float(parts[0]); B = float(parts[1]); C = float(parts[2])
-                break
+                    break
     except Exception:
         pass
     return A, B, C
-    
+
 def read_reference_file(filepath):
     with open(filepath, 'r') as f:
         return f.readlines()
 
 def remove_frozen_substring(lines):
-    # lasciamo inalterato (identico all'originale)
     new_lines = []
     for line in lines:
         _ = re.sub(r'(?i)frozen,?', '', line)
@@ -374,21 +373,21 @@ def remove_frozen_substring(lines):
     return new_lines
 
 def cleanup_individual_tmp(tmp_dir, individual_id):
-    """Cancella i file temporanei specifici di un individuo (gjf/log/chk)."""
     base = f"individuo_{individual_id}"
     for ext in (".gjf", ".log", ".chk"):
         p = os.path.join(tmp_dir, base + ext)
         if os.path.exists(p):
-            try:
-                os.remove(p)
-            except OSError:
-                pass
+            try: os.remove(p)
+            except OSError: pass
 
 def save_statistics(file_name, generations_data):
     fields = [
         "Generation",
+        "Avg. HB", "MAX HB", "MIN HB",
+        "Avg. HB Bif.", "MAX HB Bif.", "MIN HB Bif.",
         "Avg. Energy", "MAX Energy", "MIN Energy",
-        "Avg. HB_fitness", "MAX HB_fitness", "MIN HB_fitness",
+        "Avg. GRMS", "MAX GRMS", "MIN GRMS",
+        "Avg. GMAX", "MAX GMAX", "MIN GMAX",
         "Mutation rate", "Crossover rate"
     ]
     with open(file_name, "w", newline="") as csvfile:
@@ -456,15 +455,29 @@ def add_gene_lines(lines, geni, alleli):
     new_lines.append("\n")
     return new_lines
 
-def write_xyz_file(directory, individual_id, energy, hb_fitness, rank, num_atoms, xyz_lines, rotA=None, rotB=None, rotC=None):
+#def write_xyz_file(directory, individual_id, hb, energy, grms, gmax, rank, num_atoms, xyz_lines, #rotA=None, rotB=None, rotC=None):
+#    filename = os.path.join(directory, f"individuo_{individual_id}.xyz")
+#    with open(filename, 'w') as f:
+#        f.write(f"{num_atoms}\n")
+#        if rotA is not None and rotB is not None and rotC is not None:
+#            f.write(f"HB={hb}  E={energy}  GRMS={grms}  GMAX={gmax}  Rank={rank}  A={rotA}  #B={rotB}  C={rotC}\n")
+#        else:
+#            f.write(f"HB={hb}  E={energy}  GRMS={grms}  GMAX={gmax}  Rank={rank}\n")
+#        for line in xyz_lines:
+#            f.write(line + "\n")
+#    return filename
+# firma: aggiungi hb_bif=None
+def write_xyz_file(directory, individual_id, hb, energy, grms, gmax, rank, num_atoms, xyz_lines,
+                   rotA=None, rotB=None, rotC=None, hb_bif=None):
     filename = os.path.join(directory, f"individuo_{individual_id}.xyz")
     with open(filename, 'w') as f:
         f.write(f"{num_atoms}\n")
-        # aggiungiamo A/B/C se disponibili
+        meta = f"HB={hb}  E={energy}  GRMS={grms}  GMAX={gmax}  Rank={rank}"
+        if hb_bif is not None and math.isfinite(hb_bif):
+            meta += f"  HBbif={hb_bif}"
         if rotA is not None and rotB is not None and rotC is not None:
-            f.write(f"E={energy}  HB={hb_fitness}  Rank={rank}  A={rotA}  B={rotB}  C={rotC}\n")
-        else:
-            f.write(f"E={energy}  HB={hb_fitness}  Rank={rank}\n")
+            meta += f"  A={rotA}  B={rotB}  C={rotC}"
+        f.write(meta + "\n")
         for line in xyz_lines:
             f.write(line + "\n")
     return filename
@@ -474,7 +487,7 @@ def cleanup_tmp(directory):
         if fname.endswith((".gjf", ".log", ".chk")):
             os.remove(os.path.join(directory, fname))
 
-# ========== H-BOND DETECTION (NUOVO) ========================================
+# ========== H-BOND DETECTION ================================================
 
 ACCEPTOR_ELEMENTS = (7, 8, 16)   # N, O, S
 
@@ -482,7 +495,7 @@ def identify_donors_acceptors(initial_coords, initial_bonds):
     Z = [Z for (Z,_,_,_) in initial_coords]
     donors = []
     donors_H = {}
-    acceptors = [i for i,z in enumerate(Z) if z in (7,8,16)]  # N,O,S (se vuoi)
+    acceptors = [i for i,z in enumerate(Z) if z in (7,8,16)]
     for i, z in enumerate(Z):
         if z in (7,8,16):
             Hs = [j for j in initial_bonds[i] if Z[j] == 1]
@@ -490,7 +503,6 @@ def identify_donors_acceptors(initial_coords, initial_bonds):
                 donors.append(i)
                 donors_H[i] = Hs
 
-    # --- stampa diagnostica ---
     print("Donatori (0-based):")
     for d in donors:
         print(f"  Atomo {d+1} (Z={Z[d]}) con H legati -> {[h+1 for h in donors_H[d]]}")
@@ -498,9 +510,7 @@ def identify_donors_acceptors(initial_coords, initial_bonds):
 
     return donors, donors_H, acceptors
 
-
 def graph_distance_leq(bonds, i, j, max_hops: int) -> bool:
-    """Ritorna True se esiste un cammino i→j di lunghezza <= max_hops nel grafo 'bonds'."""
     if bonds is None:
         return False
     if i == j:
@@ -519,18 +529,106 @@ def graph_distance_leq(bonds, i, j, max_hops: int) -> bool:
                 dq.append((v, d+1))
     return False
 
+def evaluate_bifurcated_hbond_fitness(
+    coords,
+    donors, donors_H, acceptors,
+    contact_threshold=HB_CONTACT_THRESHOLD,
+    bonds=None,
+    xm_scale: float = 1.0,   # <— fattore percentuale (1.10 = +10%)
+    xm_add: float   = 0.1,   # <— offset in Å (0.10 = +0.10 Å)
+    alpha_bif: float = 5.0  # <— curvatura (più basso = potenziale più “morbido”)
+):
+    """
+    Conta quanti ACCETTORI sono 'biforcati', cioè hanno >=2 H-bond validi.
+    Un H-bond è valido se Ek (dalla stessa hbond_pair_energy) <= contact_threshold.
+    XM viene modificato come: XM' = XM*xm_scale + xm_add
+    L'alpha usata è alpha_bif (indipendente dalla HB energetica standard).
+    """
+    if not coords:
+        return 0.0, {"acceptor_counts": {}, "pairs": [], "threshold": contact_threshold,
+                    "xm_scale": xm_scale, "xm_add": xm_add, "alpha_bif": alpha_bif}
+
+    P = [(x,y,z) for (_,x,y,z) in coords]
+    Z = [Z for (Z,_,_,_) in coords]
+    n_atoms = len(P)
+
+    donors_valid = [d for d in donors if 0 <= d < n_atoms]
+    acc_valid    = [a for a in acceptors if 0 <= a < n_atoms]
+
+    acc_counts = {a: 0 for a in acc_valid}
+    pairs_info = []
+
+    for D in donors_valid:
+        Hs = [h for h in donors_H.get(D, []) if 0 <= h < n_atoms and Z[h] == 1]
+        for H in Hs:
+            pH = P[H]
+            for A in acc_valid:
+                if A == D:
+                    continue
+
+                # xm di base come nell'H-bond standard
+                rD_vdw = VDW_RADII.get(Z[D], 0.75)
+                rA_vdw = VDW_RADII.get(Z[A], 0.75)
+                xm_base = 0.60 * (rD_vdw + rA_vdw)
+
+                # modifica XM
+                xm = xm_base * xm_scale + xm_add
+                if xm <= 1e-12:
+                    continue
+
+                # stesse eps per tipologia D/A
+                if Z[D] == 8 and Z[A] == 7:
+                    eps_eff = HB_EPS_OHN
+                elif Z[D] == 7 and Z[A] == 8:
+                    eps_eff = HB_EPS_NHO
+                elif Z[D] == 8 and Z[A] == 8:
+                    eps_eff = HB_EPS_OHO
+                elif Z[D] == 16 and Z[A] == 8:
+                    eps_eff = HB_EPS_SHO
+                elif Z[D] == 16 and Z[A] == 7:
+                    eps_eff = HB_EPS_SHN
+                elif Z[D] == 8 and Z[A] == 16:
+                    eps_eff = HB_EPS_OHS
+                elif Z[D] == 7 and Z[A] == 16:
+                    eps_eff = HB_EPS_NHS
+                else:
+                    eps_eff = HB_EPS_BASE
+
+                xk = dist3(pH, P[A])
+
+                # usa alpha_bif (curvatura per la fitness biforcata)
+                Ek = hbond_pair_energy(xk, xm, alpha=alpha_bif, eps=eps_eff)
+
+                if Ek <= contact_threshold:
+                    acc_counts[A] += 1
+                    print(f"Trovato un candidato biforcato tra {D+1}-{H+1} - - - {A+1}")
+                    pairs_info.append({
+                        "D": D+1, "H": H+1, "A": A+1,
+                        "Ek": Ek, "dHA": xk,
+                        "xm_base": xm_base, "xm_used": xm,
+                        "alpha_bif": alpha_bif
+                    })
+
+    n_bif = sum(1 for _, c in acc_counts.items() if c >= 2)
+    print(f"-------------------------- N BIF. = {n_bif} --------------------------")
+    fitness = -float(n_bif)
+
+    details = {
+        "acceptor_counts": {a+1: c for a, c in acc_counts.items()},
+        "pairs": pairs_info,
+        "n_bifurcated_acceptors": n_bif,
+        "threshold": contact_threshold,
+        "xm_scale": xm_scale,
+        "xm_add": xm_add,
+        "alpha_bif": alpha_bif
+    }
+    return fitness, details
+    
 def evaluate_hbond_fitness(coords, donors, donors_H, acceptors,
-                           sphere=HB_SPHERE,           # non usato qui
-                           bonus=HB_BONUS_PER_BOND,    # non usato qui
-                           mutual_penalty=HB_MUTUAL_PENALTY,  # non usato qui
-                           bonds=None):                # <<< NEW
-    """
-    Seconda fitness (da minimizzare):
-      - Somma su tutte le interazioni (D,H,A) la 'Morse modificata' (parametri variabili).
-      - AGGIUNGE una penalità H–H: per ogni H donatore vs tutti gli H del sistema,
-        calcola la stessa forma funzionale con (eps=1.0, alpha=15.0, xm=2.4),
-        e somma max(0, -E_HH) per penalizzare H–H troppo vicini.
-    """
+                           sphere=HB_SPHERE,
+                           bonus=HB_BONUS_PER_BOND,
+                           mutual_penalty=HB_MUTUAL_PENALTY,
+                           bonds=None):
     if not coords:
         return 0.0, {"pairs": [], "mutual": [], "hh_penalty": {"sum": 0.0, "pairs": []}}, False
 
@@ -545,7 +643,6 @@ def evaluate_hbond_fitness(coords, donors, donors_H, acceptors,
     pairs_info = []
     any_negative = False
 
-    # --- contributo D-H...A (come nella tua versione) ---
     for D in donors_valid:
         rD_vdw = VDW_RADII.get(Z[D], 0.75)
         Hs = [h for h in donors_H.get(D, []) if 0 <= h < n_atoms and Z[h] == 1]
@@ -555,16 +652,14 @@ def evaluate_hbond_fitness(coords, donors, donors_H, acceptors,
                 if A == D:
                     continue
                 rA_vdw = VDW_RADII.get(Z[A], 0.75)
-       
                 xm = 0.60 * (rD_vdw + rA_vdw)
                 xk = dist3(pH, P[A])
 
-                # epsilon dipendente dal tipo: O–H...N > N–H...O > altri
-                if Z[D] == 8 and Z[A] == 7:       # O–H...N
+                if Z[D] == 8 and Z[A] == 7:
                     eps_eff = HB_EPS_OHN
-                elif Z[D] == 7 and Z[A] == 8:     # N–H...O
+                elif Z[D] == 7 and Z[A] == 8:
                     eps_eff = HB_EPS_NHO
-                elif Z[D] == 8 and Z[A] == 8:     #O-H...O
+                elif Z[D] == 8 and Z[A] == 8:
                     eps_eff = HB_EPS_OHO
                 elif Z[D] == 16 and Z[A] == 8:
                     eps_eff = HB_EPS_SHO
@@ -578,18 +673,11 @@ def evaluate_hbond_fitness(coords, donors, donors_H, acceptors,
                     eps_eff = HB_EPS_BASE
 
                 Ek = hbond_pair_energy(xk, xm, alpha=15, eps=eps_eff)
-                
                 total_E += Ek
                 if Ek < -0.3:
                     any_negative = True
+                pairs_info.append({"D": D+1, "H": H+1, "A": A+1, "Z_D": Z[D], "Z_A": Z[A], "dHA": xk, "xm": xm, "Ek": Ek})
 
-                pairs_info.append({
-                    "D": D+1, "H": H+1, "A": A+1,
-                    "Z_D": Z[D], "Z_A": Z[A],
-                    "dHA": xk, "xm": xm, "Ek": Ek
-                })
-
-    # <<< NEW: H–H penalty >>>
     all_H = [i for i,z in enumerate(Z) if z == 1]
     donor_H_set = set(h for hs in donors_H.values() for h in hs if 0 <= h < n_atoms)
     seen_pairs = set()
@@ -604,56 +692,37 @@ def evaluate_hbond_fitness(coords, donors, donors_H, acceptors,
             if key in seen_pairs:
                 continue
             seen_pairs.add(key)
-
-            # --- FILTRO TOPOLOGICO: escludi 1–2, 1–3, 1–4 (=> distanza <= 3 legami) ---
             if bonds is not None and graph_distance_leq(bonds, hi, hj, max_hops=4):
                 continue
             xk = dist3(P[hi], P[hj])
-            E_hh = 1e3
             if xk < HH_XM:
-                hh_pen_sum += E_hh
-            #E_hh = hbond_pair_energy(xk, HH_XM, alpha=HH_ALPHA, eps=HH_EPS)
-            #hh_pen_sum += E_hh   # << sommato SEMPRE, come richiesto
-
-            hh_pairs_info.append({
-                "H1": hi+1, "H2": hj+1,
-                "dHH": xk, "xm": HH_XM, "alpha": HH_ALPHA, "eps": HH_EPS,
-                "E_raw": E_hh
-            })
+                hh_pen_sum += 1e3
+            hh_pairs_info.append({"H1": hi+1, "H2": hj+1, "dHH": xk, "xm": HH_XM, "alpha": HH_ALPHA, "eps": HH_EPS, "E_raw": 1e3 if xk<HH_XM else 0.0})
 
     total_E += hh_pen_sum
-    # >>> END NEW
 
     details = {
         "pairs": pairs_info,
         "mutual": [],
-        "hh_penalty": {"sum": hh_pen_sum, "pairs": hh_pairs_info}  # <<< NEW: dettagli H–H
+        "hh_penalty": {"sum": hh_pen_sum, "pairs": hh_pairs_info}
     }
     return total_E, details, any_negative
 
-
-
 def hbond_pair_energy(xk, xm, alpha=15.0, eps=1.0):
-    """
-    E_k = eps * ( exp(alpha*(1 - xk/xm))
-                  - [ (xk/xm)^2 - 2*(xk/xm) + 3 ] * exp( (alpha/2)*(1 - xk/xm) ) )
-    """
     if xm <= 1e-12:
         return 0.0
     t = xk / xm
     return eps * ( math.exp(alpha*(1.0 - t))
                    - (t*t - 2.0*t + 3.0) * math.exp(0.5*alpha*(1.0 - t)) )
 
-# ========== SBX (NUOVO, angoli con wrap) ====================================
+# ========== SBX (angoli con wrap) ============================================
 
 def _bounded_sbx(x1, x2, L, U, eta):
-    """SBX bounded (produco UN figlio, scelgo child1/child2 a caso)."""
     if x1 > x2:
         x1, x2 = x2, x1
     if abs(x2 - x1) < 1e-12:
         return (x1 + x2) * 0.5
     u = random.random()
-    # compute beta for lower bound
     beta = 1.0 + 2.0 * (x1 - L) / (x2 - x1)
     alpha = 2.0 - pow(beta, -(eta + 1.0))
     if u <= 1.0/alpha:
@@ -661,7 +730,6 @@ def _bounded_sbx(x1, x2, L, U, eta):
     else:
         betaq = pow(1.0/(2.0 - u*alpha), 1.0/(eta + 1.0))
     child1 = 0.5 * ((x1 + x2) - betaq * (x2 - x1))
-    # compute beta for upper bound
     beta = 1.0 + 2.0 * (U - x2) / (x2 - x1)
     alpha = 2.0 - pow(beta, -(eta + 1.0))
     if u <= 1.0/alpha:
@@ -676,22 +744,60 @@ def _wrap360(x):
     if x < 0: x += 360.0
     return x
 
+_DISCRETE_PROBS_CACHE = {}
+
+def generate_random_allele_discrete(periodicity: int, step_degrees: float = 20.0) -> float:
+    w = 0.08
+    b = 1/(2*math.pi) - w
+    n = periodicity
+    if step_degrees <= 0:
+        step_degrees = 10.0
+    npts = max(1, int(round(360.0 / step_degrees)))
+    step = 360.0 / npts
+    angles_deg = [i * step for i in range(npts)]
+    cache_key = (n, round(step, 6))
+    if cache_key in _DISCRETE_PROBS_CACHE:
+        angles_deg_cached, cumprobs = _DISCRETE_PROBS_CACHE[cache_key]
+        if len(angles_deg_cached) == len(angles_deg):
+            r = random.random()
+            for a, cp in zip(angles_deg_cached, cumprobs):
+                if r <= cp:
+                    return a
+            return angles_deg_cached[-1]
+    weights = []
+    for ang in angles_deg:
+        theta = math.radians(ang)
+        dens = 1.0 + b + ((-1.0) ** n) * math.cos(n * theta)
+        if dens < 1e-12:
+            dens = 1e-12
+        weights.append(dens)
+    s = sum(weights)
+    probs = [w_i / s for w_i in weights]
+    cumprobs = []
+    acc = 0.0
+    for p in probs:
+        acc += p
+        cumprobs.append(acc)
+    cumprobs[-1] = 1.0
+    _DISCRETE_PROBS_CACHE[cache_key] = (angles_deg, cumprobs)
+    r = random.random()
+    for a, cp in zip(angles_deg, cumprobs):
+        if r <= cp:
+            return float(a)
+    return float(angles_deg[-1])
+
+def generate_random_allele(periodicity):
+    return generate_random_allele_discrete(periodicity)
+
 def resample_random_alleles(geni):
-    """Nuovo set di alleli casuali coerenti con le periodicità dei geni."""
     return [generate_random_allele(period) for period, _ in geni]
 
 def tweak_one_allele_random(alleles, geni, eps_deg=1e-6):
-    """
-    Ritorna (new_alleles, idx_mutato).
-    Sceglie un gene a caso e gli assegna un nuovo allele casuale coerente
-    con la periodicità. Evita (per quanto possibile) di riestrarre lo stesso valore.
-    """
     if not alleles:
         return alleles, None
     i = random.randrange(len(alleles))
     period = geni[i][0]
     old = alleles[i]
-    # prova qualche volta a cambiare davvero
     for _ in range(10):
         cand = generate_random_allele(period)
         if circular_diff_deg(cand, old) > eps_deg:
@@ -701,135 +807,18 @@ def tweak_one_allele_random(alleles, geni, eps_deg=1e-6):
     return new, i
 
 def sbx_crossover_angles(a1, a2, eta=SBX_ETA):
-    """
-    SBX su angoli (0..360) con gestione della distanza circolare:
-      - si "srotola" a2 vicino ad a1 (delta in [-180, 180]),
-      - si applica SBX in spazio [-180, 180] (L, U),
-      - si riporta e si fa mod 360.
-    """
-    # delta in [-180, 180]
     delta = ((a2 - a1 + 540.0) % 360.0) - 180.0
-    x1 = 0.0           # rappresento a1 come 0
-    x2 = delta         # e a2 come delta
+    x1 = 0.0
+    x2 = delta
     child_rel = _bounded_sbx(x1, x2, -180.0, 180.0, eta)
     child = a1 + child_rel
     return _wrap360(child)
 
 def crossover_sbx(parent1, parent2, eta=SBX_ETA):
-    """Restituisce gli alleli del figlio usando SBX per ciascun gene angolare."""
     alleles = []
     for a1, a2 in zip(parent1["alleli"], parent2["alleli"]):
         alleles.append(sbx_crossover_angles(a1, a2, eta=eta))
     return alleles
-
-# ========== MUTAZIONE (come prima) ===========================================
-
-# (opzionale) cache per non ricalcolare le probabilità ad ogni chiamata
-_DISCRETE_PROBS_CACHE = {}  # chiave: (periodicity, step_degrees) -> (angles_deg_list, cumprobs_list)
-
-#TODO: Qui ti arriverà dal prof periodicità e step, ti arriverà quello che vuoi come simmetria
-def generate_random_allele_discrete(periodicity: int, step_degrees: float = 10.0) -> float:
-    """
-    Campiona un allele angolare SOLO sui punti {0, step, 2*step, ...} in [0, 360),
-    pesando ciascun punto con la stessa 'density' continua usata nella versione originale:
-        density(theta) = 1 + b + (-1)^n * cos(n * theta)
-    dove theta è in radianti.
-    
-    Ritorna SEMPRE il punto di inizio intervallo (es. 0,10,20,...,350) come float.
-    """
-    # Parametri come nella versione continua
-    w = 0.08
-    b = 1/(2*math.pi) - w
-    n = periodicity
-
-    # Normalizza lo step e costruisci la griglia discreta [0, 360)
-    #TODO: Lo step si può modificare
-    if step_degrees <= 0:
-        step_degrees = 10.0
-    # numero di punti (es. 36 per 10°). Usiamo int(round(...)) per evitare problemi di floating
-    npts = max(1, int(round(360.0 / step_degrees)))
-    step = 360.0 / npts  # riallinea in caso di step non divisore esatto
-    angles_deg = [i * step for i in range(npts)]
-
-    # Cache: evita di ricomputare ogni volta cumprob
-    cache_key = (n, round(step, 6))
-    if cache_key in _DISCRETE_PROBS_CACHE:
-        angles_deg_cached, cumprobs = _DISCRETE_PROBS_CACHE[cache_key]
-        # piccolo controllo: stessa lunghezza (robustezza)
-        if len(angles_deg_cached) == len(angles_deg):
-            r = random.random()
-            # ricerca lineare (lista corta), volendo si può usare bisect
-            for a, cp in zip(angles_deg_cached, cumprobs):
-                if r <= cp:
-                    return a
-            return angles_deg_cached[-1]
-
-    # Calcola i pesi con la stessa density, valutata AL PUNTO DI INIZIO intervallo
-    weights = []
-    for ang in angles_deg:
-        theta = math.radians(ang)
-        dens = 1.0 + b + ((-1.0) ** n) * math.cos(n * theta)
-        # clamp di sicurezza per numerica: garantisci > 0
-        if dens < 1e-12:
-            dens = 1e-12
-        weights.append(dens)
-
-    # Normalizza a probabilità
-    s = sum(weights)
-    probs = [w_i / s for w_i in weights]
-
-    # Cumulativa per campionamento
-    cumprobs = []
-    acc = 0.0
-    for p in probs:
-        acc += p
-        cumprobs.append(acc)
-    cumprobs[-1] = 1.0  # chiudi numericamente
-
-    # Metti in cache
-    _DISCRETE_PROBS_CACHE[cache_key] = (angles_deg, cumprobs)
-
-    # Estrai
-    r = random.random()
-    for a, cp in zip(angles_deg, cumprobs):
-        if r <= cp:
-            return float(a)
-    return float(angles_deg[-1])
-
-def generate_random_allele(periodicity):
-    return generate_random_allele_discrete(periodicity)
-    w = 0.08
-    b = 1/(2*math.pi) - w
-    n = periodicity
-    while True:
-        candidate_rad = random.uniform(0, 2*math.pi)
-        density = 1 + b + math.pow(-1,n)*math.cos(n * candidate_rad)
-        if random.uniform(0, 1) <= density / (2+b):
-            return math.degrees(candidate_rad)
-
-#def generate_random_allele(periodicity: int, p: float = 0.5) -> float:
-#    """
-#    Campiona un angolo (in gradi) in modo discreto.
-#    - Se periodicity == 2:
-#        con probabilità p sceglie uniformemente da [0, 180]
-#        con probabilità 1-p sceglie uniformemente da [90, 270]
-#    - Se periodicity == 3:
-#        con probabilità p sceglie uniformemente da [60, 180, 300]
-#        con probabilità 1-p sceglie uniformemente da [0, 120, 240]
-#    """
-#    if not (0.0 <= p <= 1.0):
-#        raise ValueError("p deve essere tra 0 e 1.")
-#    if periodicity == 2:
-#        favored = (0, 180)
-#        other   = (90, 270)
-#    elif periodicity == 3:
-#        favored = (60, 180, 300)
-#        other   = (0, 120, 240)
-#    else:
-#        raise ValueError("periodicity supportate: 2 o 3.")
-#
-#    pool = favored if random.random() < p else other
-#    return float(random.choice(pool))
 
 def mutate(alleles, mutation_rate, geni):
     new_alleles = []
@@ -840,18 +829,19 @@ def mutate(alleles, mutation_rate, geni):
             new_alleles.append(allele)
     return new_alleles
 
-# ========== NSGA-II (multi-obiettivo) ========================================
+# ========== NSGA-II (multi-obiettivo generico) ===============================
 
-def dominates(a, b):
-    # minimizziamo entrambe: energia e hb_fitness
-    a1, a2 = a["fitness_energy"], a["fitness_hbond"]
-    b1, b2 = b["fitness_energy"], b["fitness_hbond"]
-    if not (math.isfinite(a1) and math.isfinite(a2) and math.isfinite(b1) and math.isfinite(b2)):
-        # i non-finiti non dominano (semplice gestione)
+def dominates_generic(a, b, objectives: List[str]):
+    # Minimizzazione per tutti gli obiettivi in 'objectives'
+    a_vals = [a.get(k, float('inf')) for k in objectives]
+    b_vals = [b.get(k, float('inf')) for k in objectives]
+    if not all(math.isfinite(x) for x in a_vals + b_vals):
         return False
-    return (a1 <= b1 and a2 <= b2) and (a1 < b1 or a2 < b2)
+    not_worse = all(av <= bv for av, bv in zip(a_vals, b_vals))
+    strictly_better = any(av < bv for av, bv in zip(a_vals, b_vals))
+    return not_worse and strictly_better
 
-def fast_non_dominated_sort(pop):
+def fast_non_dominated_sort(pop, objectives: List[str]):
     S = {i: [] for i in range(len(pop))}
     n_dom = [0]*len(pop)
     fronts = [[]]
@@ -860,9 +850,9 @@ def fast_non_dominated_sort(pop):
         n_dom[i] = 0
         for j, q in enumerate(pop):
             if i == j: continue
-            if dominates(p, q):
+            if dominates_generic(p, q, objectives):
                 S[i].append(j)
-            elif dominates(q, p):
+            elif dominates_generic(q, p, objectives):
                 n_dom[i] += 1
         if n_dom[i] == 0:
             p["rank"] = 0
@@ -878,21 +868,18 @@ def fast_non_dominated_sort(pop):
                     Q.append(j)
         f += 1
         fronts.append(Q)
-    fronts.pop()  # l'ultimo è vuoto
+    fronts.pop()
     return fronts
 
-def crowding_distance(front, pop):
+def crowding_distance(front, pop, objectives: List[str]):
     if not front:
         return
     for i in front:
         pop[i]["crowding"] = 0.0
-    # per ciascun obiettivo
-    for obj_key in ["fitness_energy", "fitness_hbond"]:
+    for obj_key in objectives:
         front_sorted = sorted(front, key=lambda idx: pop[idx][obj_key])
-        # bordo
         pop[front_sorted[0]]["crowding"] = float("inf")
         pop[front_sorted[-1]]["crowding"] = float("inf")
-        # range
         vmin = pop[front_sorted[0]][obj_key]
         vmax = pop[front_sorted[-1]][obj_key]
         if vmax == vmin:
@@ -903,24 +890,21 @@ def crowding_distance(front, pop):
             pop[front_sorted[k]]["crowding"] += (next_val - prev_val) / (vmax - vmin)
 
 def assign_pareto_metrics(pop):
-    # inizializza per sicurezza
     for ind in pop:
         ind["rank"] = int(1e9)
         ind["crowding"] = 0.0
-    fronts = fast_non_dominated_sort(pop)
+    fronts = fast_non_dominated_sort(pop, OBJECTIVES)
     for f in fronts:
-        crowding_distance(f, pop)
+        crowding_distance(f, pop, OBJECTIVES)
     return fronts
 
 def selection_nsga2(population, target_size):
-    """Seleziona i migliori target_size per rank crescente e crowding decrescente."""
     fronts = assign_pareto_metrics(population)
     selected = []
     for f in fronts:
         if len(selected) + len(f) <= target_size:
             selected.extend([population[i] for i in f])
         else:
-            # ordina per crowding decrescente
             rest = [population[i] for i in f]
             rest.sort(key=lambda ind: ind["crowding"], reverse=True)
             selected.extend(rest[:target_size - len(selected)])
@@ -929,7 +913,6 @@ def selection_nsga2(population, target_size):
 
 def pareto_tournament_selection(population, tournament_size=2):
     competitors = random.sample(population, tournament_size)
-    # migliore: rank min, poi crowding max
     competitors.sort(key=lambda ind: (ind.get("rank", 1e9), -ind.get("crowding", 0.0)))
     return competitors[0]
 
@@ -942,9 +925,12 @@ def initialize_population(pop_size, geni):
         population.append({
             "id": i,
             "alleli": alleli,
-            # multi-obiettivo:
-            "fitness_energy": None,
-            "fitness_hbond": 0.0,
+            # multi-obiettivo (inizializza a +inf)
+            "fitness_hbond": float("inf"),
+            "fitness_hb_bifork": float("inf"),
+            "fitness_energy": float("inf"),
+            "fitness_grms": float("inf"),
+            "fitness_gmax": float("inf"),
             "rank": None,
             "crowding": 0.0,
             # output:
@@ -952,8 +938,8 @@ def initialize_population(pop_size, geni):
             "num_atoms": None,
             "rotA": None, "rotB": None, "rotC": None,
             "xyz_lines": [],
-            # info aggiuntive:
-            "helped": False,          # True se hb_fitness < 0
+            # info:
+            "helped": False,
             "hb_details": {}
         })
     return population
@@ -967,66 +953,42 @@ def evaluate_individual(ind, geni, tmp_dir, gen_dir,
                         use_standard=USE_STANDARD_ORIENTATION,
                         max_topology_tries=5,
                         rescue_pool=None):
-    """
-    Valuta 'ind'. Se la topologia non coincide con quella iniziale, scarta e
-    rigenera nuovi alleli per lo STESSO individuo (stesso id), riscrivendo i file,
-    fino a trovare una topologia valida o a esaurire i tentativi.
-    """
-    # Base comune (parte invariabile del .gjf senza righe GENE)
     base_content = strip_gene_lines(INPUT_FILE)
     base_lines = remove_frozen_substring(base_content.splitlines(True))
 
     tries = 0
     while True:
         tries += 1
-
-        # 1) (Ri)crea i file dell'individuo con gli ALLELI correnti
         individual_lines = add_gene_lines(base_lines, geni, ind["alleli"])
         gjf_file = write_individual_file(tmp_dir, ind["id"], individual_lines)
         log_file = os.path.join(tmp_dir, f"individuo_{ind['id']}.log")
 
-        # 2) Esegui gdv
         retcode = run_gdv(gjf_file, log_file)
         if retcode != 0:
-            # Se gdv fallisce, scarta e riprova subito con nuovi alleli
             cleanup_individual_tmp(tmp_dir, ind["id"])
-            ind["alleli"], _ = tweak_some_alleles_random(ind["alleli"], geni)   # << cambia 1..n geni
-
+            ind["alleli"], _ = tweak_some_alleles_random(ind["alleli"], geni)
             if tries >= max_topology_tries:
-                # ultima spiaggia: prova a clonare da un individuo sano
                 if rescue_pool is not None and clone_from_rescue(ind, rescue_pool):
                     return
-                # altrimenti lascia inf come prima
-                ind["fitness_energy"] = float("inf")
-                ind["fitness_hbond"]  = float("inf")
-                ind["num_atoms"] = None
-                ind["xyz_lines"] = []
-                ind["xyz_file"]  = None
-                return
-
-            continue
-
-        # 3) Estrarre energia (la usiamo solo se la topologia risulta corretta)
-        energy = parse_fitness(log_file)
-        if energy is None:
-            # energia non trovata => scarto e rigenero
-            cleanup_individual_tmp(tmp_dir, ind["id"])
-            ind["alleli"], _ = tweak_some_alleles_random(ind["alleli"], geni)   # << cambia 1..n geni
-#
-            if tries >= max_topology_tries:
-                # ultima spiaggia: prova a clonare da un individuo sano
-                if rescue_pool is not None and clone_from_rescue(ind, rescue_pool):
-                    return
-                # altrimenti lascia inf come prima
-                ind["fitness_energy"] = float("inf")
-                ind["fitness_hbond"]  = float("inf")
-                ind["num_atoms"] = None
-                ind["xyz_lines"] = []
-                ind["xyz_file"]  = None
+                _invalidate(ind)
                 return
             continue
 
-        # 4) Parse coordinate e controllo topologia
+        # --- PARSE DEI 4 OBIETTIVI ---
+        energy = parse_fitness(log_file)               # (Hartree)
+        grms, gmax = parse_cartesian_forces_rms(log_file)  # (force units from log)
+
+        if (energy is None) or (grms is None) or (gmax is None) or \
+           (not math.isfinite(energy)) or (not math.isfinite(grms)) or (not math.isfinite(gmax)):
+            cleanup_individual_tmp(tmp_dir, ind["id"])
+            ind["alleli"], _ = tweak_some_alleles_random(ind["alleli"], geni)
+            if tries >= max_topology_tries:
+                if rescue_pool is not None and clone_from_rescue(ind, rescue_pool):
+                    return
+                _invalidate(ind)
+                return
+            continue
+
         coords = parse_last_orientation_coords(log_file, use_standard=use_standard)
         if not coords:
             coords = parse_last_orientation_coords(log_file, use_standard=(not use_standard))
@@ -1034,62 +996,67 @@ def evaluate_individual(ind, geni, tmp_dir, gen_dir,
         if initial_bonds is not None and coords:
             current_bonds = build_bond_graph(coords)
             if (len(current_bonds) != len(initial_bonds)) or (not same_topology(current_bonds, initial_bonds)):
-                # TOPOLOGIA SBAGLIATA: scarto TUTTO e rigenero nuovi alleli
                 cleanup_individual_tmp(tmp_dir, ind["id"])
-                ind["alleli"], _ = tweak_some_alleles_random(ind["alleli"], geni)   # << cambia 1..n geni
-
+                ind["alleli"], _ = tweak_some_alleles_random(ind["alleli"], geni)
                 if tries >= max_topology_tries:
-                    # ultima spiaggia: prova a clonare da un individuo sano
                     if rescue_pool is not None and clone_from_rescue(ind, rescue_pool):
                         return
-                    # altrimenti lascia inf come prima
-                    ind["fitness_energy"] = float("inf")
-                    ind["fitness_hbond"]  = float("inf")
-                    ind["num_atoms"] = None
-                    ind["xyz_lines"] = []
-                    ind["xyz_file"]  = None
+                    _invalidate(ind)
                     return
                 continue
         else:
-            # Se non ho topologia/coords, prova il clone; altrimenti invalida
             if rescue_pool is not None and clone_from_rescue(ind, rescue_pool):
                 return
-            ind["fitness_energy"] = float("inf")
-            ind["fitness_hbond"]  = float("inf")
-            ind["num_atoms"] = None
-            ind["xyz_lines"] = []
-            ind["xyz_file"]  = None
+            _invalidate(ind)
             return
 
-        # 5) A questo punto la topologia è OK: assegno energia e valuto H-bond
-        ind["fitness_energy"] = grms  
-        # Estrai le costanti rotazionali dal log
+        # --- Fitness HB ---
         rotA, rotB, rotC = parse_rotational_constants_mhz(log_file)
-        ind["rotA"] = rotA
-        ind["rotB"] = rotB
-        ind["rotC"] = rotC
+        ind["rotA"] = rotA; ind["rotB"] = rotB; ind["rotC"] = rotC
 
         hb_fit, hb_det, helped = evaluate_hbond_fitness(
             coords, donors, donors_H, acceptors,
             sphere=hb_sphere, bonus=hb_bonus, mutual_penalty=hb_mutual_penalty,
-            bonds=initial_bonds   # <<< NEW: per filtrare H–H con distanza topologica
+            bonds=initial_bonds
         )
-        ind["fitness_hbond"] = hb_fit
-        ind["hb_details"] = hb_det
-        ind["helped"] = helped
+        
+        # --- Fitness H-bond biforcati ---
+        hb_bif_fit, hb_bif_det = evaluate_bifurcated_hbond_fitness(
+            coords, donors, donors_H, acceptors,
+            contact_threshold=HB_CONTACT_THRESHOLD,
+            bonds=initial_bonds
+        )
+        ind["fitness_hb_bifork"] = hb_bif_fit
+        # opzionale: conserva dettagli per debug
+        if "hb_details" in ind and isinstance(ind["hb_details"], dict):
+            ind["hb_details"]["bifork"] = hb_bif_det
+        else:
+            ind["hb_details"] = {"bifork": hb_bif_det}
 
-        # 6) Salvo XYZ “in memoria” (lo .xyz su disco lo scrivi più avanti per i selezionati)
+        # assegna tutte le fitness
+        ind["fitness_energy"] = energy
+        ind["fitness_grms"]   = grms
+        ind["fitness_gmax"]   = gmax
+        ind["fitness_hbond"]  = hb_fit
+        ind["hb_details"]     = hb_det
+        ind["helped"]         = helped
+
         num_atoms, xyz_lines = parse_xyz_from_log(log_file)
         ind["num_atoms"] = num_atoms
         ind["xyz_lines"] = xyz_lines
-        ind["xyz_file"] = None
+        ind["xyz_file"]  = None
 
-        # 7) Fine: individuo valido ottenuto
-        if rescue_pool is not None and math.isfinite(ind["fitness_energy"]):
+        if rescue_pool is not None and all(math.isfinite(ind[k]) for k in OBJECTIVES):
             rescue_pool.append(snapshot_for_rescue(ind))
         return
 
-
+def _invalidate(ind):
+    for k in OBJECTIVES:
+        ind[k] = float("inf")
+    ind["fitness_hb_bifork"] = float("inf")
+    ind["num_atoms"] = None
+    ind["xyz_lines"] = []
+    ind["xyz_file"]  = None
 
 # ========== CLI ==============================================================
 
@@ -1119,7 +1086,7 @@ def parse_weights_arg(weights_str):
     return ws
 
 def build_arg_parser():
-    parser = argparse.ArgumentParser(description="GA conformer search (multi-obiettivo: Energia + H-bond).")
+    parser = argparse.ArgumentParser(description="GA conformer search (multi-obiettivo: HB + Energy + GRMS + GMAX).")
     parser.add_argument("--gjf", type=str, default=INPUT_FILE, help="Percorso al file .gjf di input.")
     parser.add_argument("--out-dir", type=str, default=GENERATIONS_DIR, help="Directory output delle generazioni.")
     parser.add_argument("--tmp-dir", type=str, default=TMP_DIR, help="Directory temporanea per run intermedi.")
@@ -1129,20 +1096,17 @@ def build_arg_parser():
     parser.add_argument("--pop-target", type=int, default=POPOLAZIONE_TARGET)
     parser.add_argument("--cpu-fraction", type=float, default=0.75)
     parser.add_argument("--gene-sim-threshold-deg", type=float, default=5.0)
-    # (legacy, non usati)
     parser.add_argument("--near-pairs", type=str, default="")
     parser.add_argument("--near-weights", type=str, default="")
     parser.add_argument("--pair-sphere", type=float, default=PAIR_SPHERE)
     parser.add_argument("--use-standard-orientation", action="store_true")
     parser.add_argument("--use-principal-axis", action="store_true")
     parser.add_argument("--max-topology-tries", type=int, default=20,
-    help="Numero massimo di tentativi di rigenerazione alleli se la topologia cambia.")
-    # nuovo: H-bond objective
+                        help="Numero massimo di tentativi di rigenerazione alleli se la topologia cambia.")
     parser.add_argument("--hb-sphere", type=float, default=HB_SPHERE, help="Raggio H...A per H-bond (Å).")
     parser.add_argument("--hb-bonus", type=float, default=HB_BONUS_PER_BOND, help="Quanto riduce la seconda fitness per H-bond.")
     parser.add_argument("--hb-mutual-penalty", type=float, default=HB_MUTUAL_PENALTY, help="Penalità per coppie reciproche A↔B.")
-    # nuovo: SBX
-    parser.add_argument("--sbx-eta", type=float, default=SBX_ETA, help="Indice di distribuzione SBX (maggiore = figli più vicini ai genitori).")
+    parser.add_argument("--sbx-eta", type=float, default=SBX_ETA, help="Indice di distribuzione SBX.")
     return parser
 
 # ========== MAIN GA ==========================================================
@@ -1177,7 +1141,6 @@ def genetic_algorithm():
         args.hb_mutual_penalty = HB_MUTUAL_PENALTY
         args.sbx_eta = SBX_ETA
 
-    # set globals
     MAX_TOPOLOGY_TRIES = int(getattr(args, "max_topology_tries", 10))
     INPUT_FILE = args.gjf
     TMP_DIR = args.tmp_dir
@@ -1188,58 +1151,42 @@ def genetic_algorithm():
     if args.seed is not None:
         random.seed(args.seed)
 
-    # orientazione
     USE_STANDARD_ORIENTATION = False
     if getattr(args, "use_principal_axis", False):
         USE_STANDARD_ORIENTATION = False
     elif getattr(args, "use_standard_orientation", False):
         USE_STANDARD_ORIENTATION = True
 
-    # parametri H-bond
     HB_SPHERE = float(getattr(args, "hb_sphere", HB_SPHERE))
     HB_BONUS_PER_BOND = float(getattr(args, "hb_bonus", HB_BONUS_PER_BOND))
     HB_MUTUAL_PENALTY = float(getattr(args, "hb_mutual_penalty", HB_MUTUAL_PENALTY))
-
-    # SBX
     SBX_ETA = float(getattr(args, "sbx_eta", SBX_ETA))
-
-    # (legacy NEAR_* ignorati deliberatamente)
-    _ = getattr(args, "near_pairs", "")
-    _ = getattr(args, "near_weights", "")
-    _ = getattr(args, "pair_sphere", PAIR_SPHERE)
 
     os.makedirs(TMP_DIR, exist_ok=True)
     os.makedirs(GENERATIONS_DIR, exist_ok=True)
 
-    # log generale
     generations_data = []
     generation_log_path = os.path.join(GENERATIONS_DIR, "generation_log.txt")
     with open(generation_log_path, "w") as logf:
-        logf.write("Log delle generazioni (multi-obiettivo: Energia + HB):\n\n")
+        logf.write("Log generazioni (multi-obiettivo: HB + Energy + GRMS + GMAX):\n\n")
 
-    # parse GENI dal gjf (se presenti)
     parsed_geni = parse_genes_from_gjf(INPUT_FILE)
     if parsed_geni:
         GENI = parsed_geni
 
     reference_lines = read_reference_file(INPUT_FILE)
 
-    # Topologia di riferimento
     _initial_coords = parse_coords_from_gjf(INPUT_FILE)
     _initial_bonds = build_bond_graph(_initial_coords) if _initial_coords else None
 
-    # Donatori/Accettori fissati all'avvio (indici 0-based, coerenti con topologia)
     donors, donors_H, acceptors = identify_donors_acceptors(_initial_coords, _initial_bonds) if _initial_coords and _initial_bonds else ([], {}, [])
 
-    # popolazione iniziale
     population = initialize_population(POPOLAZIONE_INIZIALE, GENI)
-    
     rescue_pool = []
 
     for gen in range(NUM_GENERAZIONI):
         print(f"Generazione {gen}")
 
-        # oscillazioni
         phase = (math.pi * NUM_OSCILLATIONS / (max(1, NUM_GENERAZIONI - 1))) * gen
         current_mutation_rate = BASE_RATE_MUTATION + DELTA_RATE_MUTATION * math.sin(phase)
         current_crossover_rate = BASE_RATE_CROSSOVER - DELTA_RATE_CROSSOVER * math.sin(phase)
@@ -1250,7 +1197,6 @@ def genetic_algorithm():
         max_workers = max(1, int((os.cpu_count() or 1) * max(0.01, min(1.0, args.cpu_fraction))))
         max_workers = min(max_workers, len(population))
 
-        # valuta in parallelo
         with ThreadPoolExecutor(max_workers=max_workers) as executor:
             futures = [
                 executor.submit(
@@ -1260,45 +1206,54 @@ def genetic_algorithm():
                     HB_SPHERE, HB_BONUS_PER_BOND, HB_MUTUAL_PENALTY,
                     USE_STANDARD_ORIENTATION,
                     MAX_TOPOLOGY_TRIES,
-                    rescue_pool                        # << nuovo argomento
+                    rescue_pool
                 )
                 for ind in population
             ]
-
             for future in as_completed(futures):
                 future.result()
 
-        # selezione NSGA-II (solo target_size)
         selected = selection_nsga2(population, POPOLAZIONE_TARGET)
 
-        # statistiche SOLO sui selezionati
-        E_list = [ind["fitness_energy"] for ind in selected if ind["fitness_energy"] is not None]
-        HB_list = [ind["fitness_hbond"] for ind in selected if ind["fitness_hbond"] is not None]
-        if E_list:
-            avg_E = sum(E_list) / len(E_list)
-            min_E = min(E_list); max_E = max(E_list)
-        else:
-            avg_E = min_E = max_E = None
-        if HB_list:
-            avg_HB = sum(HB_list) / len(HB_list)
-            min_HB = min(HB_list); max_HB = max(HB_list)
-        else:
-            avg_HB = min_HB = max_HB = None
+        HB_list   = [ind["fitness_hbond"]  for ind in selected if math.isfinite(ind["fitness_hbond"])]
+        HB_BIF_list = [ind["fitness_hb_bifork"]  for ind in selected if math.isfinite(ind["fitness_hb_bifork"])]
+        E_list    = [ind["fitness_energy"] for ind in selected if math.isfinite(ind["fitness_energy"])]
+        GRMS_list = [ind["fitness_grms"]   for ind in selected if math.isfinite(ind["fitness_grms"])]
+        GMAX_list = [ind["fitness_gmax"]   for ind in selected if math.isfinite(ind["fitness_gmax"])]
 
-        # log generazione
+        def _stats(L):
+            if not L: return (None, None, None)
+            return (sum(L)/len(L), max(L), min(L))
+
+        avg_HB, max_HB, min_HB       = _stats(HB_list)
+        avg_E,  max_E,  min_E        = _stats(E_list)
+        avg_G,  max_G,  min_G        = _stats(GRMS_list)
+        avg_M,  max_M,  min_M        = _stats(GMAX_list)
+        avg_HB_BIF, max_HB_BIF, min_HB_BIF = _stats(HB_BIF_list)
+
         with open(generation_log_path, "a") as logf:
             logf.write(f"Generazione {gen}:\n")
-            logf.write(f"  Energy   -> avg: {avg_E} | min: {min_E} | max: {max_E}\n")
-            logf.write(f"  HB_fit   -> avg: {avg_HB} | min: {min_HB} | max: {max_HB}\n")
+            logf.write(f"  HB      -> avg: {avg_HB} | min: {min_HB} | max: {max_HB}\n")
+            logf.write(f"  HBbif   -> avg: {avg_HB_BIF} | min: {min_HB_BIF} | max: {max_HB_BIF}\n")
+            logf.write(f"  Energy  -> avg: {avg_E}  | min: {min_E}  | max: {max_E}\n")
+            logf.write(f"  GRMS    -> avg: {avg_G}  | min: {min_G}  | max: {max_G}\n")
+            logf.write(f"  GMAX    -> avg: {avg_M}  | min: {min_M}  | max: {max_M}\n")
             logf.write(f"  Mutation rate: {current_mutation_rate}\n")
             logf.write(f"  Crossover rate: {current_crossover_rate}\n")
-            logf.write("  Individui target (rank, crowding, E, HB):\n")
+            logf.write("  Individui target (rank, crowding, HB, E, GRMS, GMAX):\n")
             for ind in selected:
                 rotA = ind.get('rotA'); rotB = ind.get('rotB'); rotC = ind.get('rotC')
+                extra_bif = ""
+                if "fitness_hb_bifork" in ind:
+                    extra_bif = f" | HBbif={ind['fitness_hb_bifork']}"
                 logf.write(
                     f"    id={ind['id']} | rank={ind.get('rank')} | crowd={ind.get('crowding')} "
-                    f"| E={ind['fitness_energy']} | HB={ind['fitness_hbond']}"
+                    f"| HB={ind['fitness_hbond']} | E={ind['fitness_energy']} | GRMS={ind['fitness_grms']} | GMAX={ind['fitness_gmax']}{extra_bif}"
                 )
+                #logf.write(
+                #    f"    id={ind['id']} | rank={ind.get('rank')} | crowd={ind.get('crowding')} "
+                #    f"| HB={ind['fitness_hbond']} | E={ind['fitness_energy']} | #GRMS={ind['fitness_grms']} | GMAX={ind['fitness_gmax']}"
+                #)
                 if rotA is not None and rotB is not None and rotC is not None:
                     logf.write(f" | A={rotA} | B={rotB} | C={rotC}")
                 if ind.get("helped"):
@@ -1309,25 +1264,33 @@ def genetic_algorithm():
 
         generations_data.append({
             "Generation": gen,
+            "Avg. HB": avg_HB, "MAX HB": max_HB, "MIN HB": min_HB,
+            "Avg. HB Bif.": avg_HB_BIF, "MAX HB Bif.": max_HB_BIF, "MIN HB Bif.": min_HB_BIF,
             "Avg. Energy": avg_E, "MAX Energy": max_E, "MIN Energy": min_E,
-            "Avg. HB_fitness": avg_HB, "MAX HB_fitness": max_HB, "MIN HB_fitness": min_HB,
+            "Avg. GRMS": avg_G, "MAX GRMS": max_G, "MIN GRMS": min_G,
+            "Avg. GMAX": avg_M, "MAX GMAX": max_M, "MIN GMAX": min_M,
             "Mutation rate": current_mutation_rate,
             "Crossover rate": current_crossover_rate
         })
 
-        # scrivi XYZ SOLO per selezionati
         for ind in selected:
             if ind.get("xyz_lines"):
                 n_atoms = ind.get("num_atoms") or len(ind["xyz_lines"])
+                #ind["xyz_file"] = write_xyz_file(
+                #    gen_dir, ind["id"],
+                #    ind["fitness_hbond"], ind["fitness_energy"], ind["fitness_grms"], #ind["fitness_gmax"],
+                #    ind.get("rank"), n_atoms, ind["xyz_lines"],
+                #    rotA=ind.get("rotA"), rotB=ind.get("rotB"), rotC=ind.get("rotC")
+                #)
+                # nel main, quando salvi gli xyz dei selezionati:
                 ind["xyz_file"] = write_xyz_file(
                     gen_dir, ind["id"],
-                    ind["fitness_energy"], ind["fitness_hbond"], ind.get("rank"),
-                    n_atoms, ind["xyz_lines"],
-                    rotA=ind.get("rotA"), rotB=ind.get("rotB"), rotC=ind.get("rotC")
+                    ind["fitness_hbond"], ind["fitness_energy"], ind["fitness_grms"], ind["fitness_gmax"],
+                    ind.get("rank"), n_atoms, ind["xyz_lines"],
+                    rotA=ind.get("rotA"), rotB=ind.get("rotB"), rotC=ind.get("rotC"),
+                    hb_bif=ind.get("fitness_hb_bifork")  # <— NEW
                 )
-                
-        # prepara nuova popolazione (genitori = selected)
-        # assegna metriche anche ai selected (in caso di torneo)
+
         assign_pareto_metrics(selected)
 
         new_population = []
@@ -1342,8 +1305,10 @@ def genetic_algorithm():
             new_population.append({
                 "id": random.randint(1000, 9999),
                 "alleli": child_alleles,
-                "fitness_energy": None,
-                "fitness_hbond": 0.0,
+                "fitness_hbond": float("inf"),
+                "fitness_energy": float("inf"),
+                "fitness_grms": float("inf"),
+                "fitness_gmax": float("inf"),
                 "rank": None,
                 "crowding": 0.0,
                 "xyz_file": None,
@@ -1354,14 +1319,122 @@ def genetic_algorithm():
                 "hb_details": {}
             })
         population = new_population
-        cleanup_tmp(TMP_DIR)  # opzionale
+        cleanup_tmp(TMP_DIR)
 
-    # --- Dump cumulativi (mantenuti) ---
+    # --- Dump cumulativi ---
     cum_helped_dir = os.path.join(GENERATIONS_DIR, "cumulative_helped")
     cum_standard_dir = os.path.join(GENERATIONS_DIR, "cumulative_standard")
     os.makedirs(cum_helped_dir, exist_ok=True)
     os.makedirs(cum_standard_dir, exist_ok=True)
+    
+    def _is_dominated(a, b):
+        # a e b = dict con chiavi degli obiettivi
+        better_or_equal_all = True
+        strictly_better_any = False
+        for k in OBJECTIVES:
+            if a[k] > b[k]:           # peggiore su k
+                better_or_equal_all = False
+                break
+            if a[k] < b[k]:
+                strictly_better_any = True
+        return better_or_equal_all is False and False  # placeholder per lint
 
+    def _dominates(a, b):
+        not_worse_all = all(a[k] <= b[k] for k in OBJECTIVES)
+        better_any = any(a[k] < b[k] for k in OBJECTIVES)
+        return not_worse_all and better_any
+
+    def global_pareto_front_from_selected(rootdir):
+        items = []
+        for root, _, files in os.walk(rootdir):
+            if "population_" not in root:
+                continue
+            for fn in files:
+                if not fn.endswith(".xyz"):
+                    continue
+                path = os.path.join(root, fn)
+                try:
+                    with open(path, "r") as f:
+                        _ = f.readline()
+                        meta = f.readline().strip()
+                    mHB = re.search(r"\bHB=([-\d\.Ee+]+)", meta)
+                    mE  = re.search(r"\bE=([-\d\.Ee+]+)", meta)
+                    mG  = re.search(r"\bGRMS=([-\d\.Ee+]+)", meta)
+                    mM  = re.search(r"\bGMAX=([-\d\.Ee+]+)", meta)
+                    mBf = re.search(r"\bHBbif=([-\d\.Ee+]+)", meta)  # <— NEW
+
+                    rec = {
+                        "fitness_hbond":  float(mHB.group(1)) if mHB else float("inf"),
+                        "fitness_energy": float(mE.group(1))  if mE  else float("inf"),
+                        "fitness_grms":   float(mG.group(1))  if mG  else float("inf"),
+                        "fitness_gmax":   float(mM.group(1))  if mM  else float("inf"),
+                        "path": path
+                    }
+                    if mBf:
+                        rec["fitness_hb_bifork"] = float(mBf.group(1))   # <— NEW
+                    items.append(rec)
+                except:
+                    continue
+
+        # obiettivi dinamici: include HBbif se presente
+        obj_keys = ["fitness_hbond","fitness_energy","fitness_grms","fitness_gmax"]
+        if any("fitness_hb_bifork" in r for r in items):
+            obj_keys.insert(1, "fitness_hb_bifork")  # p.es. subito dopo HB
+
+        def _dominates(a, b, keys):
+            return all(a[k] <= b[k] for k in keys) and any(a[k] < b[k] for k in keys)
+
+        front = []
+        for a in items:
+            dominated = False
+            for b in items:
+                if a is b:
+                    continue
+                if _dominates(b, a, obj_keys):
+                    dominated = True
+                    break
+            if not dominated:
+                front.append(a)
+        return front
+
+    #def dump_global_front(front, out_dir):
+    #    os.makedirs(out_dir, exist_ok=True)
+    #    log_path = os.path.join(out_dir, "global_pareto_front.csv")
+    #    with open(log_path, "w", newline="") as cf:
+    #        w = csv.writer(cf)
+    #        w.writerow(["HB","E","GRMS","GMAX","file"])
+    #        for i, rec in enumerate(sorted(front, key=lambda r: (r["HB"], r["E"], r["GRMS"], #r["GMAX"]))):
+    #            base = os.path.basename(rec["path"])
+    #            dst = os.path.join(out_dir, f"{os.path.splitext(base)[0]}_PF{i}.xyz")
+    #            shutil.copyfile(rec["path"], dst)
+    #            w.writerow([rec["HB"], rec["E"], rec["GRMS"], rec["GMAX"], os.path.basename(dst)])
+    
+    def dump_global_front(front, out_dir):
+        os.makedirs(out_dir, exist_ok=True)
+        log_path = os.path.join(out_dir, "global_pareto_front.csv")
+        has_bif = any("fitness_hb_bifork" in r for r in front)
+        with open(log_path, "w", newline="") as cf:
+            w = csv.writer(cf)
+            header = ["HB","E","GRMS","GMAX","file"]
+            if has_bif:
+                header.insert(1, "HBbif")
+            w.writerow(header)
+            # ordina con/ senza HBbif
+            def _key(r):
+                base = (r["fitness_hbond"],)
+                if has_bif:
+                    base += (r["fitness_hb_bifork"],)
+                base += (r["fitness_energy"], r["fitness_grms"], r["fitness_gmax"])
+                return base
+            for i, rec in enumerate(sorted(front, key=_key)):
+                base = os.path.basename(rec["path"])
+                dst = os.path.join(out_dir, f"{os.path.splitext(base)[0]}_PF{i}.xyz")
+                shutil.copyfile(rec["path"], dst)
+                row = [rec["fitness_hbond"], rec["fitness_energy"], rec["fitness_grms"], rec["fitness_gmax"], os.path.basename(dst)]
+                if has_bif:
+                    row = [rec["fitness_hbond"], rec["fitness_hb_bifork"], rec["fitness_energy"], rec["fitness_grms"], rec["fitness_gmax"], os.path.basename(dst)]
+                w.writerow(row)
+                
     def _collect_xyz(rootdir):
         out = []
         for root, _, files in os.walk(rootdir):
@@ -1372,80 +1445,79 @@ def genetic_algorithm():
                         with open(path, "r") as f:
                             _ = f.readline()
                             meta = f.readline().strip()
-                        mE  = re.search(r"E=([-\d\.Ee+]+)", meta)
-                        mHB = re.search(r"HB=([-\d\.Ee+]+)", meta)
+                        mHB = re.search(r"\bHB=([-\d\.Ee+]+)", meta)
+                        mE  = re.search(r"\bE=([-\d\.Ee+]+)", meta)
+                        mG  = re.search(r"\bGRMS=([-\d\.Ee+]+)", meta)
+                        mM  = re.search(r"\bGMAX=([-\d\.Ee+]+)", meta)
+                        HB = float(mHB.group(1)) if mHB else float("inf")
+                        E  = float(mE.group(1))  if mE  else float("inf")
+                        G  = float(mG.group(1))  if mG  else float("inf")
+                        M  = float(mM.group(1))  if mM  else float("inf")
                         mA  = re.search(r"\bA=([-\d\.Ee+]+)", meta)
                         mB  = re.search(r"\bB=([-\d\.Ee+]+)", meta)
                         mC  = re.search(r"\bC=([-\d\.Ee+]+)", meta)
-                        E  = float(mE.group(1))  if mE  else float("inf")
-                        HB = float(mHB.group(1)) if mHB else float("inf")
                         A  = float(mA.group(1))  if mA  else None
                         B  = float(mB.group(1))  if mB  else None
                         C  = float(mC.group(1))  if mC  else None
                     except:
-                        E = float("inf"); HB = float("inf"); A = B = C = None
-                    out.append((E, HB, A, B, C, path))
+                        HB = E = G = M = float("inf"); A = B = C = None
+                    # Ordine: usiamo tuple (HB, E, GRMS, GMAX, A,B,C,path)
+                    out.append((HB, E, G, M, A, B, C, path))
         return out
 
     all_xyz = _collect_xyz(GENERATIONS_DIR)
-    helped   = [t for t in all_xyz if t[1] < -0.3]   # HB < 0
-    standard = [t for t in all_xyz if not (t[1] < -0.3)]
+    helped   = [t for t in all_xyz if t[0] < -0.3]   # HB < -0.3
+    standard = [t for t in all_xyz if not (t[0] < -0.3)]
 
-    helped.sort(key=lambda t: (t[0], t[1]))     # usa E, poi HB
-    standard.sort(key=lambda t: (t[0], t[1]))
-    
+    helped.sort(key=lambda t: (t[0], t[1], t[2], t[3]))     # HB, E, GRMS, GMAX
+    standard.sort(key=lambda t: (t[0], t[1], t[2], t[3]))
+
     def _dump_cum(lst, out_dir, log_name):
         log_path = os.path.join(out_dir, log_name)
         with open(log_path, "w") as lf:
-            lf.write(f"Elenco (ordinato per E crescente, poi HB) - n={len(lst)}\n")
-            for rank, (E, HB, A, B, C, src) in enumerate(lst):
+            lf.write(f"Elenco (ordinato per HB, E, GRMS, GMAX) - n={len(lst)}\n")
+            for rank, (HB, E, G, M, A, B, C, src) in enumerate(lst):
                 base = os.path.basename(src)
                 root, ext = os.path.splitext(base)
                 dst_name = f"{root}_{rank}{ext}"
                 dst_path = os.path.join(out_dir, dst_name)
                 shutil.copyfile(src, dst_path)
                 if A is not None and B is not None and C is not None:
-                    lf.write(f"{rank:04d}  E={E}  HB={HB}  A={A}  B={B}  C={C}  file={dst_name}\n")
+                    lf.write(f"{rank:04d}  HB={HB}  E={E}  GRMS={G}  GMAX={M}  A={A}  B={B}  C={C}  file={dst_name}\n")
                 else:
-                    lf.write(f"{rank:04d}  E={E}  HB={HB}  file={dst_name}\n")
+                    lf.write(f"{rank:04d}  HB={HB}  E={E}  GRMS={G}  GMAX={M}  file={dst_name}\n")
 
     _dump_cum(helped,   cum_helped_dir,   "cumulative_helped_log.txt")
     _dump_cum(standard, cum_standard_dir, "cumulative_standard_log.txt")
-    
-    # --- cumulative con TUTTI (helped + standard) ---  # <<< NEW
+
     cum_all_dir = os.path.join(GENERATIONS_DIR, "cumulative")
     os.makedirs(cum_all_dir, exist_ok=True)
-
-    # Ordina tutto per Energia poi HB (come gli altri)
-    all_sorted = sorted(all_xyz, key=lambda t: (t[0], t[1]))
-
-    # Copia tutti e crea log completo
+    all_sorted = sorted(all_xyz, key=lambda t: (t[0], t[1], t[2], t[3]))
     _dump_cum(all_sorted, cum_all_dir, "cumulative_all_log.txt")
 
-    energies_path = os.path.join(cum_all_dir, "cumulative_all_E.txt")
-    with open(energies_path, "w") as ef:
-        ef.write(f"Elenco energie (ordinato per E crescente) - n={len(all_sorted)}\n")
-        for rank, (E, HB, A, B, C, src) in enumerate(all_sorted):
+    forces_path = os.path.join(cum_all_dir, "cumulative_all_forces.txt")
+    with open(forces_path, "w") as ef:
+        ef.write(f"Elenco forze (ordinato per HB, E, GRMS, GMAX) - n={len(all_sorted)}\n")
+        for rank, (HB, E, G, M, A, B, C, src) in enumerate(all_sorted):
             base = os.path.basename(src)
             if A is not None and B is not None and C is not None:
-                ef.write(f"{rank:04d}  E={E}  A={A}  B={B}  C={C}  file={base}\n")
+                ef.write(f"{rank:04d}  HB={HB}  E={E}  GRMS={G}  GMAX={M}  A={A}  B={B}  C={C}  file={base}\n")
             else:
-                ef.write(f"{rank:04d}  E={E}  file={base}\n")
+                ef.write(f"{rank:04d}  HB={HB}  E={E}  GRMS={G}  GMAX={M}  file={base}\n")
 
     with open(generation_log_path, "a") as logf:
         logf.write("=== Riepilogo finale ===\n")
-        logf.write(f"  Totale selezionati HELPED (HB<0):   {len(helped)}\n")
-        logf.write(f"  Totale selezionati STANDARD:        {len(standard)}\n")
+        logf.write(f"  Totale selezionati HELPED (HB<-0.3): {len(helped)}\n")
+        logf.write(f"  Totale selezionati STANDARD:         {len(standard)}\n")
         logf.write(f"  Cartella cumulative_helped:   {cum_helped_dir}\n")
-        logf.write(f"  Cartella cumulative_standard: {cum_standard_dir}\n\n")
-        logf.write(f"  Cartella cumulative_all:      {cum_all_dir}\n")  # <<< NEW
-        logf.write("\n")
-
-
+        logf.write(f"  Cartella cumulative_standard: {cum_standard_dir}\n")
+        logf.write(f"  Cartella cumulative_all:      {cum_all_dir}\n\n")
+        
+    # --- Pareto globale su tutti i selezionati (tutte le generazioni) ---
+    global_pf = global_pareto_front_from_selected(GENERATIONS_DIR)
+    dump_global_front(global_pf, os.path.join(GENERATIONS_DIR, "global_pareto_front"))
     save_statistics("evolution.csv", generations_data)
     print("Algoritmo completato.")
 
 if __name__ == "__main__":
     genetic_algorithm()
-
-

@@ -1,6 +1,6 @@
 %Nprocshared=1
 %Mem=1GB
-#P HF geom=readallgic Output=Pickett
+#P HF geom=readallgic force Output=Pickett
 
  gly                                                                            
 
