@@ -1,0 +1,17 @@
+# Explicit X-H...pi fitness for the planar uracil ring.
+# These directives configure the hbond_pi objective but do not add genetic
+# coordinates.
+HPI(mode=explicit)
+HPI_RING_uracil = RING(1, 2, 3, 4, 5, 6)
+
+# Independent global rigid-pose exploration of all four waters (13-15, 16-18,
+# 19-21, and 22-24) around uracil (1-12), used as the fixed reference.
+# distance is in angstrom; direction/orientation are maximum displacements in
+# degrees. 118 degrees keeps a small safety margin below the tested 120-degree
+# FROT chart limit.
+# To discourage disconnected water subclusters, add disconnected_components_penalty to
+# --extra-objectives. Connected chains are allowed; the objective remains off by default.
+POSE_WATER_1(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-12;13-15)
+POSE_WATER_2(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-12;16-18)
+POSE_WATER_3(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-12;19-21)
+POSE_WATER_4(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-12;22-24)

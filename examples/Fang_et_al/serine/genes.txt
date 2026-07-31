@@ -1,0 +1,7 @@
+# Fang et al. five-dimensional torsional search space for serine.
+# Atom indices are 1-based; only acyclic dihedral coordinates are included.
+GENE0001(periodicity=2) = D(1, 2, 3, 4)    # N-Ca-C(=O)-O: Ca-carboxyl rotation
+GENE0002(periodicity=3) = D(1, 2, 6, 7)    # N-Ca-Cb-O: side-chain chi1
+GENE0003(periodicity=3) = D(3, 2, 1, 11)   # C(=O)-Ca-N-H: amino rotation
+GENE0004(periodicity=2) = D(4, 3, 5, 14)   # O=C-O-H: carboxylic O-H
+GENE0005(periodicity=3) = D(2, 6, 7, 13)   # Ca-Cb-O-H: side-chain hydroxyl

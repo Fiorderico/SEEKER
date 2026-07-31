@@ -1,0 +1,7 @@
+# Independent torsions for the glycine example. Atom indices are 1-based.
+GENE0001(periodicity=3) = D(1, 2, 3, 15)   # (CH3)-C-S-H
+GENE0002(periodicity=3) = D(3, 2, 4, 5)    # (SH)-C-C(=O)
+GENE0003(periodicity=2) = D(5, 4, 6, 16)   # (=O)-C-N(H)-
+GENE0004(periodicity=3) = D(16, 6, 7, 8)   # NH-C
+GENE0005(periodicity=3) = D(6, 7, 8, 10)   # CH2-COOH
+GENE0006(periodicity=2) = D(7, 8, 10, 19)  # C-OH

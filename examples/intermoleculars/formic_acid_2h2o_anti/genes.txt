@@ -1,0 +1,4 @@
+# Independent global rigid-pose exploration of both waters (6-8 and 9-11)
+# around formic acid (1-5). The first fragment is the fixed reference.
+POSE_WATER_1(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-5;6-8)
+POSE_WATER_2(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-5;9-11)

@@ -1,0 +1,7 @@
+GENE0001(periodicity= 3) = D( 8, 4, 1, 2)  # OH
+GENE0002(periodicity= 3) = D( 11, 9, 2, 1)  # OH
+GENE0003(periodicity= 3) = D( 16, 13, 7, 6)  # OH
+GENE0004(periodicity= 3) = D( 4, 1, 2, 6)  # CC
+GENE0005(periodicity= 3) = D( 1, 2, 6, 7)  # CC
+GENE0006(periodicity= 3) = D( 2, 6, 7, 13)  # CC
+

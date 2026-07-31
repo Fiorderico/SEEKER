@@ -1,0 +1,14 @@
+# Fang et al. five-dimensional torsional search space for tryptophan.
+# Atom indices are 1-based; only acyclic dihedral coordinates are included.
+# Optional X-H...pi fitness: use the two fused indole rings explicitly.
+# The launcher recommends hbond_pi for these directives; they do not add
+# genetic coordinates.
+HPI(mode=explicit)
+HPI_RING_indole5 = RING(5, 6, 7, 8, 9)
+HPI_RING_indole6 = RING(1, 2, 4, 5, 6, 3)
+
+GENE0001(periodicity=3) = D(12, 11, 13, 15)  # N-Ca-C(=O)-O: Ca-carboxyl rotation
+GENE0002(periodicity=3) = D(12, 11, 10, 9)   # N-Ca-Cb-Cg: side-chain chi1
+GENE0003(periodicity=3) = D(13, 11, 12, 24)  # C(=O)-Ca-N-H: amino rotation
+GENE0004(periodicity=2) = D(15, 13, 14, 27)  # O=C-O-H: carboxylic O-H
+GENE0005(periodicity=3) = D(11, 10, 9, 8)    # Ca-Cb-Cg-Cd1: indole chi2

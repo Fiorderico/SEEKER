@@ -1,0 +1,7 @@
+# Copying this file is optional. `seeker configure` creates
+# .seeker.local.toml and validates each configured tool.
+
+[tools]
+xtb = "/absolute/path/to/xtb"
+gaussian = "/absolute/path/to/g16-or-gdv"
+openbabel = "/absolute/path/to/obabel"

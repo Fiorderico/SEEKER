@@ -1,0 +1,10 @@
+# Optional X-H...pi fitness for the imidazole ring.
+# The launcher detects these directives and recommends enabling hbond_pi.
+# These directives configure the objective but do not add genetic coordinates.
+HPI(mode=explicit)
+HPI_RING_imidazole = RING(1, 2, 4, 5, 3)
+
+# Global rigid-pose exploration of water (10-12) around imidazole (1-9).
+# distance is in angstrom; direction/orientation are maximum displacements in degrees.
+# 118 degrees keeps a small safety margin below the tested 120-degree FROT chart limit.
+POSE_WATER(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-9;10-12)

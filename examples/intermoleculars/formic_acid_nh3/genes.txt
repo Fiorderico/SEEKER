@@ -1,0 +1,4 @@
+# This XYZ contains both water (6-8) and ammonia (9-12). Explore their rigid
+# poses independently around formic acid (1-5), used as the fixed reference.
+POSE_WATER(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-5;6-8)
+POSE_AMMONIA(distance=2.6:5.2,direction=180,orientation=118) = FRAGMENTS(1-5;9-12)
